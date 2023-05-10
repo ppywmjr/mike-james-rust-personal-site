@@ -6,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Mike James Rust - a QA's playground
+          Mike James Rust - a QA&apos;s playground
         </p>
         <div>
           <a
