@@ -7,7 +7,6 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>Mike James Rust - a QA&apos;s playground</p>
-        <p>Mike James Rust - a QA&apos;s playground</p>
         <div>
           <Link href="/">
             Mike James Rust{" "}
