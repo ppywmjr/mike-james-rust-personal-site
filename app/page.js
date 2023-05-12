@@ -8,37 +8,33 @@ export default function Home() {
       <div className={styles.description}>
         <p>Mike James Rust - a QA&apos;s playground</p>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+          <Link href="/">
+            Mike James Rust{" "}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
+              src="/logo.svg"
+              alt="Mike James Rust Logo"
               className={styles.vercelLogo}
               width={100}
               height={24}
               priority
             />
-          </a>
+          </Link>
         </div>
       </div>
 
       <div className={styles.center}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
+          className={styles.profilePicture}
+          src="/profile.jpg"
+          alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
           width={180}
-          height={37}
+          height={214}
           priority
         />
       </div>
 
       <div className={styles.grid}>
-        <Link
+        <a
           href="/me-and-my-site"
           className={styles.card}
           rel="noopener noreferrer"
@@ -46,21 +42,24 @@ export default function Home() {
           <h2>
             Me and my site <span>-&gt;</span>
           </h2>
-          <p>TBD</p>
-        </Link>
+          <p>
+            A first page, with a little about who I am and why I&apos;m doing
+            this
+          </p>
+        </a>
 
         <a href="" className={styles.card} rel="noopener noreferrer">
           <h2>
             The making of <span>-&gt;</span>
           </h2>
-          <p>A step by step blog of how this site was made.</p>
+          <p>THIS DOES NOT EXIST YET</p>
         </a>
 
         <a href="" className={styles.card} rel="noopener noreferrer">
           <h2>
-            Quality opics <span>-&gt;</span>
+            Quality topics <span>-&gt;</span>
           </h2>
-          <p>This is the space to discuss quality assurance.</p>
+          <p>THIS DOES NOT EXIST YET</p>
         </a>
       </div>
     </main>
