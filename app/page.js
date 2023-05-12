@@ -57,7 +57,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            The Making Of <span>-&gt;</span>
+            The making of <span>-&gt;</span>
           </h2>
           <p>A step by step blog of how this site was made.</p>
         </a>
@@ -68,7 +68,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            Quality Topics <span>-&gt;</span>
+            Quality opics <span>-&gt;</span>
           </h2>
           <p>This is the space to discuss quality assurance.</p>
         </a>
