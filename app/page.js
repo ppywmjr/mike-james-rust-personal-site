@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -39,8 +40,8 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href=""
+        <Link
+          href="/about"
           className={styles.card}
           rel="noopener noreferrer"
         >
@@ -48,7 +49,7 @@ export default function Home() {
             Me and my site <span>-&gt;</span>
           </h2>
           <p>TBD</p>
-        </a>
+        </Link>
 
         <a
           href=""
