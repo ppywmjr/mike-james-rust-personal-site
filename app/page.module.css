@@ -145,6 +145,11 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    padding: 3rem;
+    min-height: 85vh;
+  }
+
   .content {
     padding: 4rem;
   }
