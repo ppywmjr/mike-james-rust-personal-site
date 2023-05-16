@@ -1,9 +1,12 @@
+.link {
+  transition: 0.5s;
+}
+
 .link a {
-  display: inline-flex;
-  /* width: 20ch; */
+  display: flex;
   color: #000;
   padding: 8px 16px;
-  text-decoration: none;
+  margin-right: auto;
 }
 
 .link:hover a {
