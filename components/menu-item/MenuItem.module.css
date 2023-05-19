@@ -1,14 +1,19 @@
-.link a {
-  display: inline-flex;
-  /* width: 20ch; */
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+.link {
+  transition: 0.5s;
 }
 
-.link:hover a {
-  background-color: #555;
-  color: white;
+.link a {
+  display: flex;
+  color: #000;
+  padding: 1rem 2rem;
+  margin-right: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover a {
+    background-color: #555;
+    color: white;
+  }
 }
 
 .active {
