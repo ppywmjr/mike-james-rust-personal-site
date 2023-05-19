@@ -9,9 +9,11 @@
   margin-right: auto;
 }
 
-.link:hover a {
-  background-color: #555;
-  color: white;
+@media (hover: hover) and (pointer: fine) {
+  .link:hover a {
+    background-color: #555;
+    color: white;
+  }
 }
 
 .active {
