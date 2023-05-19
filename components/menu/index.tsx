@@ -3,9 +3,10 @@
 import Link from "next/link";
 import MenuItem from "../menu-item";
 import styles from "./Menu.module.css";
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
+import { MenuProps } from "./types";
 
-const MENU_LIST = [
+const MENU_LIST: { target: string; text: string }[] = [
   { target: "/me-and-my-site", text: "Me and my site" },
   { target: "/", text: "Quality topics" },
   { target: "/", text: "The making of" },
@@ -13,7 +14,7 @@ const MENU_LIST = [
 
 const navHidden = true;
 
-const Menu = (props) => {
+const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
   const [navActive, setNavActive] = useState(null);
 
   return (
@@ -25,8 +26,8 @@ const Menu = (props) => {
             className={`${styles.burger} ${navActive ? styles.change : ""}`}
             onClick={() => setNavActive(!navActive)}
           >
-            <div class={styles.bar1}></div>
-            <div class={styles.bar2}></div>
+            <div className={styles.bar1}></div>
+            <div className={styles.bar2}></div>
           </div>
         </li>
         {MENU_LIST.map((item) => (
@@ -35,7 +36,7 @@ const Menu = (props) => {
             key={item.text}
             target={item.target}
             text={item.text}
-            active={props.currentUri === item.target ? true : false}
+            active={currentUri === item.target ? true : false}
           />
         ))}
       </ul>
