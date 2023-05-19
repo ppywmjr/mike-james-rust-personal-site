@@ -40,19 +40,19 @@
 .bar1,
 .bar2 {
   width: 1.5rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #333;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
   transition: 0.4s;
   display: block;
 }
 
 .change .bar1 {
-  transform: translate(0, 3px) rotate(-45deg);
+  transform: translate(0, 0.2rem) rotate(-45deg);
 }
 
 .change .bar2 {
-  transform: translate(0, -3px) rotate(45deg);
+  transform: translate(0, -0.2rem) rotate(45deg);
 }
 
 @media (max-width: 700px) {
