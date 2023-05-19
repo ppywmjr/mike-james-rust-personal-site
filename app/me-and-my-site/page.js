@@ -2,12 +2,13 @@ import Link from "next/link";
 import Menu from "@/components/menu";
 import MenuItem from "@/components/menu-item";
 import styles from "../page.module.css";
+import meAndMySiteStyles from "./page.module.css";
 
 export default function AboutSite() {
   return (
     <>
       <Menu currentUri={"/me-and-my-site"} />
-      <main className={styles.main}>
+      <main className={`${styles.main} ${meAndMySiteStyles.main}`}>
         <h1>Me and my site</h1>
         <p>
           Hi folks, I&apos;m Mike and this is my site. Welcome! This site is
