@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders the page 1`] = `
+<main
+  className="main"
+>
+  <div
+    className="description"
+  >
+    <p>
+      Mike James Rust - a QA's playground
+    </p>
+    <div>
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Mike James Rust
+         
+        <img
+          alt="Mike James Rust Logo"
+          className="vercelLogo"
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height={24}
+          onError={[Function]}
+          onLoad={[Function]}
+          src="/logo.svg"
+          style={
+            {
+              "color": "transparent",
+            }
+          }
+          width={100}
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="center"
+  >
+    <img
+      alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
+      className="profilePicture"
+      data-nimg="1"
+      decoding="async"
+      fetchpriority="high"
+      height={214}
+      onError={[Function]}
+      onLoad={[Function]}
+      src="/_next/image?url=%2Fprofile.jpg&w=384&q=75"
+      srcSet="/_next/image?url=%2Fprofile.jpg&w=256&q=75 1x, /_next/image?url=%2Fprofile.jpg&w=384&q=75 2x"
+      style={
+        {
+          "color": "transparent",
+        }
+      }
+      width={180}
+    />
+  </div>
+  <div
+    className="grid"
+  >
+    <a
+      className="card"
+      href="/me-and-my-site"
+      rel="noopener noreferrer"
+    >
+      <h2>
+        Me and my site 
+        <span>
+          -&gt;
+        </span>
+      </h2>
+      <p>
+        A first page, with a little about who I am and why I'm doing this
+      </p>
+    </a>
+    <a
+      className="card"
+      href=""
+      rel="noopener noreferrer"
+    >
+      <h2>
+        The making of 
+        <span>
+          -&gt;
+        </span>
+      </h2>
+      <p>
+        THIS DOES NOT EXIST YET
+      </p>
+    </a>
+    <a
+      className="card"
+      href=""
+      rel="noopener noreferrer"
+    >
+      <h2>
+        Quality topics 
+        <span>
+          -&gt;
+        </span>
+      </h2>
+      <p>
+        THIS DOES NOT EXIST YET
+      </p>
+    </a>
+  </div>
+</main>
+`;

@@ -18,17 +18,17 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
   const [navActive, setNavActive] = useState(null);
 
   return (
-    <nav>
+    <nav id="nav">
       <ul className={styles.menu}>
         <li className={styles.navBar}>
           <Link href="/">Home</Link>
-          <div
+          <button aria-controls="menu"
             className={`${styles.burger} ${navActive ? styles.change : ""}`}
             onClick={() => setNavActive(!navActive)}
           >
-            <div className={styles.bar1}></div>
-            <div className={styles.bar2}></div>
-          </div>
+            <div className={styles.bar1} role='presentation'></div>
+            <div className={styles.bar2} role='presentation'></div>
+          </button>
         </li>
         {MENU_LIST.map((item) => (
           <MenuItem

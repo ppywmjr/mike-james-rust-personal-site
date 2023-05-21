@@ -1,6 +1,6 @@
 export type MenuItemProps = {
-  active: boolean;
-  className: string;
+  active?: boolean;
+  className?: string;
   target: string;
   text: string;
 };
