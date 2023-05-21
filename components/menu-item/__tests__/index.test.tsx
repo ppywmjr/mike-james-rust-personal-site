@@ -20,6 +20,6 @@ describe("Home", () => {
 
     const menuItem = screen.getByRole("listitem");
 
-    expect(menuItem).toHaveClass(styles.active);
+    expect(menuItem).toHaveClass(`${styles.active}`);
   });
 });

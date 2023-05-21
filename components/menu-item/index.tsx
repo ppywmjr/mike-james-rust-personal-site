@@ -12,7 +12,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   return (
     <li
       className={`${styles.link} ${active ? styles.active : ""} 
-      ${className}`}
+      ${className ?? ""}`}
     >
       <Link href={target}>{text}</Link>
     </li>
