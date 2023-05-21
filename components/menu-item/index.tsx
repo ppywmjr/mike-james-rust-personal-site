@@ -11,10 +11,17 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
 }) => {
   return (
     <li
-      className={`${styles.link} ${active ? styles.active : ""} 
+      className={`${styles.link}
       ${className ?? ""}`}
     >
-      <Link href={target}>{text}</Link>
+      <Link
+        href={target}
+        className={`flex px-8 py-4 
+          ${active ? "text-white bg-black" : "text-black bg-white"}
+          hover:text-white bg-black`}
+      >
+        {text}
+      </Link>
     </li>
   );
 };
