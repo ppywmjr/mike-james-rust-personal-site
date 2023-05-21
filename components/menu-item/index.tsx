@@ -18,7 +18,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
         href={target}
         className={`flex px-8 py-4 
           ${active ? "text-white bg-black" : "text-black bg-white"}
-          hover:text-white bg-black`}
+          hover:text-white hover:bg-black`}
       >
         {text}
       </Link>
