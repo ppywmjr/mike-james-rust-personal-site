@@ -2,12 +2,6 @@ import React from "react";
 import styles from "../page.module.css";
 import meAndMySiteStyles from "./page.module.css";
 
-export const metadata = {
-  title: "Me and my site",
-  description:
-    "A description of the purpose of the site and why I am building it.",
-};
-
 export default function AboutSite() {
   return (
     <main className={`${styles.main} ${meAndMySiteStyles.main}`}>
