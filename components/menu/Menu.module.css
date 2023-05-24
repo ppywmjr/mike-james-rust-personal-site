@@ -17,24 +17,9 @@
   transition: 0.5s;
 }
 
-.navBar {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: right;
-}
-
-.navBar a {
-  display: flex;
-  color: #000;
-  padding: 1rem 2rem;
-  margin-right: auto;
-}
-
 .burger {
   display: none;
-  color: #000;
-  padding: 1rem 1rem;
-  justify-self: right;
+  margin-left: auto;
   background-color: transparent;
   border: none;
 }

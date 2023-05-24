@@ -20,19 +20,29 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
   return (
     <nav id="nav">
       <ul className={styles.menu}>
-        <li className={styles.navBar}>
-          <Link href="/">Home</Link>
-          <button aria-controls="menu"
-            className={`${styles.burger} ${navActive ? styles.change : ""}`}
+        <li className={"container flex flex-row"}>
+          <Link
+            href="/"
+            className={
+              "flex px-8 py-4 text-black bg-white hover:text-white hover:bg-black"
+            }
+          >
+            Home
+          </Link>
+          <button
+            aria-controls="menu"
+            className={`${styles.burger} p-4 justify-self-end ${
+              navActive ? styles.change : ""
+            }`}
             onClick={() => setNavActive(!navActive)}
           >
-            <div className={styles.bar1} role='presentation'></div>
-            <div className={styles.bar2} role='presentation'></div>
+            <div className={styles.bar1} role="presentation"></div>
+            <div className={styles.bar2} role="presentation"></div>
           </button>
         </li>
         {MENU_LIST.map((item) => (
           <MenuItem
-            className={!navActive ? styles.hidden : ""}
+            className={`md: ${navActive ? "hidden" : "hidden"}`}
             key={item.text}
             target={item.target}
             text={item.text}
