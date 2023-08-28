@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 160 160"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-   <polygon points="0,0 0,160 160,160 160,0" stroke="grey" fill="grey"/>
-   <polygon points="0,0 0,130 160,20 160,0" stroke="blue" fill="blue"/>
-   <path d="M 0 0 Q 100 70 140 160" stroke="purple" fill="purple"/>
-   <polygon points="0,0 140,160 0,160" stroke="purple" fill="purple"/>
+<svg width="16px" height="16px" viewBox="0 0 160 120"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <polygon points="0,20 0,120 160,120 160,20" fill="#81B29A"/>
+   <polygon points="20,0 0,20 0,120 30,120 160,20 140,0" fill="#3D405B"/>
+   <polygon points="0,20 130,120 0,120" fill="#E07A5F" />
 </svg>
