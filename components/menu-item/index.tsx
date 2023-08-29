@@ -1,24 +1,23 @@
 import Link from "next/link";
-import styles from "./MenuItem.module.css";
 import React, { FunctionComponent } from "react";
 import { MenuItemProps } from "./types";
 
 const MenuItem: FunctionComponent<MenuItemProps> = ({
   active,
-  className,
   target,
   text,
 }) => {
   return (
-    <li
-      className={`${styles.link}
-      ${className ?? ""}`}
-    >
+    <li className="flex flex-auto flex-row items-stretch justify-stretch">
       <Link
         href={target}
-        className={`flex px-8 py-4 
-          ${active ? "text-white bg-black" : "text-black bg-white"}
-          hover:text-white hover:bg-black`}
+        className={`flex-auto px-8 py-4 w-48 text-center 
+          ${
+            active
+              ? "text-text_primary bg-primary hover:bg-secondary"
+              : "text-text_primary bg-secondary hover:bg-primary"
+          }
+          `}
       >
         {text}
       </Link>
