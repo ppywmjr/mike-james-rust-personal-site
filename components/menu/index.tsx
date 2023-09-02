@@ -16,11 +16,11 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
   const [navOpen, setNavOpen] = useState(null);
 
   return (
-    <nav className="flex flex-col md:flex-row items-stretch justify-stretch bg-secondary">
+    <nav className="fixed w-full flex flex-col md:flex-row bg-secondary">
       <div className="flex flex-row-reverse md:hidden">
         <button
           aria-controls="menu"
-          className={`p-4 ${navOpen ? styles.navOpen : ""}`}
+          className={`p-3 ${navOpen ? styles.navOpen : ""}`}
           onClick={() => setNavOpen(!navOpen)}
         >
           <div className={styles.bar1} role="presentation"></div>
@@ -29,7 +29,7 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
       </div>
       <ul
         className={`${navOpen ? "flex" : "hidden md:flex"} 
-        flex-auto flex-col md:flex-row items-stretch justify-stretch`}
+        flex-col md:flex-row flex-auto flex-wrap`}
       >
         {MENU_LIST.map((item) => (
           <MenuItem
