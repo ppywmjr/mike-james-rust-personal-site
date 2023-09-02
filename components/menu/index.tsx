@@ -1,6 +1,6 @@
 "use client";
 
-import MenuItem from "../menu-item";
+import MenuItem from "./menu-item";
 import styles from "./Menu.module.css";
 import React, { FunctionComponent, useState } from "react";
 import { MenuProps } from "./types";
