@@ -11,15 +11,15 @@ describe("Home", () => {
     const link = screen.getByRole("link");
 
     expect(menuItem).toHaveTextContent("some text");
-    expect(menuItem).not.toHaveClass(styles.active);
+    expect(link).toHaveClass("bg-secondary");
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
   it("renders the active MenuItem", () => {
     render(<MenuItem target={"/some/uri"} text={"some text"} active={true} />);
 
-    const menuItem = screen.getByRole("listitem");
+    const link = screen.getByRole("link");
 
-    expect(menuItem).toHaveClass(`${styles.active}`);
+    expect(link).toHaveClass("bg-primary");
   });
 });
