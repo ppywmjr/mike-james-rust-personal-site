@@ -2,14 +2,16 @@
 
 exports[`Home renders the page 1`] = `
 <main
-  className="main"
+  className="flex flex-col justify-between items-center p-12 pt-1 min-h-screen"
 >
   <div
-    className="description"
+    className="flex flex-row self-stretch items-center justify-between"
   >
-    <p>
+    <h1
+      className="font-bold"
+    >
       Mike James Rust - a QA's playground
-    </p>
+    </h1>
     <div>
       <a
         href="/"
@@ -17,15 +19,13 @@ exports[`Home renders the page 1`] = `
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
       >
-        Mike James Rust
-         
         <img
           alt="Mike James Rust Logo"
-          className="vercelLogo"
+          className=""
           data-nimg="1"
           decoding="async"
           fetchpriority="high"
-          height={24}
+          height={12}
           onError={[Function]}
           onLoad={[Function]}
           src="/logo.svg"
@@ -34,17 +34,15 @@ exports[`Home renders the page 1`] = `
               "color": "transparent",
             }
           }
-          width={100}
+          width={50}
         />
       </a>
     </div>
   </div>
-  <div
-    className="center"
-  >
+  <div>
     <img
       alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
-      className="profilePicture"
+      className="rounded-2xl"
       data-nimg="1"
       decoding="async"
       fetchpriority="high"
@@ -62,50 +60,77 @@ exports[`Home renders the page 1`] = `
     />
   </div>
   <div
-    className="grid"
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
     <a
-      className="card"
+      className="p-4 max-w-[16rem] group"
       href="/me-and-my-site"
-      rel="noopener noreferrer"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
-      <h2>
-        Me and my site 
-        <span>
+      <h2
+        className="font-bold my-4"
+      >
+        Me and my site
+         
+        <span
+          className="inline-block transition-all group-hover:translate-x-1"
+        >
           -&gt;
         </span>
       </h2>
-      <p>
-        A first page, with a little about who I am and why I'm doing this
+      <p
+        className="text-sm"
+      >
+        A first page, with a little about who I am and why I'm doing this.
       </p>
     </a>
     <a
-      className="card"
-      href=""
-      rel="noopener noreferrer"
+      className="p-4 max-w-[16rem] group"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
-      <h2>
-        The making of 
-        <span>
+      <h2
+        className="font-bold my-4"
+      >
+        Quality topics
+         
+        <span
+          className="inline-block transition-all group-hover:translate-x-1"
+        >
           -&gt;
         </span>
       </h2>
-      <p>
+      <p
+        className="text-sm"
+      >
         THIS DOES NOT EXIST YET
       </p>
     </a>
     <a
-      className="card"
-      href=""
-      rel="noopener noreferrer"
+      className="p-4 max-w-[16rem] group"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
-      <h2>
-        Quality topics 
-        <span>
+      <h2
+        className="font-bold my-4"
+      >
+        The making of
+         
+        <span
+          className="inline-block transition-all group-hover:translate-x-1"
+        >
           -&gt;
         </span>
       </h2>
-      <p>
+      <p
+        className="text-sm"
+      >
         THIS DOES NOT EXIST YET
       </p>
     </a>

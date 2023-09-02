@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 import Menu from "../index";
 
-describe("Home", () => {
+describe("Menu", () => {
   test("renders the Menu with active URI /me-and-my-site", () => {
     render(<Menu currentUri={"/me-and-my-site"} />);
 

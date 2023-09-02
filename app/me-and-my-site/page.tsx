@@ -1,12 +1,10 @@
 import React from "react";
-import styles from "../page.module.css";
-import meAndMySiteStyles from "./page.module.css";
 
 export default function AboutSite() {
   return (
-    <main className={`${styles.main} ${meAndMySiteStyles.main}`}>
-      <h1>Me and my site</h1>
-      <p>
+    <main className="flex flex-col justify-start items-center p-12 py-24">
+      <h1 className="text-xl font-bold my-6">Me and my site</h1>
+      <p className="my-6 max-w-prose">
         Hi folks, I&apos;m Mike and this is my site. Welcome! This site is
         primarily for me, but I&apos;m delighted to imagine you reading it.
         I&apos;ve made a few little apps just for fun over the years but
