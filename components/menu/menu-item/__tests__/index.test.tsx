@@ -3,7 +3,7 @@ import MenuItem from "../index";
 import styles from "../MenuItem.module.css";
 import "@testing-library/jest-dom";
 
-describe("Home", () => {
+describe("MenuItem", () => {
   it("renders the non active MenuItem", () => {
     render(<MenuItem target={"/some/uri"} text={"some text"} active={false} />);
 

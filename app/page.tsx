@@ -2,30 +2,49 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import React from "react";
+import LinkCard from "../components/link-card";
+
+const LINK_CARDS: { target: string; heading: string; description: string }[] = [
+  {
+    target: "/me-and-my-site",
+    heading: "Me and my site",
+    description:
+      "A first page, with a little about who I am and why I'm doing this.",
+  },
+  {
+    target: "/",
+    heading: "Quality topics",
+    description: "THIS DOES NOT EXIST YET",
+  },
+  {
+    target: "/",
+    heading: "The making of",
+    description: "THIS DOES NOT EXIST YET",
+  },
+];
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>Mike James Rust - a QA&apos;s playground</p>
+    <main className="flex flex-col justify-between items-center p-12 pt-1 min-h-screen">
+      <div className="flex flex-row self-stretch items-center justify-between">
+        <h1 className="font-bold">Mike James Rust - a QA&apos;s playground</h1>
         <div>
           <Link href="/">
-            Mike James Rust{" "}
             <Image
               src="/logo.svg"
               alt="Mike James Rust Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
+              className=""
+              width={50}
+              height={12}
               priority
             />
           </Link>
         </div>
       </div>
 
-      <div className={styles.center}>
+      <div>
         <Image
-          className={styles.profilePicture}
+          className="rounded-2xl"
           src="/profile.jpg"
           alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
           width={180}
@@ -34,34 +53,15 @@ export default function Home() {
         />
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="/me-and-my-site"
-          className={styles.card}
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Me and my site <span>-&gt;</span>
-          </h2>
-          <p>
-            A first page, with a little about who I am and why I&apos;m doing
-            this
-          </p>
-        </a>
-
-        <a href="" className={styles.card} rel="noopener noreferrer">
-          <h2>
-            The making of <span>-&gt;</span>
-          </h2>
-          <p>THIS DOES NOT EXIST YET</p>
-        </a>
-
-        <a href="" className={styles.card} rel="noopener noreferrer">
-          <h2>
-            Quality topics <span>-&gt;</span>
-          </h2>
-          <p>THIS DOES NOT EXIST YET</p>
-        </a>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {LINK_CARDS.map((item) => (
+          <LinkCard
+            key={item.target}
+            target={item.target}
+            heading={item.heading}
+            description={item.description}
+          />
+        ))}
       </div>
     </main>
   );

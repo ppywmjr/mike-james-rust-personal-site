@@ -13,6 +13,9 @@ module.exports = {
       },
     },
   },
+  fontFamily: {
+    sans: ["Graphik", "sans-serif"],
+  },
   plugins: [],
   future: {
     hoverOnlyWhenSupported: true,
