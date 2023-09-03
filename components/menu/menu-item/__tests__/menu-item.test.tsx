@@ -11,7 +11,7 @@ describe("MenuItem", () => {
     const link = screen.getByRole("link");
 
     expect(menuItem).toHaveTextContent("some text");
-    expect(link).toHaveClass("bg-secondary");
+    expect(link).toHaveClass("border-secondary");
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
@@ -20,6 +20,6 @@ describe("MenuItem", () => {
 
     const link = screen.getByRole("link");
 
-    expect(link).toHaveClass("bg-primary");
+    expect(link).toHaveClass("border-primary");
   });
 });

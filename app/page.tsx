@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
 import React from "react";
 import LinkCard from "../components/link-card";
+import Logo from "../components/logo";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
   {
@@ -29,16 +29,7 @@ export default function Home() {
       <div className="flex flex-row self-stretch items-center justify-between">
         <h1 className="font-bold">Mike James Rust - a QA&apos;s playground</h1>
         <div>
-          <Link href="/">
-            <Image
-              src="/logo.svg"
-              alt="Mike James Rust Logo"
-              className=""
-              width={50}
-              height={12}
-              priority
-            />
-          </Link>
+          <Logo/>
         </div>
       </div>
 

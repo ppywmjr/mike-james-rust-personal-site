@@ -8,14 +8,14 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   text,
 }) => {
   return (
-    <li className="flex md:w-40 shrink-0 flex-row items-center">
+    <li className="flex md:w-40 shrink-0 flex-row items-center justify-center group">
       <Link
         href={target}
-        className={`flex-auto px-2 py-2 text-center
+        className={`pt-2 text-center bg-secondary min-w-[6rem]
           ${
             active
-              ? "text-text_primary bg-primary hover:bg-secondary"
-              : "text-text_primary bg-secondary hover:bg-primary"
+              ? "border-primary border-b-2 md:border-b-4"
+              : "border-secondary border-b-4 group-hover:border-primary group-hover:font-bold"
           }
           `}
       >

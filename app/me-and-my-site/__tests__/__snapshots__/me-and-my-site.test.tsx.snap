@@ -2,7 +2,7 @@
 
 exports[`Me and my site renders the page 1`] = `
 <main
-  className="flex flex-col justify-start items-center p-12 py-24"
+  className="flex flex-col justify-start items-center p-12 py-24 min-h-screen"
 >
   <h1
     className="text-xl font-bold my-6"
