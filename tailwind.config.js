@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,9 +14,6 @@ module.exports = {
         dark: "#0D2B57",
       },
     },
-  },
-  fontFamily: {
-    sans: ["Graphik", "sans-serif"],
   },
   plugins: [],
   future: {

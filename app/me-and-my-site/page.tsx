@@ -1,10 +1,27 @@
 import React from "react";
+import Image from "next/image";
+import PageHeading from "../../components/page-heading";
 
 export default function AboutSite() {
   return (
-    <main className="flex flex-col justify-start items-center p-12 py-24 min-h-screen">
-      <h1 className="text-xl font-bold my-6">Me and my site</h1>
-      <p className="my-6 max-w-prose">
+    <div>
+      <PageHeading text="Me and my site" />
+      <div className="flex flex-row flex-wrap">
+        <div className="basis-24 md:basis-32 shrink-0 mr-6 mb-6">
+          <Image
+            className="rounded-lg"
+            src="/profile.jpg"
+            alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
+            width={120}
+            height={143}
+            priority
+          />
+        </div>
+        <p className="basis-40 shrink-0 mb-6 text-xl italic">
+          An intro to what this site is all about
+        </p>
+      </div>
+      <p className="max-w-prose leading-loose">
         Hi folks, I&apos;m Mike and this is my site. Welcome! This site is
         primarily for me, but I&apos;m delighted to imagine you reading it.
         I&apos;ve made a few little apps just for fun over the years but
@@ -17,9 +34,9 @@ export default function AboutSite() {
         I&apos;ve been working as a tester with Nextjs apps for a couple of
         years now and it&apos;s so easy to work with that I figured the effort
         to get something up and running would be minimal. Also, Nextjs has so
-        many features that I think it would be ready and fun to try out some
+        many features that I think it would be really and fun to try out some
         different approaches on different pages.
       </p>
-    </main>
+    </div>
   );
 }

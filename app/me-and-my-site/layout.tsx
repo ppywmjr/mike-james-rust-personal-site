@@ -15,7 +15,9 @@ export default function RootLayout({
   return (
     <>
       <Menu currentUri={"/me-and-my-site"} />
-      {children}
+      <main className="flex flex-col justify-start items-center p-4 md:p-12 py-12 min-h-screen">
+        {children}
+      </main>
     </>
   );
 }
