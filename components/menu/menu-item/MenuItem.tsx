@@ -11,7 +11,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
     <li className="flex md:w-40 shrink-0 flex-row items-center justify-center group">
       <Link
         href={target}
-        className={`pt-2 text-center bg-secondary min-w-[6rem]
+        className={`my-4 md:mt-2 md:mb-0 text-center bg-secondary min-w-[6rem]
           ${
             active
               ? "border-primary border-b-2 md:border-b-4"
