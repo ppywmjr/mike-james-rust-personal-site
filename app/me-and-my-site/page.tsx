@@ -7,7 +7,7 @@ export default function AboutSite() {
     <div>
       <PageHeading text="Me and my site" />
       <div className="flex flex-row flex-wrap">
-        <div className="basis-24 md:basis-32 shrink-0 mr-6 mb-6">
+        <div className="basis-32 shrink-0 mr-6 mb-6">
           <Image
             className="rounded-lg"
             src="/profile.jpg"
