@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutSite() {
   return (
-    <main className="flex flex-col justify-start items-center p-12 py-24">
+    <main className="flex flex-col justify-start items-center p-12 py-24 min-h-screen">
       <h1 className="text-xl font-bold my-6">Me and my site</h1>
       <p className="my-6 max-w-prose">
         Hi folks, I&apos;m Mike and this is my site. Welcome! This site is

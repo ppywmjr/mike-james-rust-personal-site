@@ -11,8 +11,8 @@ describe("Menu", () => {
     const activeMenuLink = screen.getByText("Me and my site")
     const inactiveMenuLink = screen.getByText("Quality topics");
 
-    expect(activeMenuLink).toHaveClass("bg-primary");
-    expect(inactiveMenuLink).toHaveClass("bg-secondary");
+    expect(activeMenuLink).toHaveClass("border-primary");
+    expect(inactiveMenuLink).toHaveClass("border-secondary");
   });
 
   test("link starts hidden", () => {

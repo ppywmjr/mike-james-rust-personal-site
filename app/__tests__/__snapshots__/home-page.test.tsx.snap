@@ -13,19 +13,15 @@ exports[`Home renders the page 1`] = `
       Mike James Rust - a QA's playground
     </h1>
     <div>
-      <a
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <div
+        className="px-4 flex flex-row items-center"
       >
         <img
           alt="Mike James Rust Logo"
-          className=""
           data-nimg="1"
           decoding="async"
           fetchpriority="high"
-          height={12}
+          height={6}
           onError={[Function]}
           onLoad={[Function]}
           src="/logo.svg"
@@ -34,9 +30,9 @@ exports[`Home renders the page 1`] = `
               "color": "transparent",
             }
           }
-          width={50}
+          width={25}
         />
-      </a>
+      </div>
     </div>
   </div>
   <div>
