@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import MenuItem from "../index";
-import styles from "../MenuItem.module.css";
 import "@testing-library/jest-dom";
 
 describe("MenuItem", () => {
