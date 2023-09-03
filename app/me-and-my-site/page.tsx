@@ -34,7 +34,7 @@ export default function AboutSite() {
         I&apos;ve been working as a tester with Nextjs apps for a couple of
         years now and it&apos;s so easy to work with that I figured the effort
         to get something up and running would be minimal. Also, Nextjs has so
-        many features that I think it would be realy and fun to try out some
+        many features that I think it would be really and fun to try out some
         different approaches on different pages.
       </p>
     </div>
