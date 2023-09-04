@@ -41,7 +41,7 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
       </div>
       <ul
         className={`${navOpen ? "flex" : "hidden md:flex"} 
-        flex-col md:flex-row flex-auto flex-wrap`}
+        flex-col md:flex-row flex-auto flex-wrap items-stretch`}
       >
         {MENU_LIST.map((item) => (
           <MenuItem

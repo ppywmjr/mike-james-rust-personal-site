@@ -8,17 +8,18 @@ describe("MenuItem", () => {
 
     const menuItem = screen.getByRole("listitem");
     const link = screen.getByRole("link");
+    const text = screen.getByText("some text");
 
     expect(menuItem).toHaveTextContent("some text");
-    expect(link).toHaveClass("border-secondary");
+    expect(text).toHaveClass("border-secondary");
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
   it("renders the active MenuItem", () => {
     render(<MenuItem target={"/some/uri"} text={"some text"} active={true} />);
 
-    const link = screen.getByRole("link");
+    const text = screen.getByText("some text");
 
-    expect(link).toHaveClass("border-primary");
+    expect(text).toHaveClass("border-primary");
   });
 });
