@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import LinkCard from "../components/link-card";
 import Logo from "../components/logo";
+import PageHeading from "../components/page-heading";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
   {
@@ -24,14 +25,8 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-between items-center p-12 pt-1 min-h-screen">
-      <div className="flex flex-row self-stretch items-center justify-between">
-        <h1 className="font-bold">Mike James Rust - a QA&apos;s playground</h1>
-        <div>
-          <Logo/>
-        </div>
-      </div>
-
+    <div className="flex flex-col justify-start md:justify-evenly h-full items-center">
+      <PageHeading text="mike james rust" />
       <div>
         <Image
           className="rounded-2xl"
@@ -42,8 +37,7 @@ export default function Home() {
           priority
         />
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {LINK_CARDS.map((item) => (
           <LinkCard
             key={item.target}
@@ -53,6 +47,6 @@ export default function Home() {
           />
         ))}
       </div>
-    </main>
+    </div>
   );
 }

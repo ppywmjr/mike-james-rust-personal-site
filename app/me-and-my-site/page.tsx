@@ -2,6 +2,12 @@ import React from "react";
 import Image from "next/image";
 import PageHeading from "../../components/page-heading";
 
+export const metadata = {
+  title: "Me and my site",
+  description:
+    "A description of the purpose of the site and why I am building it.",
+};
+
 export default function AboutSite() {
   return (
     <div>
