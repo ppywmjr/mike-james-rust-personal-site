@@ -2,18 +2,19 @@
 
 import MenuItem from "./menu-item";
 import React, { FunctionComponent, useState } from "react";
-import { MenuProps } from "./types";
 import Logo from "../logo";
+import { usePathname } from "next/navigation";
 
 const MENU_LIST: { target: string; text: string }[] = [
   { target: "/", text: "Home" },
   { target: "/me-and-my-site", text: "Me and my site" },
-  { target: "/", text: "Quality topics" },
-  { target: "/", text: "The making of" },
+  { target: "/quality-topics", text: "Quality topics" },
+  { target: "/the-making-of", text: "The making of" },
 ];
 
-const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
+const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(null);
+  const pathname = usePathname();
 
   return (
     <nav className="fixed w-full flex flex-col md:flex-row bg-secondary">
@@ -48,7 +49,7 @@ const Menu: FunctionComponent<MenuProps> = ({ currentUri }) => {
             key={item.text}
             target={item.target}
             text={item.text}
-            active={currentUri === item.target ? true : false}
+            active={pathname === item.target}
           />
         ))}
       </ul>
