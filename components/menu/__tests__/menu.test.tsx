@@ -31,10 +31,44 @@ describe("Menu", () => {
     render(<Menu />);
 
     const burger = screen.getByRole("button");
-    userEvent.click(burger);
+    await userEvent.click(burger);
 
     await waitFor(() => {
       expect(screen.queryAllByRole("list")).toBeVisible;
     });
   });
+
+    test("closing burger menu hides links", async () => {
+      render(<Menu />);
+
+      const burger = screen.getByRole("button");
+      await userEvent.click(burger);
+
+      await waitFor(() => {
+        expect(screen.queryAllByRole("list")).toBeVisible;
+      });
+
+      await userEvent.click(burger);
+
+      await waitFor(() => {
+        expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
+      });      
+    });
+
+    test("clicking link hides links", async () => {
+      render(<Menu />);
+
+      const burger = screen.getByRole("button");
+      await userEvent.click(burger);
+
+      await waitFor(() => {
+        expect(screen.queryAllByRole("list")).toBeVisible;
+      });
+
+      await userEvent.click(screen.queryAllByRole("list")[0]);
+
+      await waitFor(() => {
+        expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
+      });      
+    });
 });
