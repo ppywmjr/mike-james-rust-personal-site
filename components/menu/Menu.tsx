@@ -16,6 +16,8 @@ const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(null);
   const pathname = usePathname();
 
+  const handleMenuItemClick = () => setNavOpen(false);
+
   return (
     <nav className="fixed w-full flex flex-col md:flex-row bg-secondary">
       <div className="flex flex-row justify-between">
@@ -50,6 +52,7 @@ const Menu: FunctionComponent<{}> = () => {
             target={item.target}
             text={item.text}
             active={pathname === item.target}
+            onClick={handleMenuItemClick}
           />
         ))}
       </ul>
