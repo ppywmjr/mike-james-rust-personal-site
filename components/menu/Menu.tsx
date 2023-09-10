@@ -31,12 +31,12 @@ const Menu: FunctionComponent<{}> = () => {
           onClick={() => setNavOpen(!navOpen)}
         >
           <div
-            className={`w-6 h-0.5 bg-mjr_dark_blue my-1 mx-0 block duration-500
+            className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
             ${navOpen ? "-rotate-45 translate-y-[0.2rem]" : ""}`}
             role="presentation"
           ></div>
           <div
-            className={`w-6 h-0.5 bg-mjr_dark_blue my-1 mx-0 block duration-500
+            className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
             ${navOpen ? "rotate-45 -translate-y-[0.2rem]" : ""}`}
             role="presentation"
           ></div>
