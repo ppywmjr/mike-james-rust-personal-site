@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 describe("PageHeading", () => {
   it("renders the page heading", () => {
-    render(<PageHeading text="Some text" />);
+    render(<PageHeading>Some text</PageHeading>);
 
     expect(screen.getByRole("heading")).toHaveTextContent("Some text");
   });

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import LinkCard from "../components/link-card";
-import Logo from "../components/logo";
 import PageHeading from "../components/page-heading";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
@@ -12,12 +11,12 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
       "A first page, with a little about who I am and why I'm doing this.",
   },
   {
-    target: "/",
+    target: "/quality-topics",
     heading: "Quality topics",
     description: "THIS DOES NOT EXIST YET",
   },
   {
-    target: "/",
+    target: "/the-making-of",
     heading: "The making of",
     description: "THIS DOES NOT EXIST YET",
   },
@@ -26,7 +25,7 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
 export default function Home() {
   return (
     <div className="flex flex-col justify-start md:justify-evenly h-full items-center">
-      <PageHeading text="mike james rust" />
+      <PageHeading>mike james rust</PageHeading>
       <div>
         <Image
           className="rounded-2xl"

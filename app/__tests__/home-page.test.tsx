@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -11,7 +12,7 @@ describe("Home page", () => {
 
     expect(heading).toBeVisible();
   });
-  
+
   it("renders with img", () => {
     render(<Home />);
 
@@ -23,9 +24,8 @@ describe("Home page", () => {
   it("renders with link card", () => {
     render(<Home />);
 
-    const text = screen.getByRole("link", {name: /Me and my site/});
+    const text = screen.getByRole("link", { name: /Me and my site/ });
 
     expect(text).toBeVisible();
-  });  
-
+  });
 });

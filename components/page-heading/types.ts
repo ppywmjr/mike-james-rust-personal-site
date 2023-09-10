@@ -1,3 +1,3 @@
 export type PageHeadingProps = {
-  text: string;
+  children: string;
 };

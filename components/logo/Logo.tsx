@@ -1,6 +1,8 @@
+import React, { FunctionComponent } from "react";
 import Image from "next/image";
 
-const Logo = () => {
+const Logo: FunctionComponent<{}>
+ = () => {
   return (
     <div className="px-4 flex flex-row items-center">
       <Image
