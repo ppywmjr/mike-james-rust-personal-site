@@ -17,7 +17,7 @@ describe("Menu", () => {
     const activeMenuLink = screen.getByText("Me and my site");
     const inactiveMenuLink = screen.getByText("Quality topics");
 
-    expect(activeMenuLink).toHaveClass("border-mjr_light_blue");
+    expect(activeMenuLink).toHaveClass("border-mjr_orange");
     expect(inactiveMenuLink).toHaveClass("border-mjr_light_green");
   });
 
