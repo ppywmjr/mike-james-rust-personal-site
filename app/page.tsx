@@ -18,7 +18,7 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
   {
     target: "/the-making-of",
     heading: "The making of",
-    description: "THIS DOES NOT EXIST YET",
+    description: "The first choices I made to make this site.",
   },
 ];
 
@@ -26,7 +26,6 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-start md:justify-evenly h-full items-center">
       <PageHeading>mike james rust</PageHeading>
-      <div>
         <Image
           className="rounded-2xl"
           src="/profile.jpg"
@@ -35,7 +34,6 @@ export default function Home() {
           height={214}
           priority
         />
-      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {LINK_CARDS.map((item) => (
           <LinkCard

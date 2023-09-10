@@ -1,8 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { SubHeadingProps } from "./types";
 
-const SubHeading: FunctionComponent<SubHeadingProps> = ({ level, children }) => {
-  const className = "font-bold text-lg";
+const SubHeading: FunctionComponent<SubHeadingProps> = ({
+  level,
+  children,
+}) => {
+  const className = "font-bold text-mjr_very_dark_orange text-xl";
 
   switch (level) {
     case 2:

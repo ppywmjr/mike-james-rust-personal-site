@@ -11,7 +11,7 @@ describe("MenuItem", () => {
     const text = screen.getByText("some text");
 
     expect(menuItem).toHaveTextContent("some text");
-    expect(text).toHaveClass("border-secondary");
+    expect(text).toHaveClass("border-mjr_light_green");
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
@@ -20,6 +20,6 @@ describe("MenuItem", () => {
 
     const text = screen.getByText("some text");
 
-    expect(text).toHaveClass("border-primary");
+    expect(text).toHaveClass("border-mjr_light_blue");
   });
 });

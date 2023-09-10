@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-dark">
+      <body className="text-mjr_dark_blue">
         <Menu />
         <main className="flex flex-col justify-start items-center p-4 md:p-12 py-12 h-56 min-h-screen">
           {children}

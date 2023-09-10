@@ -12,15 +12,15 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
     <li className="flex md:w-40 shrink-0 flex-row items-center justify-center group">
       <Link
         href={target}
-        className="flex flex-row justify-center bg-secondary w-full"
+        className="flex flex-row justify-center bg-mjr_light_green w-full"
         onClick={onClick}
       >
         <p
-          className={`my-4 md:mt-2 md:mb-0 text-center bg-secondary min-w-[6rem]
+          className={`my-4 md:mt-2 md:mb-0 text-center bg-mjr_light_green min-w-[6rem]
           ${
             active
-              ? "border-primary border-b-2 md:border-b-4"
-              : "border-secondary border-b-4 group-hover:border-primary group-hover:font-bold"
+              ? "border-mjr_orange border-b-2 md:border-b-2"
+              : "border-mjr_light_green border-b-2 group-hover:border-mjr_orange group-hover:font-bold"
           }
           `}
         >
