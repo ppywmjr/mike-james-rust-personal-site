@@ -17,8 +17,8 @@ describe("Menu", () => {
     const activeMenuLink = screen.getByText("Me and my site");
     const inactiveMenuLink = screen.getByText("Quality topics");
 
-    expect(activeMenuLink).toHaveClass("border-primary");
-    expect(inactiveMenuLink).toHaveClass("border-secondary");
+    expect(activeMenuLink).toHaveClass("border-mjr_orange");
+    expect(inactiveMenuLink).toHaveClass("border-mjr_light_green");
   });
 
   test("link starts hidden", () => {
@@ -38,37 +38,37 @@ describe("Menu", () => {
     });
   });
 
-    test("closing burger menu hides links", async () => {
-      render(<Menu />);
+  test("closing burger menu hides links", async () => {
+    render(<Menu />);
 
-      const burger = screen.getByRole("button");
-      await userEvent.click(burger);
+    const burger = screen.getByRole("button");
+    await userEvent.click(burger);
 
-      await waitFor(() => {
-        expect(screen.queryAllByRole("list")).toBeVisible;
-      });
-
-      await userEvent.click(burger);
-
-      await waitFor(() => {
-        expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
-      });      
+    await waitFor(() => {
+      expect(screen.queryAllByRole("list")).toBeVisible;
     });
 
-    test("clicking link hides links", async () => {
-      render(<Menu />);
+    await userEvent.click(burger);
 
-      const burger = screen.getByRole("button");
-      await userEvent.click(burger);
-
-      await waitFor(() => {
-        expect(screen.queryAllByRole("list")).toBeVisible;
-      });
-
-      await userEvent.click(screen.queryAllByRole("list")[0]);
-
-      await waitFor(() => {
-        expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
-      });      
+    await waitFor(() => {
+      expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
     });
+  });
+
+  test("clicking link hides links", async () => {
+    render(<Menu />);
+
+    const burger = screen.getByRole("button");
+    await userEvent.click(burger);
+
+    await waitFor(() => {
+      expect(screen.queryAllByRole("list")).toBeVisible;
+    });
+
+    await userEvent.click(screen.queryAllByRole("list")[0]);
+
+    await waitFor(() => {
+      expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
+    });
+  });
 });

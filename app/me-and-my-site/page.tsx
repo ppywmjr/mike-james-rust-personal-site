@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeading from "../../components/page-heading";
 import Hero from "../../components/hero";
+import Paragraph from "@components/article/paragraph";
 
 export const metadata = {
   title: "Me and my site",
@@ -19,7 +20,7 @@ export default function AboutSite() {
         }
         text={"An intro to what this site is all about"}
       />
-      <p className="leading-loose">
+      <Paragraph>
         Hi folks, I&rsquo;m Mike and this is my site. Welcome! This site is
         primarily for me, but I&rsquo;m delighted to imagine you reading it.
         I&rsquo;ve made a few little apps just for fun over the years but
@@ -34,7 +35,7 @@ export default function AboutSite() {
         to get something up and running would be minimal. Also, Nextjs has so
         many features that I think it would be really and fun to try out some
         different approaches on different pages.
-      </p>
+      </Paragraph>
     </div>
   );
 }
