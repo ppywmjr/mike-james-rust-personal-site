@@ -19,5 +19,21 @@ describe("LinkCard", () => {
 
     expect(image).toBeVisible();
     expect(description).toBeVisible();
+    expect(description).not.toHaveClass("sm:basis-52");
+  });
+  test("text element is wider when over 41 characters", () => {
+    render(
+      <Hero
+        imageSource={"/image"}
+        altText={"image description"}
+        text={"A long ish hero text prop of 42 characters"}
+      />
+    );
+
+    const description = screen.getByText(
+      "A long ish hero text prop of 42 characters"
+    );
+
+    expect(description).toHaveClass("sm:basis-52");
   });
 });
