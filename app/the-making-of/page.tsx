@@ -5,6 +5,7 @@ import TextList from "@components/article/text-list";
 import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
 import TextListItem from "@components/article/text-list/text-list-item";
+import TextLink from "@components/article/text-link";
 
 export const metadata = {
   title: "The making of",
@@ -30,30 +31,53 @@ export default function AboutSite() {
         <Paragraph>TL/DR Here&rsquo;s what I&rsquo;m going with:</Paragraph>
         <TextList>
           <TextListItem>Computer - Low end specs Windows PC</TextListItem>
-          <TextListItem>IDE - VSCode</TextListItem>
-          <TextListItem>Framework - Nextjs</TextListItem>
-          <TextListItem>Hosting - Vercel</TextListItem>
-          <TextListItem>Source control - Github</TextListItem>
+          <TextListItem>
+            IDE -{" "}
+            <TextLink target="https://code.visualstudio.com/">VSCode</TextLink>
+          </TextListItem>
+          <TextListItem>
+            Framework - <TextLink target="https://nextjs.org/">Nextjs</TextLink>
+          </TextListItem>
+          <TextListItem>
+            Hosting - <TextLink target="https://vercel.com/">Vercel</TextLink>
+          </TextListItem>
+          <TextListItem>
+            Source control -{" "}
+            <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site">
+              Github
+            </TextLink>
+          </TextListItem>
         </TextList>
         <SubHeading level={2}>Computer</SubHeading>
         <Paragraph>
-          I own what I own and I&rsquo;ve got no plans to upgrade. In my day job
-          I use a high end macbook pro so this might be a little strange, but
-          this will just prove that a high end computer is not a barrier to
-          entry.
+          I own what I own and I&rsquo;ve got no plans to upgrade. It was bought
+          in 2016 for around £400 so it is more than a little out of date but I
+          know it will be fine. If nothing else, I&rsquo;m going to prove that a
+          high end computer is not a barrier to entry for developing a quality website.
         </Paragraph>
         <SubHeading level={2}>IDE</SubHeading>
         <Paragraph>
-          VSCode, because it&rsquo;s incredibly popular for JavaScript
-          development. And it&rsquo;s built by Windows, so the Windows docs are
-          good. Oh and it&rsquo;s free.
+          An IDE, or integrated development environment, is the software that
+          you use to write code. It helps with all sorts of things like
+          highlighting code errors and making autocomplete suggestions.
+          I&rsquo;m going to use VSCode, Visual Studio Code, because it&rsquo;s
+          incredibly popular for JavaScript development. And it&rsquo;s built by
+          Windows, so the Windows docs are good. Oh and it&rsquo;s free.
         </Paragraph>
         <SubHeading level={2}>Framework</SubHeading>
         <Paragraph>
-          I own what I own and I&rsquo;ve got no plans to upgrade. In my day job
-          I use a high end macbook pro so this might be a little strange, but
-          this will just prove that a high end computer is not a barrier to
-          entry
+          I&rsquo;m super excited about Nextjs, it&rsquo;s the main Framework
+          that the developers at my work use and it has a tonne of features that
+          will make developing a quick modern website. In computer programming,
+          a framework is a whole lot of code that you import into to your code
+          that you don&rsquo;t need to write and that helps you create a better
+          app. It can also help you to focus on the things that make your
+          application unique because it looks after all the things that all
+          webapps need. Some highlights of Nextjs for me are that it can
+          generate static html pages from your javascript, so they load much
+          faster and don&rsquo;t require the lots of computing power from your
+          users, and the Link component, which preloads the content of linked
+          pages so that it is fast to navigate around the site.
         </Paragraph>
         <SubHeading level={2}>Hosting</SubHeading>
         <Paragraph>
@@ -75,7 +99,7 @@ export default function AboutSite() {
         <Paragraph>
           GitHub is the best know place to store all the code, for many things
           it&rsquo;s free, and above all Vercel made it super easy to link to a
-          GitHub account
+          GitHub account.
         </Paragraph>
       </div>
     </div>
