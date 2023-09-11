@@ -4,7 +4,12 @@ import Link from "next/link";
 
 const TextLink: FunctionComponent<TextLinkProps> = ({ target, children }) => {
   return (
-    <Link className="text-mjr_dark_orange font-bold underline italic" href={target} >{children}</Link>
+    <Link
+      className="text-mjr_very_dark_orange font-bold underline italic"
+      href={target}
+    >
+      {children}
+    </Link>
   );
 };
 
