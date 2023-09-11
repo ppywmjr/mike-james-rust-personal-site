@@ -4,8 +4,8 @@ import "@testing-library/jest-dom";
 
 import Hero from "../index";
 
-describe("LinkCard", () => {
-  test("renders the LinkCard", () => {
+describe("Hero", () => {
+  test("renders the Hero", () => {
     render(
       <Hero
         imageSource={"/image"}
