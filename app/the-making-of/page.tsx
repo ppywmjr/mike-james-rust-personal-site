@@ -53,7 +53,8 @@ export default function AboutSite() {
           I own what I own and I&rsquo;ve got no plans to upgrade. It was bought
           in 2016 for around £400 so it is more than a little out of date but I
           know it will be fine. If nothing else, I&rsquo;m going to prove that a
-          high end computer is not a barrier to entry for developing a quality website.
+          high end computer is not a barrier to entry for developing a quality
+          website.
         </Paragraph>
         <SubHeading level={2}>IDE</SubHeading>
         <Paragraph>
@@ -66,18 +67,16 @@ export default function AboutSite() {
         </Paragraph>
         <SubHeading level={2}>Framework</SubHeading>
         <Paragraph>
-          I&rsquo;m super excited about Nextjs, it&rsquo;s the main Framework
-          that the developers at my work use and it has a tonne of features that
-          will make developing a quick modern website. In computer programming,
-          a framework is a whole lot of code that you import into to your code
-          that you don&rsquo;t need to write and that helps you create a better
-          app. It can also help you to focus on the things that make your
-          application unique because it looks after all the things that all
-          webapps need. Some highlights of Nextjs for me are that it can
-          generate static html pages from your javascript, so they load much
-          faster and don&rsquo;t require the lots of computing power from your
-          users, and the Link component, which preloads the content of linked
-          pages so that it is fast to navigate around the site.
+          I&rsquo;m super excited about Nextjs, it has a tonne of features that
+          will make it easy to develop a quick, modern website. In computer
+          programming, a framework is a whole lot of code that you import into
+          to yours so that you don&rsquo;t have to reinvent the wheel. It takes care 
+          of the boring, and often complex stuff so that you can focus on the
+          things that make your application unique. Some highlights of Nextjs for me are
+          that it can generate static html pages from your javascript, so they
+          load much faster and don&rsquo;t require lots of computing power
+          from your users. And the Link component, which preloads the content of
+          linked pages so that it is fast to navigate around the site.
         </Paragraph>
         <SubHeading level={2}>Hosting</SubHeading>
         <Paragraph>
@@ -87,7 +86,7 @@ export default function AboutSite() {
           hosting and infrastructure is a maze of confusion. I was amazed by how
           much easier it has got. I was expecting to deal with something like
           Amazon Web Services, choose resources, and worry about accidentally
-          using paid for services - no diss for AWS, it has other strengths. But
+          using expensive services - no diss for AWS, it has other strengths. But
           I looked at Vercel basically because they own Nextjs and that&rsquo;s
           the framework I&rsquo;ve chosen. Everything to get a web app up and
           hosted was free and straightforward. I connected to GitHub, where
@@ -97,9 +96,13 @@ export default function AboutSite() {
         </Paragraph>
         <SubHeading level={2}>Source control</SubHeading>
         <Paragraph>
-          GitHub is the best know place to store all the code, for many things
+          GitHub is the best known place to store all the code, for many things
           it&rsquo;s free, and above all Vercel made it super easy to link to a
-          GitHub account.
+          GitHub account. GitHub is a place for storing git repositories. Git, itself,
+          is a history of your code changes, that allows you to work on new changes and 
+          merge them together when you are confident they are what you want. Git really 
+          is a wonderful tool and one that virtually all developers use, regardless of which 
+          coding language they prefer.
         </Paragraph>
       </div>
     </div>
