@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="text-mjr_dark_blue">
         <Menu />
-        <main className="flex flex-col justify-start items-center p-4 md:p-12 py-12 h-56 min-h-screen">
+        <main className="flex flex-col justify-start items-center px-4 pt-12 pb-16">
           {children}
         </main>
       </body>
