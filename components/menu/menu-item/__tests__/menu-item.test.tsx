@@ -11,7 +11,7 @@ describe("MenuItem", () => {
     const text = screen.getByText("some text");
 
     expect(menuItem).toHaveTextContent("some text");
-    expect(text).toHaveClass("border-mjr_light_green");
+    expect(text).toHaveClass("border-transparent");
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
