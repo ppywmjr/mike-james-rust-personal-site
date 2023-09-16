@@ -18,7 +18,7 @@ describe("Menu", () => {
     const inactiveMenuLink = screen.getByText("Quality topics");
 
     expect(activeMenuLink).toHaveClass("border-mjr_orange");
-    expect(inactiveMenuLink).toHaveClass("border-mjr_light_green");
+    expect(inactiveMenuLink).toHaveClass("border-transparent");
   });
 
   test("link starts hidden", () => {
@@ -34,7 +34,7 @@ describe("Menu", () => {
     await userEvent.click(burger);
 
     await waitFor(() => {
-      expect(screen.queryAllByRole("list")).toBeVisible;
+      expect(screen.getAllByRole("list")).toBeVisible;
     });
   });
 
@@ -45,7 +45,7 @@ describe("Menu", () => {
     await userEvent.click(burger);
 
     await waitFor(() => {
-      expect(screen.queryAllByRole("list")).toBeVisible;
+      expect(screen.getAllByRole("list")).toBeVisible;
     });
 
     await userEvent.click(burger);
@@ -56,19 +56,35 @@ describe("Menu", () => {
   });
 
   test("clicking link hides links", async () => {
+    render(<Menu />)
+    const burger = screen.getByRole("button");
+    await userEvent.click(burger);
+
+    await waitFor(() => {
+      expect(screen.getAllByRole("list")).toBeVisible;
+    });
+
+    await userEvent.click(screen.getAllByRole("list")[0]);
+
+    await waitFor(() => {
+      expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
+    });
+  });
+
+  test("clicking outside menu items hides links", async () => {
     render(<Menu />);
 
     const burger = screen.getByRole("button");
     await userEvent.click(burger);
 
     await waitFor(() => {
-      expect(screen.queryAllByRole("list")).toBeVisible;
+      expect(screen.getAllByRole("list")).toBeVisible;
     });
 
-    await userEvent.click(screen.queryAllByRole("list")[0]);
+    await userEvent.click(screen.getByTestId("backdrop"));
 
     await waitFor(() => {
       expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
     });
-  });
+  });  
 });
