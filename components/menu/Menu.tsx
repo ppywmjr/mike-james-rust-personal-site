@@ -1,20 +1,36 @@
 "use client";
 
 import MenuItem from "./menu-item";
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, ReactNode, useState } from "react";
 import Logo from "../logo";
 import { usePathname } from "next/navigation";
+import SubmenuItem from "./submenu-item";
 
-const MENU_LIST: { target: string; text: string }[] = [
-  { target: "/", text: "Home" },
-  { target: "/me-and-my-site", text: "Me and my site" },
-  { target: "/quality-topics", text: "Quality topics" },
-  { target: "/the-making-of", text: "The making of" },
+const running = <SubmenuItem target="/" text="Running" active={false} />;
+
+const MENU_LIST: {
+  path: string;
+  text: string;
+  submenuItems?: {path: string, text: string}[];
+}[] = [
+  { path: "/", text: "Home" },
+  {
+    path: "/me-and-my-site",
+    text: "Me and my site",
+  },
+  { path: "/quality-topics", text: "Quality topics" },
+  {
+    path: "/the-making-of",
+    text: "The making of",
+    submenuItems: [
+      { path: "", text: "Day 1 - Choices" },
+      { path: "day-2-running", text: "Day 2 - Up and running" },
+    ],
+  },
 ];
 
 const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const pathname = usePathname();
 
   const handleMenuItemClick = () => setNavOpen(false);
 
@@ -50,10 +66,17 @@ const Menu: FunctionComponent<{}> = () => {
           {MENU_LIST.map((item) => (
             <MenuItem
               key={item.text}
-              target={item.target}
+              target={item.path}
               text={item.text}
-              active={pathname === item.target}
               onClick={handleMenuItemClick}
+              submenuItems={item?.submenuItems?.map((subItem) => (
+                <SubmenuItem
+                  key={subItem.text}
+                  target={`${item.path}/${subItem.path}`}
+                  text={subItem.text}
+                  onClick={handleMenuItemClick}
+                />
+              ))}
             />
           ))}
         </ul>
