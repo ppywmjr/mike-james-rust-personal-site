@@ -13,50 +13,58 @@ const MENU_LIST: { target: string; text: string }[] = [
 ];
 
 const Menu: FunctionComponent<{}> = () => {
-  const [navOpen, setNavOpen] = useState(null);
+  const [navOpen, setNavOpen] = useState(false);
   const pathname = usePathname();
 
   const handleMenuItemClick = () => setNavOpen(false);
 
   return (
-    <nav className="fixed w-full flex flex-col md:flex-row bg-mjr_light_green">
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-row items-center">
-          <Logo />
-          <p className="md:hidden lg:block">mike james rust</p>
-        </div>
-        <button
-          aria-controls="menu"
-          className={"p-3 md:hidden"}
-          onClick={() => setNavOpen(!navOpen)}
-        >
-          <div
-            className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
+    <div className="fixed w-full flex flex-col md:flex-row">
+      <nav className="flex w-full flex-col md:flex-row bg-mjr_light_green">
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-row items-center">
+            <Logo />
+            <p className="md:hidden lg:block">mike james rust</p>
+          </div>
+          <button
+            aria-controls="menu"
+            className={"p-3 md:hidden"}
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            <div
+              className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
             ${navOpen ? "-rotate-45 translate-y-[0.2rem]" : ""}`}
-            role="presentation"
-          ></div>
-          <div
-            className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
+              role="presentation"
+            ></div>
+            <div
+              className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
             ${navOpen ? "rotate-45 -translate-y-[0.2rem]" : ""}`}
-            role="presentation"
-          ></div>
-        </button>
-      </div>
-      <ul
-        className={`${navOpen ? "flex" : "hidden md:flex"} 
+              role="presentation"
+            ></div>
+          </button>
+        </div>
+        <ul
+          className={`${navOpen ? "flex" : "hidden md:flex"} 
         flex-col md:flex-row flex-auto flex-wrap items-stretch`}
-      >
-        {MENU_LIST.map((item) => (
-          <MenuItem
-            key={item.text}
-            target={item.target}
-            text={item.text}
-            active={pathname === item.target}
-            onClick={handleMenuItemClick}
-          />
-        ))}
-      </ul>
-    </nav>
+        >
+          {MENU_LIST.map((item) => (
+            <MenuItem
+              key={item.text}
+              target={item.target}
+              text={item.text}
+              active={pathname === item.target}
+              onClick={handleMenuItemClick}
+            />
+          ))}
+        </ul>
+      </nav>
+      <div
+        role="presentation"
+        data-testid="backdrop"
+        onClick={() => setNavOpen(false)}
+        className={`h-0 ${navOpen ? "min-h-screen" : ""} md:hidden`}
+      ></div>
+    </div>
   );
 };
 

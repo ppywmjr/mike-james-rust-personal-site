@@ -24,17 +24,17 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-start md:justify-evenly h-full items-center">
+    <div className="flex flex-col justify-start h-full items-center">
       <PageHeading>mike james rust</PageHeading>
-        <Image
-          className="rounded-2xl"
-          src="/profile.jpg"
-          alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
-          width={180}
-          height={214}
-          priority
-        />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <Image
+        className="rounded-2xl"
+        src="/profile.jpg"
+        alt="My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
+        width={180}
+        height={214}
+        priority
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pt-16">
         {LINK_CARDS.map((item) => (
           <LinkCard
             key={item.target}
