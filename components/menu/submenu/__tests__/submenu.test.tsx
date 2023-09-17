@@ -15,7 +15,9 @@ describe("Submenu", () => {
       <Submenu
         path={"/current/uri"}
         text={"some text"}
+        submenuOpen={false}
         onClick={() => {}}
+        onSubmenuItemClick={() => {}}
         submenuItems={[
           { target: "/item-1", text: "item 1" },
           { target: "/item-2", text: "item 2" },
@@ -42,10 +44,10 @@ describe("Submenu", () => {
       <Submenu
         path={"/non-current/uri"}
         text={"some text"}
+        submenuOpen={false}
         onClick={() => {}}
-        submenuItems={[
-          { target: "/item-1", text: "item 1" },
-        ]}
+        onSubmenuItemClick={() => {}}
+        submenuItems={[{ target: "/item-1", text: "item 1" }]}
       />
     );
 
@@ -54,12 +56,14 @@ describe("Submenu", () => {
     expect(submenuLabel).toHaveClass("border-transparent");
   });
 
-  it("clicking the button opens the submenu", async () => {
+  it("clicking the button opens a closed submenu", async () => {
     render(
       <Submenu
         path={"/current/uri"}
         text={"some text"}
+        submenuOpen={false}
         onClick={() => {}}
+        onSubmenuItemClick={() => {}}
         submenuItems={[{ target: "/item-1", text: "item 1" }]}
       />
     );
@@ -73,25 +77,19 @@ describe("Submenu", () => {
     });
   });
 
-  it("clicking the button again closes the submenu", async () => {
+  it("clicking the button closes an open submenu", async () => {
     render(
       <Submenu
         path={"/current/uri"}
         text={"some text"}
+        submenuOpen={true}
         onClick={() => {}}
-        submenuItems={[
-          { target: "/item-1", text: "item 1" },
-        ]}
+        onSubmenuItemClick={() => {}}
+        submenuItems={[{ target: "/item-1", text: "item 1" }]}
       />
     );
 
-    const submenuButton = screen.getByRole("button");
-
-    await userEvent.click(submenuButton);
-
-    await waitFor(() => {
-      expect(screen.getAllByRole("link")).toBeVisible;
-    });    
+    const submenuButton = screen.getByRole("button");    
     
     await userEvent.click(submenuButton);
 

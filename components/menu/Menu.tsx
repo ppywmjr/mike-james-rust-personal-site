@@ -1,7 +1,7 @@
 "use client";
 
 import MenuItem from "./menu-item";
-import React, { FunctionComponent, MenuHTMLAttributes, ReactNode, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
@@ -21,16 +21,18 @@ const MENU_LIST: {
     path: "/the-making-of",
     text: "The making of",
     submenuItems: [
-      { target: "", text: "Day 1 - Choices" },
-      { target: "/day-2-running", text: "Day 2 - Up and running" },
+      { target: "", text: "Starting choices" },
+      { target: "/day-2-running", text: "Up and running" },
     ],
   },
 ];
 
 const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
-  const handleMenuItemClick = () => setNavOpen(false);
+  const handleMenuItemClick = () => {setNavOpen(false), setSubmenuOpen(false);};
+  const handleOnSubmenuItemClick = () => setSubmenuOpen(!submenuOpen);
 
   return (
     <div className="fixed w-full flex flex-col md:flex-row">
@@ -64,11 +66,15 @@ const Menu: FunctionComponent<{}> = () => {
         >
           {MENU_LIST.map((item) =>
             item.submenuItems ? (
-              <Submenu  key={item.text}
+              <Submenu
+                key={item.text}
                 path={item.path}
                 text={item.text}
+                submenuOpen={submenuOpen}
                 onClick={handleMenuItemClick}
-                submenuItems={item.submenuItems}/>
+                onSubmenuItemClick={handleOnSubmenuItemClick}
+                submenuItems={item.submenuItems}
+              />
             ) : (
               <MenuItem
                 key={item.text}
