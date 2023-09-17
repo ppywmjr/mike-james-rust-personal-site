@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { MenuItemProps } from "./types";
 import { usePathname } from "next/navigation";
 

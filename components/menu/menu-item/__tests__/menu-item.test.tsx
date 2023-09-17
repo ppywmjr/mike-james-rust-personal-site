@@ -14,11 +14,13 @@ describe("MenuItem", () => {
 
     const menuItem = screen.getByRole("listitem");
     const link = screen.getByRole("link");
-    const text = screen.getByText("some text");
+    const text = screen.getByText("some text");    
+    const listItem = screen.getByRole("listitem");
 
     expect(menuItem).toHaveTextContent("some text");
     expect(text).toHaveClass("border-transparent");
     expect(link).toHaveAttribute("href", "/some/uri");
+    expect(listItem).toHaveClass("bg-mjr_light_green");
   });
 
   it("renders the active MenuItem", () => {
@@ -30,4 +32,21 @@ describe("MenuItem", () => {
 
     expect(text).toHaveClass("border-mjr_orange");
   });
+
+  it("renders the submenu MenuItem", () => {
+    render(
+      <MenuItem
+        target={"/current-uri"}
+        text={"some text"}
+        isSubmenu={true}
+        onClick={() => {}}
+      />
+    );
+
+    const listItem = screen.getByRole("listitem");
+
+    expect(listItem).toHaveClass("bg-mjr_very_light_green");
+  });
+
+  
 });

@@ -16,9 +16,13 @@ describe("Menu", () => {
 
     const activeMenuLink = screen.getByText("Me and my site");
     const inactiveMenuLink = screen.getByText("Quality topics");
+    const submenu = screen.getByText("The making of");
 
+    expect(activeMenuLink).toBeVisible();
     expect(activeMenuLink).toHaveClass("border-mjr_orange");
+    expect(inactiveMenuLink).toBeVisible();
     expect(inactiveMenuLink).toHaveClass("border-transparent");
+    expect(submenu).toBeVisible();
   });
 
   test("link starts hidden", () => {
@@ -86,5 +90,5 @@ describe("Menu", () => {
     await waitFor(() => {
       expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
     });
-  });  
+  }); 
 });
