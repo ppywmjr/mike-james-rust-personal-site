@@ -1,16 +1,15 @@
 "use client";
 
 import MenuItem from "./menu-item";
-import React, { FunctionComponent, ReactNode, useState } from "react";
+import React, { FunctionComponent, MenuHTMLAttributes, ReactNode, useState } from "react";
 import Logo from "../logo";
-import SubmenuItem from "./submenu-item";
-
-const running = <SubmenuItem target="/" text="Running" active={false} />;
+import Submenu from "./submenu";
+import { MenuItemProps } from "./menu-item/types";
 
 const MENU_LIST: {
   path: string;
   text: string;
-  submenuItems?: {path: string, text: string}[];
+  submenuItems?: MenuItemProps[];
 }[] = [
   { path: "/", text: "Home" },
   {
@@ -22,8 +21,8 @@ const MENU_LIST: {
     path: "/the-making-of",
     text: "The making of",
     submenuItems: [
-      { path: "", text: "Day 1 - Choices" },
-      { path: "day-2-running", text: "Day 2 - Up and running" },
+      { target: "", text: "Day 1 - Choices" },
+      { target: "/day-2-running", text: "Day 2 - Up and running" },
     ],
   },
 ];
@@ -63,22 +62,22 @@ const Menu: FunctionComponent<{}> = () => {
           className={`${navOpen ? "flex" : "hidden md:flex"} 
         flex-col md:flex-row flex-auto flex-wrap items-stretch`}
         >
-          {MENU_LIST.map((item) => (
-            <MenuItem
-              key={item.text}
-              target={item.path}
-              text={item.text}
-              onClick={handleMenuItemClick}
-              submenuItems={item?.submenuItems?.map((subItem) => (
-                <SubmenuItem
-                  key={subItem.text}
-                  target={`${item.path}/${subItem.path}`}
-                  text={subItem.text}
-                  onClick={handleMenuItemClick}
-                />
-              ))}
-            />
-          ))}
+          {MENU_LIST.map((item) =>
+            item.submenuItems ? (
+              <Submenu  key={item.text}
+                path={item.path}
+                text={item.text}
+                onClick={handleMenuItemClick}
+                submenuItems={item.submenuItems}/>
+            ) : (
+              <MenuItem
+                key={item.text}
+                target={item.path}
+                text={item.text}
+                onClick={handleMenuItemClick}
+              />
+            )
+          )}
         </ul>
       </nav>
       <div
