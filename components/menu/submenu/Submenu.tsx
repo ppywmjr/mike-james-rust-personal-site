@@ -7,16 +7,17 @@ import Image from "next/image";
 const Submenu: FunctionComponent<SubmenuProps> = ({
   path,
   text,
+  submenuOpen,
   onClick,
+  onSubmenuItemClick,
   submenuItems,
 }) => {
   const current = usePathname().startsWith(path);
-  const [subnavOpen, setSubnavOpen] = useState(false);
 
   return (
     <li className="flex md:w-40 shrink-0 flex-col items-center justify-center">
       <button
-        onClick={() => setSubnavOpen(!subnavOpen)}
+        onClick={onSubmenuItemClick}
         className="flex flex-row justify-center items-center bg-mjr_light_green w-full"
       >
         {" "}
@@ -33,7 +34,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
         </p>
         <span className="ms-3 mt-1">
           <Image
-            className={`${subnavOpen ? "rotate-180" : ""} duration-500`}
+            className={`${submenuOpen ? "rotate-180" : ""} duration-500`}
             src="/chevron.svg"
             alt="chevron"
             width={12}
@@ -42,19 +43,20 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
           />
         </span>
       </button>
-      <ul className={`${!subnavOpen ? "hidden" : ""} w-full duration-500`}>
-        {submenuItems.map((item) => (
-          <MenuItem
-            key={item.text}
-            target={`${path}${item.target}`}
-            text={item.text}
-            isSubmenu={true}
-            onClick={() => {
-              onClick();
-              setSubnavOpen(false);
-            }}
-          />
-        ))}
+      <ul className={`${!submenuOpen ? "hidden" : ""} w-full duration-500`}>
+        <div className="md:absolute">
+          {submenuItems.map((item) => (
+            <MenuItem
+              key={item.text}
+              target={`${path}${item.target}`}
+              text={item.text}
+              isSubmenu={true}
+              onClick={() => {
+                onClick();
+              }}
+            />
+          ))}
+        </div>
       </ul>
     </li>
   );
