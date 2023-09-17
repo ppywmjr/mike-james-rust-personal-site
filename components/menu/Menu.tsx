@@ -32,6 +32,7 @@ const Menu: FunctionComponent<{}> = () => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const handleMenuItemClick = () => {setNavOpen(false), setSubmenuOpen(false);};
+  const handleOnSubmenuItemClick = () => setSubmenuOpen(!submenuOpen);
 
   return (
     <div className="fixed w-full flex flex-col md:flex-row">
@@ -71,7 +72,7 @@ const Menu: FunctionComponent<{}> = () => {
                 text={item.text}
                 submenuOpen={submenuOpen}
                 onClick={handleMenuItemClick}
-                onSubmenuItemClick={() => setSubmenuOpen(!submenuOpen)}
+                onSubmenuItemClick={handleOnSubmenuItemClick}
                 submenuItems={item.submenuItems}
               />
             ) : (

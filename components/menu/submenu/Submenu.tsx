@@ -13,6 +13,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
   submenuItems,
 }) => {
   const current = usePathname().startsWith(path);
+  const handleOnClick = () => onClick();
 
   return (
     <li className="flex md:w-40 shrink-0 flex-col items-center justify-center">
@@ -51,9 +52,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
               target={`${path}${item.target}`}
               text={item.text}
               isSubmenu={true}
-              onClick={() => {
-                onClick();
-              }}
+              onClick={handleOnClick}
             />
           ))}
         </div>
