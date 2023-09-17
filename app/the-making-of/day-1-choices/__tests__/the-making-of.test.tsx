@@ -24,7 +24,7 @@ describe("Me and my site", () => {
   it("renders with text", () => {
     render(<TheMakingOf />);
 
-    const heading = screen.getByRole("heading", { level: 1});
+    const heading = screen.getByRole("heading", { level: 1 });
 
     expect(heading).toBeVisible();
     expect(heading).toHaveTextContent("Day 1 - Choices");
