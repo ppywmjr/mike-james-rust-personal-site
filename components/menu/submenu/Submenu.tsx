@@ -16,7 +16,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
   const handleOnClick = () => onClick();
 
   return (
-    <li className="flex md:w-40 shrink-0 flex-col items-center justify-center">
+    <li className="flex md:w-44 shrink-0 flex-col items-center justify-center group">
       <button
         onClick={onSubmenuItemClick}
         className="flex flex-row justify-center items-center bg-mjr_light_green w-full"
@@ -33,7 +33,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
         >
           {text}
         </p>
-        <span className="ms-3 mt-1">
+        <span className="ms-3 mt-1 md:hidden">
           <Image
             className={`${submenuOpen ? "rotate-180" : ""} duration-500`}
             src="/chevron.svg"
@@ -44,7 +44,11 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
           />
         </span>
       </button>
-      <ul className={`${!submenuOpen ? "hidden" : ""} w-full duration-500`}>
+      <ul
+        className={`${
+          !submenuOpen ? "hidden" : "md:hidden"
+        } w-full duration-500 md:group-hover:block`}
+      >
         <div className="md:absolute">
           {submenuItems.map((item) => (
             <MenuItem

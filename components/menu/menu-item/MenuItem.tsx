@@ -16,7 +16,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
 
   return (
     <li
-      className={`flex md:w-40 shrink-0 flex-col items-center justify-center ${backgroundColour} ${
+      className={`flex md:w-44 shrink-0 flex-col items-center justify-center ${backgroundColour} ${
         isSubmenu ? "group/submenuitem" : "group"
       }`}
     >

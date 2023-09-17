@@ -19,7 +19,7 @@ const MENU_LIST: {
   { path: "/quality-topics", text: "Quality topics" },
   {
     path: "/the-making-of",
-    text: "The making of",
+    text: "How to make this site",
     submenuItems: [
       { target: "", text: "Starting choices" },
       { target: "/day-2-running", text: "Up and running" },
