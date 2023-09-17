@@ -13,14 +13,12 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   const backgroundColour = isSubmenu
     ? "bg-mjr_very_light_green"
     : "bg-mjr_light_green";
-  const borderColour = isSubmenu
-    ? "border-mjr_light_orange"
-    : "border-mjr_orange";
-  const subGroup = isSubmenu ? "/submenuitem" : "";
 
   return (
     <li
-      className={`flex md:w-40 shrink-0 flex-col items-center justify-center ${backgroundColour} group${subGroup}`}
+      className={`flex md:w-40 shrink-0 flex-col items-center justify-center ${backgroundColour} ${
+        isSubmenu ? "group/submenuitem" : "group"
+      }`}
     >
       <Link
         href={target}
@@ -28,11 +26,17 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
         onClick={onClick}
       >
         <p
-          className={`my-4 md:mt-2 md:mb-0 text-center min-w-[6rem]
+          className={`my-4 md:mt-2 md:mb-0 text-center min-w-[6rem] 
           ${
             current
-              ? `${borderColour} border-b-2 md:border-b-2`
-              : `border-transparent border-b-2 group-hover${subGroup}:${borderColour} group-hover${subGroup}:font-bold`
+              ? `border-b-2 md:border-b-2 ${
+                  isSubmenu ? "border-mjr_light_orange" : "border-mjr_orange"
+                }`
+              : `border-transparent border-b-2 ${
+                  isSubmenu
+                    ? `group-hover/submenuitem:border-mjr_light_orange group-hover/submenuitem:font-bold`
+                    : `group-hover:border-mjr_orange group-hover:font-bold`
+                }`
           }
           `}
         >
