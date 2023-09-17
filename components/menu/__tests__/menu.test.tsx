@@ -30,7 +30,7 @@ describe("Menu", () => {
   test("burger menu reveals links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -41,7 +41,7 @@ describe("Menu", () => {
   test("closing burger menu hides links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -57,7 +57,7 @@ describe("Menu", () => {
 
   test("clicking link hides links", async () => {
     render(<Menu />)
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -74,7 +74,7 @@ describe("Menu", () => {
   test("clicking outside menu items hides links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {

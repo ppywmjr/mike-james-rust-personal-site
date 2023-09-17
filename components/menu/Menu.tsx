@@ -3,7 +3,6 @@
 import MenuItem from "./menu-item";
 import React, { FunctionComponent, ReactNode, useState } from "react";
 import Logo from "../logo";
-import { usePathname } from "next/navigation";
 import SubmenuItem from "./submenu-item";
 
 const running = <SubmenuItem target="/" text="Running" active={false} />;
@@ -46,6 +45,7 @@ const Menu: FunctionComponent<{}> = () => {
             aria-controls="menu"
             className={"p-3 md:hidden"}
             onClick={() => setNavOpen(!navOpen)}
+            data-testid="burger-menu"
           >
             <div
               className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500

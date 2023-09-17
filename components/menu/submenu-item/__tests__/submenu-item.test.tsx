@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import MenuItem from "../index";
+import SubmenuItem from "../index";
 import "@testing-library/jest-dom";
 
 jest.mock("next/navigation", () => ({
@@ -8,9 +8,11 @@ jest.mock("next/navigation", () => ({
   },
 }));
 
-describe("MenuItem", () => {
-  it("renders the non active MenuItem", () => {
-    render(<MenuItem target={"/some/uri"} text={"some text"} onClick={() => {}}/>);
+describe("SubmenuItem", () => {
+  it("renders the non active SubmenuItem", () => {
+    render(
+      <SubmenuItem target={"/some/uri"} text={"some text"} onClick={() => {}} />
+    );
 
     const menuItem = screen.getByRole("listitem");
     const link = screen.getByRole("link");
@@ -21,9 +23,13 @@ describe("MenuItem", () => {
     expect(link).toHaveAttribute("href", "/some/uri");
   });
 
-  it("renders the active MenuItem", () => {
+  it("renders the active SubmenuItem", () => {
     render(
-      <MenuItem target={"/current-uri"} text={"some text"} onClick={() => {}} />
+      <SubmenuItem
+        target={"/current-uri"}
+        text={"some text"}
+        onClick={() => {}}
+      />
     );
 
     const text = screen.getByText("some text");
