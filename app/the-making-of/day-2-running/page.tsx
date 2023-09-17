@@ -4,6 +4,7 @@ import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
 import TextLink from "@components/article/text-link";
+import Illustration from "@components/article/illustration";
 
 export const metadata = {
   title: "The making of",
@@ -44,11 +45,22 @@ export default function AboutSite() {
           probably ask you for more permissions, and then it will give you the
           option to choose a repository name, I went for
           &quot;mike-james-rust-personal-site&quot;, and then there is a button
-          to create it. Then you can sit back and watch as it creates the
-          repository, builds the template app, and deploys it so a webserver.
-          Follow the links to the dashboard and you will see the url of the
-          website you have created. Awesome.
+          to create it.
         </Paragraph>
+        <Illustration
+          imageSource="/the-making-of/day-2/article/clone-nextjs.png"
+          labelText="Cloning the Next.js template on Vercel"
+        />
+        <Paragraph>
+          Then you can sit back and watch as it creates the repository, builds
+          the template app, and deploys it so a webserver. Follow the links to
+          the dashboard and you will see the url of the website you have
+          created. Awesome.
+        </Paragraph>
+        <Illustration
+          imageSource="/the-making-of/day-2/article/Nextjs-template.png"
+          labelText="The newly created Next.js template website"
+        />
         <SubHeading level={2}>So what?</SubHeading>
         <Paragraph>
           Maybe you&rsquo;ve made a website on something like Wix or WordPress
