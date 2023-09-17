@@ -16,9 +16,13 @@ describe("Menu", () => {
 
     const activeMenuLink = screen.getByText("Me and my site");
     const inactiveMenuLink = screen.getByText("Quality topics");
+    const submenu = screen.getByText("The making of");
 
+    expect(activeMenuLink).toBeVisible();
     expect(activeMenuLink).toHaveClass("border-mjr_orange");
+    expect(inactiveMenuLink).toBeVisible();
     expect(inactiveMenuLink).toHaveClass("border-transparent");
+    expect(submenu).toBeVisible();
   });
 
   test("link starts hidden", () => {
@@ -30,7 +34,7 @@ describe("Menu", () => {
   test("burger menu reveals links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -41,7 +45,7 @@ describe("Menu", () => {
   test("closing burger menu hides links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -57,7 +61,7 @@ describe("Menu", () => {
 
   test("clicking link hides links", async () => {
     render(<Menu />)
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -74,7 +78,7 @@ describe("Menu", () => {
   test("clicking outside menu items hides links", async () => {
     render(<Menu />);
 
-    const burger = screen.getByRole("button");
+    const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
     await waitFor(() => {
@@ -86,5 +90,5 @@ describe("Menu", () => {
     await waitFor(() => {
       expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
     });
-  });  
+  }); 
 });
