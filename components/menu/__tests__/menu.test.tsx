@@ -16,7 +16,7 @@ describe("Menu", () => {
 
     const activeMenuLink = screen.getByText("Me and my site");
     const inactiveMenuLink = screen.getByText("Quality topics");
-    const submenu = screen.getByText("The making of");
+    const submenu = screen.getByText("How to make this site");
 
     expect(activeMenuLink).toBeVisible();
     expect(activeMenuLink).toHaveClass("border-mjr_orange");
