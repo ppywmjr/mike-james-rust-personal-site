@@ -36,7 +36,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
             className={`${subnavOpen ? "rotate-180" : ""} duration-500`}
             src="/chevron.svg"
             alt="chevron"
-            width={16}
+            width={12}
             height={6}
             priority
           />
