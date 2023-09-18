@@ -16,7 +16,9 @@ describe("Day 2 Running", () => {
   it("renders with img", () => {
     render(<TheMakingOf />);
 
-    const image = screen.getByRole("img");
+    const image = screen.getByRole("img", {
+      name: "A red squirrel sprints across a screen",
+    });
 
     expect(image).toBeVisible();
   });

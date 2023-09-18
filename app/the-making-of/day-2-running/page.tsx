@@ -17,7 +17,7 @@ export default function AboutSite() {
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-2/running.jpg"}
-        altText={""}
+        altText={"A red squirrel sprints across a screen"}
         text={
           "Only a few clicks to make a website and server running in the cloud"
         }
