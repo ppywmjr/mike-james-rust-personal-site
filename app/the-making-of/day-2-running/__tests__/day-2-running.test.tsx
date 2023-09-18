@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 import TheMakingOf from "../page";
 
-describe("Me and my site", () => {
+describe("Day 2 Running", () => {
   it("renders with h1", () => {
     render(<TheMakingOf />);
 
@@ -16,7 +16,9 @@ describe("Me and my site", () => {
   it("renders with img", () => {
     render(<TheMakingOf />);
 
-    const image = screen.getByRole("img");
+    const image = screen.getByRole("img", {
+      name: "A red squirrel sprints across a screen",
+    });
 
     expect(image).toBeVisible();
   });
@@ -24,9 +26,9 @@ describe("Me and my site", () => {
   it("renders with text", () => {
     render(<TheMakingOf />);
 
-    const heading = screen.getByRole("heading", { level: 1});
+    const heading = screen.getByRole("heading", { level: 1 });
 
     expect(heading).toBeVisible();
-    expect(heading).toHaveTextContent("Day 1 - Choices");
+    expect(heading).toHaveTextContent("Day 2 - Up and running");
   });
 });
