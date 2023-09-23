@@ -22,7 +22,7 @@ describe("Illustration", () => {
     expect(image).toHaveAccessibleName("image description");
   });
 
-    test("acessible name falls back to label text", () => {
+  test("acessible name falls back to label text", () => {
     render(
       <Illustration imageSource={"/image"} labelText={"Some label text"} />
     );
@@ -31,5 +31,42 @@ describe("Illustration", () => {
 
     expect(image).toHaveAccessibleName("Some label text");
   });
-});
 
+  test("Default width is 600", () => {
+    render(
+      <Illustration imageSource={"/image"} labelText={"Some label text"} />
+    );
+
+    const image = screen.getByRole("img");
+
+    expect(image).toHaveAttribute("width", "600");
+  });
+
+  test("Landscape width is 600", () => {
+    render(
+      <Illustration
+        imageSource={"/image"}
+        labelText={"Some label text"}
+        isPortraitOrientation={false}
+      />
+    );
+
+    const image = screen.getByRole("img");
+
+    expect(image).toHaveAttribute("width", "600");
+  });
+
+  test("Portrait width is 400", () => {
+    render(
+      <Illustration
+        imageSource={"/image"}
+        labelText={"Some label text"}
+        isPortraitOrientation={true}
+      />
+    );
+
+    const image = screen.getByRole("img");
+
+    expect(image).toHaveAttribute("width", "400");
+  });
+});
