@@ -19,7 +19,7 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
         height={143}
         priority
       />
-      <label className="italic" htmlFor={imageSource}>
+      <label className="italic text-mjr_very_dark_orange" htmlFor={imageSource}>
         {labelText}
       </label>
     </div>
