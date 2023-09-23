@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function AboutSite() {
   return (
-    <div className="max-w-prose">
+    <>
       <PageHeading>Day 1 - Choices</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-1/choices.jpg"}
@@ -118,6 +118,6 @@ export default function AboutSite() {
           language they prefer.
         </Paragraph>
       </div>
-    </div>
+    </>
   );
 }
