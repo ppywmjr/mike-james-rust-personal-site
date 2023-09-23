@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function AboutSite() {
   return (
-    <div className="max-w-prose">
+    <>
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-2/running.jpg"}
@@ -75,6 +75,6 @@ export default function AboutSite() {
           in any way you wish. You really are in control.
         </Paragraph>
       </div>
-    </div>
+    </>
   );
 }

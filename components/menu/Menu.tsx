@@ -21,8 +21,9 @@ const MENU_LIST: {
     path: "/the-making-of",
     text: "How to make this site",
     submenuItems: [
-      { target: "/day-1-choices", text: "Starting choices" },
+      { target: "/day-1-choices", text: "Choices" },
       { target: "/day-2-running", text: "Up and running" },
+      { target: "/day-3-on-my-computer", text: "A website on my computer" },
     ],
   },
 ];
@@ -31,7 +32,9 @@ const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
-  const handleMenuItemClick = () => {setNavOpen(false), setSubmenuOpen(false);};
+  const handleMenuItemClick = () => {
+    setNavOpen(false), setSubmenuOpen(false);
+  };
   const handleOnSubmenuItemClick = () => setSubmenuOpen(!submenuOpen);
 
   return (
