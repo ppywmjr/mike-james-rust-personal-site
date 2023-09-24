@@ -1,5 +1,3 @@
-import { TailWindSize } from "@components/tailwindSizeType";
-
 export type SignPostProps = {
   target: string;
   text: string;
