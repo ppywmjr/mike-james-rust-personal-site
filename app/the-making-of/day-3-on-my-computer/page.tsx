@@ -6,6 +6,7 @@ import SubHeading from "@components/article/sub-heading";
 import TextLink from "@components/article/text-link";
 import Illustration from "@components/article/illustration";
 import Code from "@components/article/code";
+import NeighbourNavigation from "@components/article/neighbour-navigation";
 
 export const metadata = {
   title: "The making of",
@@ -15,6 +16,7 @@ export const metadata = {
 export default function AboutSite() {
   return (
     <>
+      <NeighbourNavigation previousTarget={"/the-making-of/day-2-running"} />
       <PageHeading>Day 3 - A website on my computer</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-3/superhero.jpg"}
@@ -153,14 +155,15 @@ export default function AboutSite() {
         <Paragraph>
           The app is running! Honestly, this is a massive hurdle, so many people
           don&rsquo;t make it this far, and who can blame them, it&rsquo;s a lot
-          of work for not much excitement. Maybe it&rsquo;s time to shut down the
-          server. There&rsquo;s a couple of ways to do this, firstly you can
+          of work for not much excitement. Maybe it&rsquo;s time to shut down
+          the server. There&rsquo;s a couple of ways to do this, firstly you can
           click the little bin icon on the VSCode terminal, or, if you want to
           keep the terminal open you can press &quot;ctrl + c&quot; to end the
           process, then confirm by typing &quot;y&quot;. That is all the set up
           done, next we can write our own code.
         </Paragraph>
       </div>
+      <NeighbourNavigation previousTarget={"/the-making-of/day-2-running"} />
     </>
   );
 }

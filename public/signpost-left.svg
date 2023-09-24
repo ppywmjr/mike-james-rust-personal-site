@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="20px" viewBox="0 0 285 64"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M45,2 
+           h 225  
+           q 5 0, 5 5  
+           v 50 
+           q 0 5, -5 5
+           h -225 
+           c -3 0, -5 -3, -5 -3
+           l -25 -23
+           q -4 -4, 0 -8
+           l 25 -23
+           c 0 0, 2 -3, 5 -3
+           Z
+            " fill="transparent" stroke="#E07A5F" stroke-width="2" />
+</svg>

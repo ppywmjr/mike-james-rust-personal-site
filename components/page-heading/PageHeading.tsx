@@ -3,7 +3,7 @@ import { PageHeadingProps } from "./types";
 
 const PageHeading: FunctionComponent<PageHeadingProps> = ({ children }) => {
   return (
-    <h1 className="text-3xl text-mjr_dark_orange font-bold my-6 md:my-8">
+    <h1 className="text-3xl text-mjr_dark_orange font-bold mb-6 md:mb-8">
       {children}
     </h1>
   );

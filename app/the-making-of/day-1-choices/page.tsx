@@ -6,6 +6,7 @@ import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
 import TextListItem from "@components/article/text-list/text-list-item";
 import TextLink from "@components/article/text-link";
+import NeighbourNavigation from "@components/article/neighbour-navigation";
 
 export const metadata = {
   title: "The making of",
@@ -15,6 +16,7 @@ export const metadata = {
 export default function AboutSite() {
   return (
     <>
+      <NeighbourNavigation nextTarget={"/the-making-of/day-2-running"} />
       <PageHeading>Day 1 - Choices</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-1/choices.jpg"}
@@ -100,9 +102,9 @@ export default function AboutSite() {
           hosting and infrastructure is a maze of confusion. I am amazed by how
           much easier it has got. I was expecting to deal with something like
           Amazon Web Services, choose resources, and worry about accidentally
-          using expensive services - no dis for AWS, it has other strengths.
-          But I looked at Vercel basically because they own Next.js. Everything
-          to get a web app up and hosted was free and straightforward, as
+          using expensive services - no dis for AWS, it has other strengths. But
+          I looked at Vercel basically because they own Next.js. Everything to
+          get a web app up and hosted was free and straightforward, as
           you&rsquo;ll see in the next post.
         </Paragraph>
         <SubHeading level={2}>Source control</SubHeading>
@@ -117,6 +119,7 @@ export default function AboutSite() {
           language they prefer.
         </Paragraph>
       </div>
+      <NeighbourNavigation nextTarget={"/the-making-of/day-2-running"} />
     </>
   );
 }
