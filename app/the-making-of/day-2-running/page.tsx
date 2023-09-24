@@ -5,15 +5,20 @@ import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
 import TextLink from "@components/article/text-link";
 import Illustration from "@components/article/illustration";
+import NeighbourNavigation from "@components/article/neighbour-navigation";
 
 export const metadata = {
   title: "The making of",
   description: "How this site was developed.",
 };
 
-export default function AboutSite() {
+export default function TheMakingOf() {
   return (
     <>
+      <NeighbourNavigation
+        previousTarget={"/the-making-of/day-1-choices"}
+        nextTarget={"/the-making-of/day-3-on-my-computer"}
+      />
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-2/running.jpg"}
@@ -75,6 +80,11 @@ export default function AboutSite() {
           in any way you wish. You really are in control.
         </Paragraph>
       </div>
+      <NeighbourNavigation
+        previousTarget={"/the-making-of/day-1-choices"}
+        nextTarget={"/the-making-of/day-3-on-my-computer"}
+        nextText="Next - Running the website on my computer"
+      />
     </>
   );
 }

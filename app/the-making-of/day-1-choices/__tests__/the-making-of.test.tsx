@@ -16,7 +16,9 @@ describe("Me and my site", () => {
   it("renders with img", () => {
     render(<TheMakingOf />);
 
-    const image = screen.getByRole("img");
+    const image = screen.getByRole("img", {
+      name: "Old style computer monitors showing code.",
+    });
 
     expect(image).toBeVisible();
   });
