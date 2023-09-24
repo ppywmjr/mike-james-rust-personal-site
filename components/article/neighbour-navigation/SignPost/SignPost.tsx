@@ -3,26 +3,38 @@ import { SignPostProps } from "./types";
 import Link from "next/link";
 import Image from "next/image";
 
-const NeighbourNavigation: FunctionComponent<SignPostProps> = ({
+const SignPost: FunctionComponent<SignPostProps> = ({
   target,
   text,
   direction,
+  size,
 }) => {
   const source =
     direction === "left" ? "/signpost-left.svg" : "/signpost-right.svg";
-  const textPadding = direction === "left" ? "ps-1" : "pe-1";
+  const isSmall = size === "small";
+  const isMedium = size === "medium";
+  const isLarge = size === "large";
   return (
     <>
-      <Link href={target} className="group w-24 inline-block h-7">
+      <Link
+        href={target}
+        className={`
+        ${isSmall ? "w-24" : isMedium ? "w-32" : "w-64"}
+         group flex items-center`}
+      >
         <Image
           src={source}
-          alt={"hello"}
-          width={94}
-          height={24}
+          alt={""}
+          width={isLarge ? 270 : isMedium ? 135 : 96}
+          height={isLarge ? 96 : isMedium ? 48 : 24}
           className="absolute -z-10"
         />
         <p
-          className={`text-mjr_very_dark_orange w-full text-center group-hover:font-bold leading-normal ${textPadding}`}
+          className={`text-mjr_very_dark_orange 
+          ${direction === "left" ? "ms-2" : "ms-0"} 
+          ${isLarge ? "w-56 ps-3 m-auto" : "w-20"}
+          ${isMedium ? "ps-2 m-auto" : ""}
+          text-center group-hover:font-bold leading-normal`}
         >
           {text}
         </p>
@@ -31,4 +43,4 @@ const NeighbourNavigation: FunctionComponent<SignPostProps> = ({
   );
 };
 
-export default NeighbourNavigation;
+export default SignPost;

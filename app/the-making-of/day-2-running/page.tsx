@@ -12,7 +12,7 @@ export const metadata = {
   description: "How this site was developed.",
 };
 
-export default function AboutSite() {
+export default function TheMakingOf() {
   return (
     <>
       <NeighbourNavigation
@@ -83,6 +83,7 @@ export default function AboutSite() {
       <NeighbourNavigation
         previousTarget={"/the-making-of/day-1-choices"}
         nextTarget={"/the-making-of/day-3-on-my-computer"}
+        nextText="Next - Running the website on my computer"
       />
     </>
   );
