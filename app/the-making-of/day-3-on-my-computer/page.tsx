@@ -25,14 +25,14 @@ export default function AboutSite() {
         <SubHeading level={2}>Getting the code</SubHeading>
         <Paragraph>
           Currently the code lives in a repository on GitHub, but really I want
-          to edit it on my own computer. To do this, I need to
-          &quot;cloning&quot; the repository to my local computer. This is how
-          git works and many developers use commands to manage all this on the
-          terminal. But I thikn it is much easier to use{" "}
+          to edit it on my own computer. To do this, I need to &quot;clone&quot;
+          the repository to my local computer. This is how git works and many
+          developers use commands to manage all this on the terminal. But I
+          think it is much easier to use{" "}
           <TextLink target="https://desktop.github.com/">
             GitHub&rsquo;s desktop application
           </TextLink>{" "}
-          which takes care of managaing the repository as well as logging you in
+          which takes care of managing the repository as well as logging you in
           for permissions.
         </Paragraph>
         <Paragraph>
@@ -52,12 +52,12 @@ export default function AboutSite() {
         />
         <SubHeading level={2}>Installing VSCode</SubHeading>
         <Paragraph>
-          The code is now on your computer, but you now need some way to see it,
+          The code is now on your computer, but you need some way to see it,
           edit it and run it. Download and install{" "}
           <TextLink target="https://code.visualstudio.com/">VSCode</TextLink>.{" "}
           Then choose open folder and select the folder in which you cloned the
-          repository. You have your IDE where you will do virtually all of your
-          development.
+          repository. You now have an IDE where you will do virtually all of
+          your development.
         </Paragraph>
         <Illustration
           imageSource="/the-making-of/day-3/article/vscode.jpg"
@@ -66,13 +66,13 @@ export default function AboutSite() {
         <SubHeading level={2}>Node.js</SubHeading>
         <Paragraph>
           The javascript code needs something to execute it, on a website it is
-          run by the broswer, such as Chrome. On the server the most common
-          approach is to use Node.js. We could install Node directly onto our
-          computers but I have found that this approach will eventually end up
+          run by the browser, such as Chrome. On the server the most common
+          approach is to use Node.js. You could install Node directly onto your
+          computer but I have found that this approach will eventually end up
           causing pains. It is much better to install a version manager and use
-          that to install the Node. For Windows, I&rsquo;m going to use
-          nvm-windows, which stands for Node Version Manager Windows. Download
-          the latest nvm-setup.zip file from{" "}
+          that to install Node. For Windows, I&rsquo;m using nvm-windows, which
+          stands for Node Version Manager Windows. Download the latest
+          nvm-setup.zip file from{" "}
           <TextLink target="https://github.com/coreybutler/nvm-windows/releases">
             NVM&rsquo;s GitHub releases page
           </TextLink>
@@ -80,13 +80,13 @@ export default function AboutSite() {
         </Paragraph>
         <Paragraph>
           At time of writing, some nvm commands on windows require administrator
-          priveleges so to install Node open the Windows PowerShell terminal as
+          privileges so to install Node open the Windows PowerShell terminal as
           an administrator by typing PowerShell in the Windows search bar and
           selecting &quot;Run as administrator&quot;.
         </Paragraph>
         <Illustration
           imageSource="/the-making-of/day-3/article/powershell-as-admin.jpg"
-          labelText="Searching for powershell in windows search bar to run as administrator."
+          labelText="Searching for PowerShell in Windows search bar to run as administrator."
         />
         <Paragraph>
           In the PowerShell terminal type <Code>nvm ls</Code> and press enter.
@@ -103,12 +103,12 @@ export default function AboutSite() {
           labelText="PowerShell terminal to install and use Node."
         />
         <Paragraph>
-          In most circumstances it is safer to not use admin priveleges in the
+          In most circumstances it is safer to not use admin privileges in the
           terminal, so now that node is set up, it&rsquo;s best to move over to
           VSCode&rsquo;s built in terminal. And open a terminal by selecting the
           VSCode&rsquo;s Terminal menu and clicking &quot;New Terminal&quot;.
           This will open a PowerShell terminal at the bottom of VSCode without
-          administrator priveleges. Type <Code>node -v</Code> to confirm the
+          administrator privileges. Type <Code>node -v</Code> to confirm the
           version of Node that is running.
         </Paragraph>
         <Illustration
@@ -117,20 +117,21 @@ export default function AboutSite() {
         />
         <SubHeading level={2}>Installing Node packages</SubHeading>
         <Paragraph>
-          So close now. The only thing we need now are the Node packages. A core
-          part of Node is that it uses packages, which are small (and sometimes
-          not so small) bundles of code that are designed to do specialised
-          jobs. In VSCode Explorer, if you open package.json file you will see a
-          list of &quot;dependencies&quot; that are the packages that are needed
-          to run this application. Each of which will also depend on other
-          packages. The whole long list of all packages needed can be seen in
-          the package-lock.json file. If you open that, you&rsquo;ll see
-          it&rsquo;s over 3000 lines long, so there&rsquo;s a lot of code that
-          we need to get in order to run the app. Fortunately Node comes with a
-          package manager called npm, or Node Package Manager, inventive name, I
-          know. In the terminal type <Code>npm ci</Code> and watch npm install
-          all of the packages that are needed. You should see in the VSCode
-          explorer that a new folder has been generated called node_modules.
+          So close now. The only other thing we need are the Node packages. A
+          core part of Node is that it uses packages, which are small (and
+          sometimes not so small) bundles of code that are designed to do
+          specialised jobs. In VSCode Explorer, if you open the package.json
+          file you will see a list of &quot;dependencies&quot; that are the
+          packages that are needed to run this application. Each of which will
+          also depend on other packages. The whole long list of all packages
+          needed can be seen in the package-lock.json file. If you open that,
+          you&rsquo;ll see it&rsquo;s over 3000 lines long, so there&rsquo;s a
+          lot of code that we need to get in order to run the app. Fortunately
+          Node comes with a package manager called npm, or Node Package Manager,
+          inventive name I know. In the terminal type <Code>npm ci</Code> and
+          watch npm install all of the packages that are needed. You should see
+          in the VSCode explorer that a new folder has been generated called
+          node_modules.
         </Paragraph>
         <Illustration
           imageSource="/the-making-of/day-3/article/npm-run-dev.jpg"
@@ -141,7 +142,7 @@ export default function AboutSite() {
           Ok, we are ready to actually run the app. Run one final command in the
           terminal <Code>npm run dev</Code> and the server will start in
           developer mode. In Chrome, or which ever browser you like best, go to
-          the url localhost:3000 and you should see the app running on your
+          url localhost:3000 and you should see the app running on your
           computer.
         </Paragraph>
         <Illustration
@@ -152,9 +153,9 @@ export default function AboutSite() {
         <Paragraph>
           The app is running! Honestly, this is a massive hurdle, so many people
           don&rsquo;t make it this far, and who can blame them, it&rsquo;s a lot
-          of work for not much excitment. Maybe it&rsquo;s time to shut down the
+          of work for not much excitement. Maybe it&rsquo;s time to shut down the
           server. There&rsquo;s a couple of ways to do this, firstly you can
-          click the little bin icon on the VSCode terminal, or, ifyou want to
+          click the little bin icon on the VSCode terminal, or, if you want to
           keep the terminal open you can press &quot;ctrl + c&quot; to end the
           process, then confirm by typing &quot;y&quot;. That is all the set up
           done, next we can write our own code.
