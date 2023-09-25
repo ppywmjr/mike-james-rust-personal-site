@@ -53,7 +53,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
           {submenuItems.map((item) => (
             <MenuItem
               key={item.text}
-              target={`${path}${item.target}`}
+              target={`${item.target}`}
               text={item.text}
               isSubmenu={true}
               onClick={handleOnClick}

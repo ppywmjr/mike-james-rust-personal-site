@@ -5,6 +5,7 @@ import React, { FunctionComponent, useState } from "react";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
+import makingOfMetaData  from "../../app/the-making-of/makingOfMetadata";
 
 const MENU_LIST: {
   path: string;
@@ -20,11 +21,9 @@ const MENU_LIST: {
   {
     path: "/the-making-of",
     text: "How to make this site",
-    submenuItems: [
-      { target: "/day-1-choices", text: "Choices" },
-      { target: "/day-2-running", text: "Up and running" },
-      { target: "/day-3-on-my-computer", text: "A website on my computer" },
-    ],
+    submenuItems: makingOfMetaData.pages.map (page => {
+      return {target: page.uri, text: page.menuText }
+    }),
   },
 ];
 

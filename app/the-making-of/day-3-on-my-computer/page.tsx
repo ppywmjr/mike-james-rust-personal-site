@@ -7,16 +7,20 @@ import TextLink from "@components/article/text-link";
 import Illustration from "@components/article/illustration";
 import Code from "@components/article/code";
 import NeighbourNavigation from "@components/article/neighbour-navigation";
+import makingOfMetaData from "../makingOfMetadata";
 
 export const metadata = {
   title: "The making of",
   description: "How this site was developed.",
 };
 
+const currentPageIndex = 2;
+const previousPage = makingOfMetaData.pages[currentPageIndex - 1];
+
 export default function TheMakingOf() {
   return (
     <>
-      <NeighbourNavigation previousTarget={"/the-making-of/day-2-running"} />
+      <NeighbourNavigation previousTarget={previousPage.uri} />
       <PageHeading>Day 3 - A website on my computer</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-3/superhero.jpg"}
@@ -163,7 +167,7 @@ export default function TheMakingOf() {
           done, next we can write our own code.
         </Paragraph>
       </div>
-      <NeighbourNavigation previousTarget={"/the-making-of/day-2-running"} />
+      <NeighbourNavigation previousTarget={previousPage.uri} />
     </>
   );
 }

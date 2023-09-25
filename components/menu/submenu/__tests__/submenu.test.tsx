@@ -33,9 +33,9 @@ describe("Submenu", () => {
     expect(submenuLabel).toBeVisible();
     expect(submenuLabel).toHaveClass("border-mjr_orange");
     expect(links).toHaveLength(2);
-    expect(links[0]).toHaveAttribute("href", "/current/uri/item-1");
+    expect(links[0]).toHaveAttribute("href", "/item-1");
     expect(links[0]).toHaveTextContent("item 1");
-    expect(links[1]).toHaveAttribute("href", "/current/uri/item-2");
+    expect(links[1]).toHaveAttribute("href", "/item-2");
     expect(links[1]).toHaveTextContent("item 2");
   });
 
