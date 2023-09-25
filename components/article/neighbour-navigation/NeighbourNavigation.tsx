@@ -5,11 +5,12 @@ import SignPost from "./SignPost";
 const NeighbourNavigation: FunctionComponent<NeighbourNavigationProps> = ({
   nextTarget,
   previousTarget,
-  nextText = "Next",
-  previousText = "Previous",
+  nextDescription,
+  previousDescription,
 }) => {
-  const largeSignPosts =
-    nextText.length > 10 || previousText.length > 10 ? true : false;
+  const nextText = nextDescription ? `Next - ${nextDescription}` : 'Next';
+  const previousText = previousDescription ? `Previous - ${previousDescription}` : "Previous";
+  const largeSignPosts = nextDescription || previousDescription;
   return (
     <div
       className={`w-full 

@@ -16,11 +16,15 @@ export const metadata = {
 
 const currentPageIndex = 0;
 const nextPage = makingOfMetaData.pages[currentPageIndex + 1];
+const previousPage = makingOfMetaData.pages[currentPageIndex - 1];
 
 export default function TheMakingOf() {
   return (
     <>
-      <NeighbourNavigation nextTarget={nextPage.uri} />
+      <NeighbourNavigation
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
+      />
       <PageHeading>Day 1 - Choices</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-1/choices.jpg"}
@@ -124,8 +128,9 @@ export default function TheMakingOf() {
         </Paragraph>
       </div>
       <NeighbourNavigation
-        nextTarget={nextPage.uri}
-        nextText={nextPage.linkDescription}
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
+        nextDescription={nextPage?.linkDescription}
       />
     </>
   );

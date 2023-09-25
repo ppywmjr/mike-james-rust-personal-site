@@ -21,8 +21,8 @@ export default function TheMakingOf() {
   return (
     <>
       <NeighbourNavigation
-        previousTarget={previousPage.uri}
-        nextTarget={nextPage.uri}
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
       />
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
@@ -86,9 +86,9 @@ export default function TheMakingOf() {
         </Paragraph>
       </div>
       <NeighbourNavigation
-        previousTarget={previousPage.uri}
-        nextTarget={nextPage.uri}
-        nextText={nextPage.linkDescription}
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
+        nextDescription={nextPage?.linkDescription}
       />
     </>
   );
