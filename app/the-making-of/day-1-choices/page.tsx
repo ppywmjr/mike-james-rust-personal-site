@@ -7,16 +7,20 @@ import SubHeading from "@components/article/sub-heading";
 import TextListItem from "@components/article/text-list/text-list-item";
 import TextLink from "@components/article/text-link";
 import NeighbourNavigation from "@components/article/neighbour-navigation";
+import makingOfMetaData from "../makingOfMetadata";
 
 export const metadata = {
   title: "The making of",
   description: "How this site was developed.",
 };
 
+const currentPageIndex = 0;
+const nextPage = makingOfMetaData.pages[currentPageIndex + 1];
+
 export default function TheMakingOf() {
   return (
     <>
-      <NeighbourNavigation nextTarget={"/the-making-of/day-2-running"} />
+      <NeighbourNavigation nextTarget={nextPage.uri} />
       <PageHeading>Day 1 - Choices</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-1/choices.jpg"}
@@ -120,8 +124,8 @@ export default function TheMakingOf() {
         </Paragraph>
       </div>
       <NeighbourNavigation
-        nextTarget={"/the-making-of/day-2-running"}
-        nextText="Next - Only a few clicks to make a website and server running in the cloud"
+        nextTarget={nextPage.uri}
+        nextText={nextPage.linkDescription}
       />
     </>
   );
