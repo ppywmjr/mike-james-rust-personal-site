@@ -31,7 +31,7 @@ const NeighbourNavigation: FunctionComponent<NeighbourNavigationProps> = ({
         >
           <SignPost
             direction="left"
-            text={`Previous - ${previousText}`}
+            text={previousText}
             target={previousTarget}
             size={
               largeSignPosts
@@ -46,7 +46,7 @@ const NeighbourNavigation: FunctionComponent<NeighbourNavigationProps> = ({
       {nextTarget && (
         <SignPost
           direction="right"
-          text={`Next - ${nextText}`}
+          text={nextText}
           target={nextTarget}
           size={largeSignPosts ? "large" : "small"}
         />
