@@ -21,11 +21,11 @@ describe("NeighbourNavigation", () => {
     expect(links[1]).toHaveAttribute("href", "/uri-right");
   });
 
-  test("Next link text longer than 10 characters hides the previous link", () => {
+  test("Next description hides the previous link", () => {
     render(
       <NeighbourNavigation
         nextTarget={"/uri-right"}
-        nextText={"Eleven char"}
+        nextDescription={"A description"}
         previousTarget={"/uri-left"}
       />
     );
