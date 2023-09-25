@@ -5,9 +5,7 @@ import React, { FunctionComponent, useState } from "react";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
-import makingOfMetaData  from "app/the-making-of/makingOfMetadata";
-
-
+import makingOfMetaData  from "../../app/the-making-of/makingOfMetadata";
 
 const MENU_LIST: {
   path: string;
