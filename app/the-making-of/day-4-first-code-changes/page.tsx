@@ -32,12 +32,13 @@ export default function TheMakingOf() {
       <Hero
         imageSource={"/the-making-of/day-4/build.jpg"}
         altText={"A mischievous red squirrel throws around building blocks"}
-        text={"It's my server and I'll change what I want"}
+        text={"It's my server and I'll change what I want to"}
       />
       <div>
         <Paragraph>
           The first code changes are an exciting moment, but doing it right has
-          a lot of steps. So in this section we are going to:
+          a lot of steps. And we are going to do it right, so here&rsquo;s what
+          we&rsquo;ll do:
           <TextList>
             <TextListItem>Create a local git branch</TextListItem>
             <TextListItem>Run the app in developer mode</TextListItem>
@@ -52,19 +53,20 @@ export default function TheMakingOf() {
         <SubHeading level={2}>Create a branch</SubHeading>
         <Paragraph>
           Git works with branches. Each branch is a history of some code and
-          those branches can separate an merge back together. In a professional
-          project branches are very important so that different people can be
-          working on the same application at the same time, in an solo project
-          it&rsquo;s less important, all commits can just be to a single main
-          branch. However, let&rsquo;s do this the proper way, it&rsquo;ll help
-          in the long run. Open GitHub desktop and you will see that it has a
-          tab that says Current branch: main. That is a drop down menu that if
-          you open, you&rsquo;ll see an option for &quot;New branch&quot;.
-          Create a new branch and give it a descriptive name. I like to use the
-          format: &quot;feature/a-descriptive-name&quot;. The word
-          &quot;feature&quot; is there to show that we are adding a new feature
-          as opposed to &quot;bug&quot; if we are fixing a bug, or
-          &quot;chore&quot; for something boring like updating dependencies.
+          those branches can split off and merge back together. In a
+          professional project branches are very important so that different
+          people can be working on the same application at the same time. In an
+          solo project it&rsquo;s less important, all commits can just be to a
+          single main branch. However, let&rsquo;s do this the proper way,
+          it&rsquo;ll help in the long run. Open GitHub desktop and you will see
+          that it has a tab that says &quot;Current branch: main&quot;. That is
+          a drop down menu that if you open, you&rsquo;ll see an option for
+          &quot;New branch&quot;. Create a new branch and give it a descriptive
+          name. I like to use the format:
+          &quot;feature/a-descriptive-name&quot;. The word &quot;feature&quot;
+          is there to show that we are adding a new feature as opposed to
+          &quot;bug&quot; if we are fixing a bug, or &quot;chore&quot; for
+          something boring like updating dependencies.
         </Paragraph>
         <SubHeading level={2}>Editing Next.js 13</SubHeading>
         <Paragraph>
@@ -88,7 +90,8 @@ export default function TheMakingOf() {
           <TextLink target="https://www.w3schools.com/html/html_basic.asp">
             w3schools.com&rsquo;s html tutorial
           </TextLink>
-          . I chose a couple of things to change, I changed the first &lt;p&gt;
+          . I chose a couple of things to change. First, I changed the a{" "}
+          <Code>&lt;p&gt;</Code>
           tag&rsquo;s content as per line 9, the highlighted line here:
           <TsxCodeBlock
             code={`export default function Home() {
@@ -116,15 +119,16 @@ export default function TheMakingOf() {
           labelText={"VSCode error"}
         />
         <Paragraph>
-          So it&rsquo;s not happy with me using a &quot; &rsquo; &quot;
+          So it&rsquo;s not happy with me using an apostrophe{" "}
+          <Code>&apos;</Code>
           character, I need to replace it with an encoding. I&rsquo;ve chosen to
           encode it with <Code>&amp;rsquo;</Code>.
         </Paragraph>
         <Paragraph>
-          I also decided to change some more text on the cards, and the targets
-          (href) of the links so that they point to the home page, and remove
-          one of the cards so that there are 3 instead of 4. You can see all
-          these changes on the
+          I also decided to change some more text on the cards. I&rsquo;ve
+          changed the href&rsquo;s (urls) of the links so that they point to the
+          home page. And I&rsquo;ve removed one of the cards so that there are 3
+          instead of 4. You can see all these changes on the{" "}
           <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site/pull/1/files">
             GitHub pull request.
           </TextLink>
@@ -153,24 +157,25 @@ export default function TheMakingOf() {
         </Paragraph>
         <SubHeading level={2}>Push the changes</SubHeading>
         <Paragraph>
-          Now you have some changes that you, there&rsquo;s a few more steps to
-          getting them deployed to you main server. First go to GitHub desktop,
-          you&rsquo;ll see that it shows the changes to each file. Quickly check
-          through them and make sure you haven&rsquo;t included anything by
-          accident. When you are ready, you can &quot;commit&quot; the changes.
-          Create a summary description, I went with &quot;3 column grid and copy
-          changes&quot;. Then click the &quot;Commit to ...&quot; button. And
-          your changes have been committed to your local branch. GitHub Desktop
-          will update to show that there are no local changes anymore - you
-          haven&rsquo;t lost them it&rsquo;s just that they have been committed
-          to the branch. Instead of the changes it will show you a &quot;Publish
-          branch&quot; button. Click it and this will &quot;push&quot; your
-          changes to GitHub.
+          Now you have some changes, check them in your browser and make sure
+          you are happy with them. There&rsquo;s just a few more steps to
+          getting them deployed to you server on the internet. First go to
+          GitHub desktop, you&rsquo;ll see that it shows the changes to each
+          file. Quickly check through them and make sure you haven&rsquo;t
+          included anything by accident. When you are ready, you can
+          &quot;commit&quot; the changes. Create a summary description, I went
+          with &quot;3 column grid and copy changes&quot;. Then click the
+          &quot;Commit to ...&quot; button. And your changes have been committed
+          to your local branch. GitHub Desktop will update to show that there
+          are no local changes anymore - you haven&rsquo;t lost them it&rsquo;s
+          just that they have been committed to the branch. Instead of the
+          changes it will show you a &quot;Publish branch&quot; button. Click it
+          and this will &quot;push&quot; your changes to GitHub.
         </Paragraph>
         <SubHeading level={2}>Opening a Pull Request</SubHeading>
         <Paragraph>
           Go to your project in GitHub in your browser, for me that would be{" "}
-          <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site" />
+          <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site" />{" "}
           GitHub has detected that you have recently pushed changes and
           you&rsquo;ll see a big green button to create a pull request.
         </Paragraph>
@@ -203,7 +208,7 @@ export default function TheMakingOf() {
           to &quot;Merge without waiting for requirements to be met (bypass
           branch protections)&quot;. Then I select &quot;Squash and merge&quot;.
           Now GitHub merges the changes to the main branch and Vercel deploys
-          those changes. Amazing, I can now see my changes at the url Vercel
+          those changes. Amazing! I can now see my changes at the url Vercel
           deploys to, for me that&rsquo;s{" "}
           <TextLink
             target={"https://mike-james-rust-personal-site.vercel.app"}
