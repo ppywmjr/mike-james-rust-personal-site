@@ -8,7 +8,7 @@ import Illustration from "@components/article/illustration";
 import Code from "@components/article/code";
 import NeighbourNavigation from "@components/article/neighbour-navigation";
 import makingOfMetaData from "../makingOfMetadata";
-import TsxCodeBlock from "@components/article/tsx-code-block";
+import CodeBlock from "@components/article/code-block";
 import TextList from "@components/article/text-list";
 import TextListItem from "@components/article/text-list/text-list-item";
 
@@ -39,17 +39,17 @@ export default function TheMakingOf() {
           The first code changes are an exciting moment, but doing it right has
           a lot of steps. And we are going to do it right, so here&rsquo;s what
           we&rsquo;ll do:
-          <TextList>
-            <TextListItem>Create a local git branch</TextListItem>
-            <TextListItem>Run the app in developer mode</TextListItem>
-            <TextListItem>Change some code</TextListItem>
-            <TextListItem>Check the changes</TextListItem>
-            <TextListItem>Commit the code to the local branch</TextListItem>
-            <TextListItem>Publish the local branch to GitHub</TextListItem>
-            <TextListItem>Create a pull request on GitHub</TextListItem>
-            <TextListItem>Merge the pull request</TextListItem>
-          </TextList>
         </Paragraph>
+        <TextList>
+          <TextListItem>Create a local git branch</TextListItem>
+          <TextListItem>Run the app in developer mode</TextListItem>
+          <TextListItem>Change some code</TextListItem>
+          <TextListItem>Check the changes</TextListItem>
+          <TextListItem>Commit the code to the local branch</TextListItem>
+          <TextListItem>Publish the local branch to GitHub</TextListItem>
+          <TextListItem>Create a pull request on GitHub</TextListItem>
+          <TextListItem>Merge the pull request</TextListItem>
+        </TextList>
         <SubHeading level={2}>Create a branch</SubHeading>
         <Paragraph>
           Git works with branches. Each branch is a history of some code and
@@ -93,17 +93,20 @@ export default function TheMakingOf() {
           . I chose a couple of things to change. First, I changed the a{" "}
           <Code>&lt;p&gt;</Code>
           tag&rsquo;s content as per line 9, the highlighted line here:
-          <TsxCodeBlock
-            code={`export default function Home() {
+        </Paragraph>
+        <CodeBlock
+          code={`export default function Home() {
   return
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
           Mike James Rust - a QA's playground
         </p>`}
-            startingLineNumber={4}
-            highlightLines={[9]}
-          />
+          startingLineNumber={4}
+          highlightLines={[9]}
+          language="tsx"
+        />
+        <Paragraph>
           Now look in your browser at your locally running page and you will see
           that it has been updated.
         </Paragraph>
@@ -142,7 +145,7 @@ export default function TheMakingOf() {
           layouts. This file defines a grid for the cards to be displayed on.
           The grid has 4 columns, one for each card. But now I have only 3 cards
           so I have updated it to be 3 like so:
-          <TsxCodeBlock
+          <CodeBlock
             code={`.grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(25%, auto));
@@ -151,6 +154,7 @@ export default function TheMakingOf() {
 }`}
             startingLineNumber={42}
             highlightLines={[44]}
+            language="css"
           />
           In fact, I should have also updated the minmax to be (33%, auto), but
           I missed that at the time. Oh well, bugs happen.

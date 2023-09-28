@@ -3,7 +3,7 @@ import { CodeProps } from "./types";
 
 const Code: FunctionComponent<CodeProps> = ({ children }) => {
   return (
-    <code className="bg-slate-800 text-slate-300 font-mono px-2 not-prose tracking-wide rounded-sm">
+    <code className="bg-[#212121] text-[#F8F8F2] px-1 not-prose">
       {children}
     </code>
   );
