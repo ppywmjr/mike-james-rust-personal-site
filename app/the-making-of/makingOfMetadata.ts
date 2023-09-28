@@ -1,11 +1,11 @@
 const basePath = "/the-making-of";
 
-const makingOfMetaData = {
+const makingOfMetaData: {pages: {uri: string, menuText: string, linkDescription: string}[]} = {
   pages: [
     {
       uri: `${basePath}/day-1-choices`,
       menuText: "Choices",
-      linkDescription: "Where to get started",
+      linkDescription: "Where to get started making a website and server",
     },
     {
       uri: `${basePath}/day-2-running`,
