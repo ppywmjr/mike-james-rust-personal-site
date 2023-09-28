@@ -204,12 +204,12 @@ export default function TheMakingOf() {
           branch protections)&quot;. Then I select &quot;Squash and merge&quot;.
           Now GitHub merges the changes to the main branch and Vercel deploys
           those changes. Amazing, I can now see my changes at the url Vercel
-          deploys to, for me that&rsquo;s{' '}
+          deploys to, for me that&rsquo;s{" "}
           <TextLink
             target={"https://mike-james-rust-personal-site.vercel.app"}
           />
-          . But if you visit my link, you&rsquo;ll see a lot of other changes
-          have happened since then.
+          . Although, you know what, actually it didn&rsquo;t work out so
+          smoothly, in reality I broke the app with the first change!
         </Paragraph>
       </div>
       <NeighbourNavigation
