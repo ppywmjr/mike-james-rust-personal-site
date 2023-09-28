@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function AboutSite() {
   return (
-    <div className="max-w-prose">
+    <div className="max-w-prose mx-auto">
       <PageHeading>Me and my site</PageHeading>
       <Hero
         imageSource={"/profile.jpg"}
