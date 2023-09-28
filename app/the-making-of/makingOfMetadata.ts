@@ -1,6 +1,8 @@
 const basePath = "/the-making-of";
 
-const makingOfMetaData: {pages: {uri: string, menuText: string, linkDescription: string}[]} = {
+const makingOfMetaData: {
+  pages: { uri: string; menuText: string; linkDescription: string }[];
+} = {
   pages: [
     {
       uri: `${basePath}/day-1-choices`,
@@ -10,12 +12,18 @@ const makingOfMetaData: {pages: {uri: string, menuText: string, linkDescription:
     {
       uri: `${basePath}/day-2-running`,
       menuText: "Up and running",
-      linkDescription: "Only a few clicks to make a website and server running in the cloud",
+      linkDescription:
+        "Only a few clicks to make a website and server running in the cloud",
     },
     {
       uri: `${basePath}/day-3-on-my-computer`,
       menuText: "A website on my computer",
       linkDescription: "Running the website on my computer",
+    },
+    {
+      uri: `${basePath}/day-4-first-code-changes`,
+      menuText: "First code changes",
+      linkDescription: "It's my server and I'll change what I want",
     },
   ],
 };
