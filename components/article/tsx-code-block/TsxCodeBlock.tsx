@@ -30,7 +30,7 @@ const TsxCodeBlock: FunctionComponent<TsxCodeBlockProps> = ({
       wrapLongLines={wrapLongLines}
       showLineNumbers={true}
       startingLineNumber={startingLineNumber}
-      customStyle={{ "border-radius": "0px", padding: "0.5rem" }}
+      customStyle={{ "borderRadius": "0px", padding: "0.5rem" }}
       className={`leading-tight block text-sm rounded-none ${styles.scrollbar}`}
     >
       {code}

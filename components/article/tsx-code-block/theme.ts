@@ -21,7 +21,7 @@ const theme = {
     msHyphens: "none",
     hyphens: "none",
     display: "block",
-    "min-width": "max-content",
+    minWidth: "max-content",
   },
   'pre[class*="language-"]': {
     color: "#f8f8f2",

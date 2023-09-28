@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 import Page from "../page";
 
-describe("Day 2 Running", () => {
+describe("Day 3", () => {
   test("renders with h1", () => {
     render(<Page />);
 

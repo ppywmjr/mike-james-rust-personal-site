@@ -31,7 +31,7 @@ export default function TheMakingOf() {
       <PageHeading>Day 4 - First code changes</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-4/build.jpg"}
-        altText={"A red squirrel throws around building blocks"}
+        altText={"A mischievous red squirrel throws around building blocks"}
         text={"It's my server and I'll change what I want"}
       />
       <div>
@@ -113,7 +113,7 @@ export default function TheMakingOf() {
         <Illustration
           imageSource={"/the-making-of/day-4/article/vscode-error.jpg"}
           labelText={"VSCode error"}
-        ></Illustration>
+        />
         <Paragraph>
           So it&rsquo;s not happy with me using a &quot; &rsquo; &quot;
           character, I need to replace it with an encoding. I&rsquo;ve chosen to
@@ -172,6 +172,20 @@ export default function TheMakingOf() {
           <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site" />
           GitHub has detected that you have recently pushed changes and
           you&rsquo;ll see a big green button to create a pull request.
+        </Paragraph>
+        <Illustration
+          imageSource={"/the-making-of/day-4/article/create-pr.jpg"}
+          labelText={"GitHub's Compare & pull request button"}
+        />
+        <Paragraph>
+          If you don&rsquo;t do it immediately and the button isn&rsquo;t there,
+          you can still go into the &quot;Pull requests&quot; tab and create it
+          with the &quot;New pull request&quot; button.
+        </Paragraph>
+        <Paragraph>
+          Add a nice descriptive summary and click the &quot;Create pull
+          request&quot; button. GitHub will check that Vercel successfully built
+          and deployed the app to a test deployment.Then you can click merge.
         </Paragraph>
         <SubHeading level={2}>github actions</SubHeading>
         <Paragraph>paragraph</Paragraph>
