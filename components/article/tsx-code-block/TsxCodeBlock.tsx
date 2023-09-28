@@ -21,7 +21,7 @@ const TsxCodeBlock: FunctionComponent<TsxCodeBlockProps> = ({
       style={theme}
       wrapLines={wrapLines}
       lineProps={(lineNumber) => {
-        let style = { display: "block" };
+        let style:{ display:string, backgroundColor?: string} = { display: "block" };
         if (highlightLines?.includes(lineNumber)) {
           style.backgroundColor = "#1F3155";
         }
