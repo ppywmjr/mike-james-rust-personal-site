@@ -25,7 +25,7 @@ const theme = {
   },
   'pre[class*="language-"]': {
     color: "#f8f8f2",
-    background: "#2b2b2b",
+    background: "#212121",
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
     textAlign: "left",
     whiteSpace: "pre",
@@ -88,7 +88,7 @@ const theme = {
     color: "#00e0e0",
   },
   selector: {
-    color: "#abe338",
+    color: "#6EA5DC",
   },
   "attr-name": {
     color: "#F7B32A",
