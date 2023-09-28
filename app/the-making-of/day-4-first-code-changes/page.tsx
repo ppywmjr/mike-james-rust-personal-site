@@ -112,6 +112,7 @@ export default function TheMakingOf() {
         </Paragraph>
         <Illustration
           imageSource={"/the-making-of/day-4/article/vscode-error.jpg"}
+          altText="VS Code shows an error that the apostrophe needs to be encoded"
           labelText={"VSCode error"}
         />
         <Paragraph>
@@ -185,12 +186,31 @@ export default function TheMakingOf() {
         <Paragraph>
           Add a nice descriptive summary and click the &quot;Create pull
           request&quot; button. GitHub will check that Vercel successfully built
-          and deployed the app to a test deployment.Then you can click merge.
+          and deployed the app to a test deployment. It should look something
+          like this:
         </Paragraph>
-        <SubHeading level={2}>github actions</SubHeading>
-        <Paragraph>paragraph</Paragraph>
-        <SubHeading level={2}>merge</SubHeading>
-        <Paragraph>paragraph</Paragraph>
+        <Illustration
+          imageSource={"/the-making-of/day-4/article/check-passed.jpg"}
+          altText={
+            "GitHub shows that the checks have passed but the merge is blocked because it hasn't been reviewed"
+          }
+          labelText={"GitHub merge checks"}
+        />
+        <Paragraph>
+          If you are working in a team, you would want someone else to check
+          your work and approve the pull request before merging, but as I am
+          working alone, there is no one to approve. So I clicked the checkbox
+          to &quot;Merge without waiting for requirements to be met (bypass
+          branch protections)&quot;. Then I select &quot;Squash and merge&quot;.
+          Now GitHub merges the changes to the main branch and Vercel deploys
+          those changes. Amazing, I can now see my changes at the url Vercel
+          deploys to, for me that&rsquo;s{' '}
+          <TextLink
+            target={"https://mike-james-rust-personal-site.vercel.app"}
+          />
+          . But if you visit my link, you&rsquo;ll see a lot of other changes
+          have happened since then.
+        </Paragraph>
       </div>
       <NeighbourNavigation
         previousTarget={previousPage?.uri}
