@@ -3,6 +3,9 @@ import { TextLinkProps } from "./types";
 import Link from "next/link";
 
 const TextLink: FunctionComponent<TextLinkProps> = ({ target, children }) => {
+  if (!children) {
+    children = target;
+  }
   return (
     <Link
       className="text-mjr_very_dark_orange font-bold underline italic"

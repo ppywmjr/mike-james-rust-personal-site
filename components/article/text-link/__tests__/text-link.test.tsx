@@ -18,4 +18,14 @@ describe("TextLink", () => {
     expect(link).toHaveAttribute("href", "/my-url");
     expect(link).toHaveTextContent("My Link");
   });
+
+  test("default text is the target url", () => {
+    render(<TextLink target={"/my-url"} />);
+
+    const link = screen.getByRole("link");
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute("href", "/my-url");
+    expect(link).toHaveTextContent("/my-url");
+  });
 });

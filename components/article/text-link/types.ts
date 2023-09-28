@@ -1,4 +1,4 @@
 export type TextLinkProps = {
-  children: string;
+  children?: string;
   target: string;
 };
