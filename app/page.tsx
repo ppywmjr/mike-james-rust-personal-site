@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import LinkCard from "../components/link-card";
 import PageHeading from "../components/page-heading";
+import makingOfMetaData from "./the-making-of/makingOfMetadata";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
   {
@@ -11,14 +12,19 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
       "A first page, with a little about who I am and why I'm doing this.",
   },
   {
-    target: "/quality-topics",
-    heading: "Quality topics",
-    description: "THIS DOES NOT EXIST YET",
+    target: makingOfMetaData.pages[0].uri,
+    heading: makingOfMetaData.pages[0].menuText,
+    description: makingOfMetaData.pages[0].linkDescription,
   },
   {
-    target: "/the-making-of",
-    heading: "The making of",
-    description: "The first choices I made to make this site.",
+    target: makingOfMetaData.pages[1].uri,
+    heading: makingOfMetaData.pages[1].menuText,
+    description: makingOfMetaData.pages[1].linkDescription,
+  },
+  {
+    target: makingOfMetaData.pages[2].uri,
+    heading: makingOfMetaData.pages[2].menuText,
+    description: makingOfMetaData.pages[2].linkDescription,
   },
 ];
 
@@ -34,7 +40,7 @@ export default function Home() {
         height={214}
         priority
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:pt-16">
         {LINK_CARDS.map((item) => (
           <LinkCard
             key={item.target}

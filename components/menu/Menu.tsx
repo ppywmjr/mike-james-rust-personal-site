@@ -17,7 +17,6 @@ const MENU_LIST: {
     path: "/me-and-my-site",
     text: "Me and my site",
   },
-  { path: "/quality-topics", text: "Quality topics" },
   {
     path: "/the-making-of",
     text: "How to make this site",

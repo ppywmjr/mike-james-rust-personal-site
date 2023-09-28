@@ -15,7 +15,7 @@ describe("Menu", () => {
     render(<Menu />);
 
     const activeMenuLink = screen.getByText("Me and my site");
-    const inactiveMenuLink = screen.getByText("Quality topics");
+    const inactiveMenuLink = screen.getByText("Home");
     const submenu = screen.getByText("How to make this site");
 
     expect(activeMenuLink).toBeVisible();
