@@ -1,0 +1,13 @@
+.scrollbar::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+/* Define the thumb style */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #e07a5f;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+  background-color: #e1b0a3;
+  width: 8px;
+}
