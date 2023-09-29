@@ -5,7 +5,7 @@ import Submit from "./submit";
 const Form: FunctionComponent<FormProps> = ({
   children,
   action,
-  submitText = "Submit form",
+  submitText = 'Submit form',
 }) => {
   return (
     <form action={action}>

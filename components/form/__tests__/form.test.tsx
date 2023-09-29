@@ -1,15 +1,30 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import Form from "../Form";
 
 describe("Form", () => {
-    const sampleFunction: (formData: FormData) => void = (formData) => {};
-  it("renders the Form with children", () => {
-    render(<Form action={sampleFunction}>Child text</Form>);
+  const mockAction: (formData: FormData) => void = jest.fn((formData) => {});
+  test("Renders with submit button and children", () => {
+    render(
+      <Form action={mockAction} submitText="Submit me">
+        Child text
+      </Form>
+    );
 
-    const form = screen.getByText("Child text");
+    const children = screen.getByText("Child text");
+    const submitButton = screen.getByRole("button");
 
-    expect(form).toBeVisible();
+    expect(children).toBeVisible();
+    expect(submitButton).toBeVisible();
+    expect(submitButton).toHaveTextContent("Submit me");
+  });
+
+  test("Renders with default submit button text ", () => {
+    render(<Form action={mockAction}>Child text</Form>);
+
+    const submitButton = screen.getByRole("button");
+
+    expect(submitButton).toHaveTextContent("Submit form");
   });
 });

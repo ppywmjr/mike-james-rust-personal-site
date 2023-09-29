@@ -22,16 +22,15 @@ export default function Contact() {
       message: z.string().min(1).max(200),
     });
 
-    let parse;
     try {
-      parse = contactSchema.parse({
+      const parse = contactSchema.parse({
         email: formData.get("email"),
         message: formData.get("message"),
       });
+      // TODO handle success
     } catch (err) {
       if (err instanceof z.ZodError) {
-        //nothing is done yet
-        console.log(err.issues)
+        // TODO handle errors
       }
     }
     revalidatePath("/form");
