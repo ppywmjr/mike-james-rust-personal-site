@@ -10,7 +10,7 @@ describe("Submit", () => {
     const submitButton = screen.getByRole("button");
 
     expect(submitButton).toBeVisible();
-    expect(submitButton).toHaveTextContent("Child Text");
+    expect(submitButton).toHaveTextContent("Child text");
     expect(submitButton).toHaveAttribute("type", "submit");
   });
 });
