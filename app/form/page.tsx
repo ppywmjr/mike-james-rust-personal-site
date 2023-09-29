@@ -31,9 +31,10 @@ export default function Contact() {
     } catch (err) {
       if (err instanceof z.ZodError) {
         //nothing is done yet
+        console.log(err.issues)
       }
     }
-    revalidatePath("/contact");
+    revalidatePath("/form");
   }
 
   return (
@@ -54,7 +55,6 @@ export default function Contact() {
       <Form action={create}>
         <TextInput name="message" label="Message:" />
         <TextInput name="email" label="Email:" />
-        <Submit>Submit form</Submit>
       </Form>
     </div>
   );

@@ -5,10 +5,26 @@ import TextInput from "../TextInput";
 
 describe("TextInput", () => {
   it("renders the TextInput", () => {
-    render(<TextInput id={""} name={""} label={""}/>);
+    render(<TextInput id={"an id"} name={"aName"} label={"A label"} />);
 
-    const textInput = screen.getByText("Child text");
+    const textBox = screen.getByRole("textbox");
+    const label = screen.getByText("A label");
 
-    expect(textInput).toBeVisible();
+    expect(textBox).toBeVisible();
+    expect(textBox).toHaveAccessibleName("A label");
+    expect(textBox).toHaveAttribute("name", "aName");
+    expect(label).toBeVisible();
+  });
+
+  it("renders the TextInput is linked to label by default when no id is provided", () => {
+    render(<TextInput name={"aName"} label={"A label"} />);
+
+    const textBox = screen.getByRole("textbox");
+    const label = screen.getByText("A label");
+
+    expect(textBox).toBeVisible();
+    expect(textBox).toHaveAccessibleName("A label");
+    expect(textBox).toHaveAttribute("name", "aName");
+    expect(label).toBeVisible();
   });
 });
