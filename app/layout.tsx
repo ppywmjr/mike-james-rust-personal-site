@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Menu from "../components/menu";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <main className="justify-start items-center px-4 pt-12 pb-16 leading-relaxed">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );
