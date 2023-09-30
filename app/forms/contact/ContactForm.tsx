@@ -3,14 +3,12 @@
 // import { useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import Form from "@components/form";
+import Form from "@components/form";
 // import TextInput from "@components/form/text-input/TextInput";
 import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
 
-export function SampleForm() {
-
-
+export function ContactForm() {
   const {
     register,
     handleSubmit,

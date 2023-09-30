@@ -2,7 +2,7 @@ import React, { useTransition } from "react";
 import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
-import { SampleForm } from "./SampleForm";
+import { ContactForm } from "./ContactForm";
 
 export const metadata = {
   title: "Contact me",
@@ -21,11 +21,13 @@ export default function Contact() {
         text={"Submit a form, and nothing will happen!"}
       />
       <Paragraph>
-        This form is simply for submitting some data. It is not validated on the
-        front end but it is validated on the server. Then the server does
-        nothing with it.
+        This form is simply for submitting some data. It is validated on the
+        front end with react-hook-form and the payload is handled by the Next.js
+        13 server action. The front and back end validations use zod to for the
+        validation rules. The server and front end do nothing with the form
+        submission.
       </Paragraph>
-      <SampleForm />
+      <ContactForm />
     </div>
   );
 }
