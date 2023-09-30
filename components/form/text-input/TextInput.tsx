@@ -1,18 +1,29 @@
 import React, { FunctionComponent } from "react";
 import { TextInputProps } from "./types";
 
-const TextInput: FunctionComponent<TextInputProps> = ({ id, name, label }) => {
+const TextInput: FunctionComponent<TextInputProps> = ({
+  id,
+  name,
+  label,
+  type,
+  isRequired,
+}) => {
   if (!id) {
     id = name;
   }
   return (
     <label htmlFor={id} className="block w-full">
-      <div className="w-20 my-1">{label}</div>
+      <span className="w-20 my-1 block">{label}</span>
       <input
         id={id}
-        className="border-2 border-mjr_orange w-full sm:w-96 px-2 
-        focus:outline-none focus:border-mjr_dark_blue focus:ring-1 focus:ring-mjr_dark_blue"
+        className="border-2 border-mjr_orange w-full sm:w-96 px-2
+
+        focus:outline-none focus:border-mjr_dark_blue focus:ring-1 focus:ring-mjr_dark_blue
+         invalid:border-pink-500  invalid:ring-pink-500
+       "
         name={name}
+        required={isRequired ? true : false}
+        type={type}
       />
     </label>
   );

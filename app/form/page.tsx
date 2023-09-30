@@ -5,7 +5,6 @@ import z from "zod";
 import { revalidatePath } from "next/cache";
 import Paragraph from "@components/article/paragraph";
 import Form from "@components/form";
-import Submit from "@components/form/submit";
 import TextInput from "@components/form/text-input/TextInput";
 
 export const metadata = {
@@ -53,7 +52,7 @@ export default function Contact() {
       </Paragraph>
       <Form action={create}>
         <TextInput name="message" label="Message:" />
-        <TextInput name="email" label="Email:" />
+        <TextInput name="email" label="Email:" isRequired={true} type="email" />
       </Form>
     </div>
   );
