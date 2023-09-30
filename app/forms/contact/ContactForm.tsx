@@ -1,32 +1,32 @@
 "use client";
 
 // import { useTransition } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { SubmitHandler, useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "@components/form";
 // import TextInput from "@components/form/text-input/TextInput";
 import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
 
 export function ContactForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormSchemaType>({
-    resolver: zodResolver(formSchema),
-  });
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors, isSubmitting },
+  // } = useForm<FormSchemaType>({
+  //   resolver: zodResolver(formSchema),
+  // });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    console.log(data);
-    action(data);
-  };
+  // const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
+  //   console.log(data);
+  //   action(data);
+  // };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Form action={action} schema={formSchema}>
       {/* <TextInput name="message" label="Message:" />
       <TextInput name="email" label="Email:" isRequired={true} type="email" /> */}
-      <label className="block  w-full" htmlFor="email">
+      {/* <label className="block  w-full" htmlFor="email">
         Email
       </label>
       <input
@@ -51,14 +51,7 @@ export function ContactForm() {
         <span className="text-red-800 block mt-2">
           {errors.message?.message}
         </span>
-      )}
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="block bg-mjr_orange hover:bg-mjr_very_dark_orange p-2 my-3 w-40 center"
-      >
-        Submit
-      </button>
-    </form>
+      )} */}
+    </Form>
   );
 }
