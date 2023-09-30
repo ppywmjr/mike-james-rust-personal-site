@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useTransition } from "react";
 import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
-import z from "zod";
-import { revalidatePath } from "next/cache";
 import Paragraph from "@components/article/paragraph";
 import Form from "@components/form";
 import TextInput from "@components/form/text-input/TextInput";
+import { SampleForm } from "./SampleForm";
 
 export const metadata = {
   title: "Contact me",
@@ -13,28 +12,6 @@ export const metadata = {
 };
 
 export default function Contact() {
-  async function create(formData: FormData) {
-    "use server";
-
-    const contactSchema = z.object({
-      email: z.string().email().nonempty(),
-      message: z.string().min(1).max(200),
-    });
-
-    try {
-      const parse = contactSchema.parse({
-        email: formData.get("email"),
-        message: formData.get("message"),
-      });
-      // TODO handle success
-    } catch (err) {
-      if (err instanceof z.ZodError) {
-        // TODO handle errors
-      }
-    }
-    revalidatePath("/form");
-  }
-
   return (
     <div className="max-w-prose lg:max-w-3xl mx-auto">
       <PageHeading>Submit a form</PageHeading>
@@ -50,10 +27,7 @@ export default function Contact() {
         front end but it is validated on the server. Then the server does
         nothing with it.
       </Paragraph>
-      <Form action={create}>
-        <TextInput name="message" label="Message:" />
-        <TextInput name="email" label="Email:" isRequired={true} type="email" />
-      </Form>
+      <SampleForm />
     </div>
   );
 }

@@ -145,17 +145,19 @@ export default function TheMakingOf() {
           layouts. This file defines a grid for the cards to be displayed on.
           The grid has 4 columns, one for each card. But now I have only 3 cards
           so I have updated it to be 3 like so:
-          <CodeBlock
-            code={`.grid {
+        </Paragraph>
+        <CodeBlock
+          code={`.grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
 }`}
-            startingLineNumber={42}
-            highlightLines={[44]}
-            language="css"
-          />
+          startingLineNumber={42}
+          highlightLines={[44]}
+          language="css"
+        />
+        <Paragraph>
           In fact, I should have also updated the minmax to be (33%, auto), but
           I missed that at the time. Oh well, bugs happen.
         </Paragraph>
