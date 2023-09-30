@@ -1,11 +1,12 @@
 "use client";
 
-import { useTransition } from "react";
+// import { useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import Form from "@components/form";
 // import TextInput from "@components/form/text-input/TextInput";
-import { action, FormSchemaType, formSchema } from "./action";
+import { action }  from "./action";
+import { FormSchemaType, formSchema } from "./schema";
 
 export function SampleForm() {
   // const [isPending, startTransition] = useTransition();
@@ -29,12 +30,13 @@ export function SampleForm() {
     resolver: zodResolver(formSchema),
   });
 
-  // const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-  //   console.log(data);
-  // };
+  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
+    // console.log(data);
+    action(data)
+  };
 
   return (
-    <form onSubmit={handleSubmit(action)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       {/* <TextInput name="message" label="Message:" />
       <TextInput name="email" label="Email:" isRequired={true} type="email" /> */}
       <label className="block  w-full" htmlFor="email">
@@ -44,7 +46,7 @@ export function SampleForm() {
         className="block  w-full border-2 border-pink my-2"
         type="text"
         id="email"
-        {...register("email", { required: true })}
+        {...register("email")}
       />
       {errors.email && (
         <span className="text-red-800 block mt-2">{errors.email?.message}</span>
@@ -56,7 +58,7 @@ export function SampleForm() {
         className="block w-full border-2 border-pink my-2"
         type="text"
         id="message"
-        {...register("message", { required: true })}
+        {...register("message")}
       />
       {errors.message && (
         <span className="text-red-800 block mt-2">
