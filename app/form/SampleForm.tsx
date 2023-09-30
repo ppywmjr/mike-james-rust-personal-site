@@ -5,22 +5,11 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import Form from "@components/form";
 // import TextInput from "@components/form/text-input/TextInput";
-import { action }  from "./action";
+import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
 
 export function SampleForm() {
-  // const [isPending, startTransition] = useTransition();
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm<FormData>();
 
-  // const onSubmit = handleSubmit((data) => {
-  //   startTransition(() => {
-  //     action(data);
-  //   });
-  // });
 
   const {
     register,
@@ -31,8 +20,8 @@ export function SampleForm() {
   });
 
   const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    // console.log(data);
-    action(data)
+    console.log(data);
+    action(data);
   };
 
   return (

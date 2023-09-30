@@ -2,8 +2,6 @@ import React, { useTransition } from "react";
 import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
-import Form from "@components/form";
-import TextInput from "@components/form/text-input/TextInput";
 import { SampleForm } from "./SampleForm";
 
 export const metadata = {
