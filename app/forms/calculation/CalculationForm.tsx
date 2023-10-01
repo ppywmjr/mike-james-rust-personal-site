@@ -11,7 +11,7 @@ import { useState } from "react";
 import Paragraph from "@components/article/paragraph";
 import Button from "@components/button/Button";
 
-export function ContactForm() {
+export function CalculationForm() {
   const {
     register,
     handleSubmit,
@@ -22,16 +22,12 @@ export function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [serverData, setServerData] = useState({
-    name: "",
-    message: "",
-    email: "",
+    faces: undefined,
   });
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
-    console.log("The data submitted by the browser was", data);
     setServerData(await action(data));
     setSubmitted(true);
-    console.log("The data parsed by the server was", serverData);
   };
 
   return (
@@ -39,42 +35,28 @@ export function ContactForm() {
       {!submitted && (
         <Form action={handleSubmit(onSubmit)}>
           <Input
-            name="message"
-            label="Message:"
+            name="vertices"
+            label="The first input."
             register={register}
-            errors={errors.message}
+            errors={errors.vertices}
+            type="number"
           />
           <Input
-            name="name"
-            label="Name:"
+            name="edges"
+            label="The second input."
             register={register}
-            errors={errors.name}
+            errors={errors.edges}
+            type="number"
           />
-          <Input
-            name="email"
-            label="Email:"
-            register={register}
-            errors={errors.email}
-            type="email"
-          />
-          <Submit disabled={isSubmitting}>Submit</Submit>
+          <Submit disabled={isSubmitting}>Find out the result</Submit>
         </Form>
       )}
       {submitted && (
         <>
-          <Paragraph>{`Thanks for the message! This is the data you sent was:`}</Paragraph>
-          {serverData?.message && (
-            <Paragraph>{`Message: ${serverData?.message}`}</Paragraph>
-          )}
-          {serverData?.name && (
-            <Paragraph>{`Name: ${serverData?.name}`}</Paragraph>
-          )}
-          {serverData?.email && (
-            <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
-          )}
+          <Paragraph>{`The result is: ${serverData.faces} faces`}</Paragraph>
           <Button
             onClick={() => setSubmitted(false)}
-            text="Send another message"
+            text="Try another calculation"
           />
         </>
       )}

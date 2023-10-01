@@ -1,11 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import TextInput from "../TextInput";
+import Input from "../Input";
 
-describe.skip("TextInput", () => {
-  it("renders the TextInput", () => {
-    render(<TextInput id={"an id"} name={"aName"} label={"A label"} register={register} />);
+describe.skip("Input", () => {
+  it("renders the Input", () => {
+    render(
+      <Input
+        id={"an id"}
+        name={"aName"}
+        label={"A label"}
+        register={register}
+      />
+    );
 
     const textBox = screen.getByRole("textbox");
     const label = screen.getByText("A label");
@@ -16,8 +23,8 @@ describe.skip("TextInput", () => {
     expect(label).toBeVisible();
   });
 
-  it("renders the TextInput is linked to label by default when no id is provided", () => {
-    render(<TextInput name={"aName"} label={"A label"} register={register} />);
+  it("renders the Input is linked to label by default when no id is provided", () => {
+    render(<Input name={"aName"} label={"A label"} register={register} />);
 
     const textBox = screen.getByRole("textbox");
     const label = screen.getByText("A label");

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
-import { TextInputProps } from "./types";
+import { InputProps } from "./types";
 
-const TextInput: FunctionComponent<TextInputProps> = ({
+const Input: FunctionComponent<InputProps> = ({
   id,
   name,
   label,
@@ -14,17 +14,17 @@ const TextInput: FunctionComponent<TextInputProps> = ({
   }
   return (
     <label htmlFor={id} className="block w-full">
-      <span className="w-20 my-1 block">{label}</span>
+      <span className="w-full my-1 block">{label}</span>
       <input
         id={id}
         className="border-2 border-mjr_orange w-full sm:w-96 px-2
         focus:outline-none focus:border-mjr_dark_blue focus:ring-1 focus:ring-mjr_dark_blue
-         invalid:border-pink-500  invalid:ring-pink-500
+         invalid:border-red-800  invalid:ring-red-800
        "
         name={name}
         type={type}
         {...register(name)}
-        />
+      />
       {errors && (
         <span className="text-mjr_very_dark_orange block mt-2">
           {errors.message as string}
@@ -34,4 +34,4 @@ const TextInput: FunctionComponent<TextInputProps> = ({
   );
 };
 
-export default TextInput;
+export default Input;
