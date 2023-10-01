@@ -1,10 +1,10 @@
 import { FieldError, UseFormRegister } from "react-hook-form";
 
-export type TextInputProps = {
+export type InputProps = {
   id?: string;
   name: string;
   label: string;
-  type?: "email";
+  type?: "email" | "number" | "text" ;
   register: UseFormRegister<any>;
   errors?: FieldError;
 };
