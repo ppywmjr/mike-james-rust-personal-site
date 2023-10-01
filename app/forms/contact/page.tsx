@@ -1,4 +1,4 @@
-import React, { useTransition } from "react";
+import React from "react";
 import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
@@ -12,7 +12,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <div className="max-w-prose lg:max-w-3xl mx-auto">
-      <PageHeading>Submit a form</PageHeading>
+      <PageHeading>Submit a contact form</PageHeading>
       <Hero
         imageSource={"/profile.jpg"}
         altText={
@@ -22,10 +22,15 @@ export default function Contact() {
       />
       <Paragraph>
         This form is simply for submitting some data. It is validated on the
-        front end with react-hook-form and the payload is handled by the Next.js
-        13 server action. The front and back end validations use zod to for the
-        validation rules. The server and front end do nothing with the form
-        submission.
+        front end with react-hook-form and the payload is handled by a Next.js
+        13 server action. The front and back end validations use Zod for the
+        validation rules. The browser logs the data sent in the browser console.
+        The back end returns the parsed data back to the browser, and the
+        broswer also logs that. If you open the browser console (Windows: Ctrl +
+        Shift + J. Mac: Cmd + Opt +J) you can see that nothing is submitted
+        until the form is valid. And you can see the front and back end data.
+        Because they are using the same schema to validate, they should be the
+        same.
       </Paragraph>
       <ContactForm />
     </div>

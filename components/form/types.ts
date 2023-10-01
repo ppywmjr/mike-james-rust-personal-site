@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
-import z from "zod";
+import { ReactNode, BaseSyntheticEvent } from "react";
+
+type ReactHookFormHandleSubmitReturn = (
+  e?: BaseSyntheticEvent<object, any, any>
+) => Promise<any>;
 
 export type FormProps = {
-  action: any;
+  action: ReactHookFormHandleSubmitReturn;
   children?: ReactNode;
-  submitText?: string;
-  isSubmitting?: boolean;
-  schema: z.ZodObject<any>;
 };

@@ -1,57 +1,50 @@
 "use client";
 
-// import { useTransition } from "react";
-// import { SubmitHandler, useForm } from "react-hook-form";
-// import { zodResolver } from "@hookform/resolvers/zod";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "@components/form";
-// import TextInput from "@components/form/text-input/TextInput";
+import TextInput from "@components/form/text-input";
 import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
+import Submit from "@components/form/submit";
 
 export function ContactForm() {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors, isSubmitting },
-  // } = useForm<FormSchemaType>({
-  //   resolver: zodResolver(formSchema),
-  // });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
+  });
 
-  // const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-  //   console.log(data);
-  //   action(data);
-  // };
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    console.log("The data submitted by the browser was", data);
+    const serverData = await action(data);
+    console.log("The data parsed by the server was", data);
+  };
 
   return (
-    <Form action={action} schema={formSchema}>
-      {/* <TextInput name="message" label="Message:" />
-      <TextInput name="email" label="Email:" isRequired={true} type="email" /> */}
-      {/* <label className="block  w-full" htmlFor="email">
-        Email
-      </label>
-      <input
-        className="block  w-full border-2 border-pink my-2"
-        type="text"
-        id="email"
-        {...register("email")}
+    <Form action={handleSubmit(onSubmit)}>
+      <TextInput
+        name="message"
+        label="Message:"
+        register={register}
+        errors={errors.message}
       />
-      {errors.email && (
-        <span className="text-red-800 block mt-2">{errors.email?.message}</span>
-      )}
-      <label className="block  w-full" htmlFor="message">
-        Message
-      </label>
-      <input
-        className="block w-full border-2 border-pink my-2"
-        type="text"
-        id="message"
-        {...register("message")}
+      <TextInput
+        name="name"
+        label="Name:"
+        register={register}
+        errors={errors.name}
       />
-      {errors.message && (
-        <span className="text-red-800 block mt-2">
-          {errors.message?.message}
-        </span>
-      )} */}
+      <TextInput
+        name="email"
+        label="Email:"
+        register={register}
+        errors={errors.email}
+        type="email"
+      />
+      <Submit disabled={isSubmitting}>Submit</Submit>
     </Form>
   );
 }

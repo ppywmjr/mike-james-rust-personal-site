@@ -6,7 +6,8 @@ const TextInput: FunctionComponent<TextInputProps> = ({
   name,
   label,
   type,
-  isRequired,
+  register,
+  errors,
 }) => {
   if (!id) {
     id = name;
@@ -17,14 +18,18 @@ const TextInput: FunctionComponent<TextInputProps> = ({
       <input
         id={id}
         className="border-2 border-mjr_orange w-full sm:w-96 px-2
-
         focus:outline-none focus:border-mjr_dark_blue focus:ring-1 focus:ring-mjr_dark_blue
          invalid:border-pink-500  invalid:ring-pink-500
        "
         name={name}
-        required={isRequired ? true : false}
         type={type}
+        {...register(name)}
       />
+      {errors && (
+        <span className="text-mjr_very_dark_orange block mt-2">
+          {errors.message as string}
+        </span>
+      )}
     </label>
   );
 };
