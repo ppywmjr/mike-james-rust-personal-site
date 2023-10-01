@@ -6,12 +6,13 @@ import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
 import makingOfMetaData from "../../app/the-making-of/makingOfMetadata";
-import formsMetaData from "app/forms/formsMetadata";
+import formsMetaData from "../../app/forms/formsMetadata";
 
 const MENU_LIST: {
   path: string;
   text: string;
   submenuItems?: MenuItemProps[];
+  index?: number;
 }[] = [
   { path: "/", text: "Home" },
   {
@@ -21,6 +22,7 @@ const MENU_LIST: {
   {
     path: "/the-making-of",
     text: "How to make this site",
+    index: 0,
     submenuItems: makingOfMetaData.pages.map((page) => {
       return { target: page.uri, text: page.menuText };
     }),
@@ -28,6 +30,7 @@ const MENU_LIST: {
   {
     path: "/forms",
     text: "Sample forms",
+    index: 1,
     submenuItems: formsMetaData.pages.map((page) => {
       return { target: page.uri, text: page.menuText };
     }),
@@ -45,36 +48,6 @@ const Menu: FunctionComponent<{}> = () => {
   const handleSubmenuItemClick = [
     () => setSubmenuOpen([!submenuOpen[0], false]),
     () => setSubmenuOpen([false, !submenuOpen[1]]),
-  ];
-
-  const MENU_LIST: {
-    path: string;
-    text: string;
-    submenuItems?: MenuItemProps[];
-    handleClick?: any;
-    index?: number;
-  }[] = [
-    { path: "/", text: "Home" },
-    {
-      path: "/me-and-my-site",
-      text: "Me and my site",
-    },
-    {
-      path: "/the-making-of",
-      text: "How to make this site",
-      index: 0,
-      submenuItems: makingOfMetaData.pages.map((page) => {
-        return { target: page.uri, text: page.menuText };
-      }),
-    },
-    {
-      path: "/forms",
-      text: "Sample forms",
-      index: 1,
-      submenuItems: formsMetaData.pages.map((page) => {
-        return { target: page.uri, text: page.menuText };
-      }),
-    },
   ];
 
   return (
