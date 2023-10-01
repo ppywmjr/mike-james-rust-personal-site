@@ -24,7 +24,7 @@ const TextInput: FunctionComponent<TextInputProps> = ({
         name={name}
         type={type}
         {...register(name)}
-      />
+        />
       {errors && (
         <span className="text-mjr_very_dark_orange block mt-2">
           {errors.message as string}

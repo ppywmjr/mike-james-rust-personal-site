@@ -5,6 +5,6 @@ export type TextInputProps = {
   name: string;
   label: string;
   type?: "email";
-  register?: UseFormRegister<any>;
+  register: UseFormRegister<any>;
   errors?: FieldError;
 };

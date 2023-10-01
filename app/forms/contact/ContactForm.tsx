@@ -20,7 +20,7 @@ export function ContactForm() {
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
     console.log("The data submitted by the browser was", data);
     const serverData = await action(data);
-    console.log("The data parsed by the server was", data);
+    console.log("The data parsed by the server was", serverData);
   };
 
   return (
