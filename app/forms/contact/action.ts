@@ -9,12 +9,11 @@ export const action = async (data: FormSchemaType) => {
       email: data.email,
       message: data.message,
     });
-    console.log(data);
+
     revalidatePath("/forms/contact");
     return data;
   } catch (err) {
     revalidatePath("/forms/contact");
-    console.log(err);
     return err;
   }
 };
