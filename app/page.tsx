@@ -3,6 +3,7 @@ import React from "react";
 import LinkCard from "../components/link-card";
 import PageHeading from "../components/page-heading";
 import makingOfMetaData from "./the-making-of/makingOfMetadata";
+import formsMetaData from "./forms/formsMetadata";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
   {
@@ -22,9 +23,9 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
     description: makingOfMetaData.pages[1].linkDescription,
   },
   {
-    target: makingOfMetaData.pages[2].uri,
-    heading: makingOfMetaData.pages[2].menuText,
-    description: makingOfMetaData.pages[2].linkDescription,
+    target: formsMetaData.pages[0].uri,
+    heading: formsMetaData.pages[0].menuText,
+    description: formsMetaData.pages[0].linkDescription,
   },
 ];
 

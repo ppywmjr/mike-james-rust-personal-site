@@ -5,7 +5,8 @@ import React, { FunctionComponent, useState } from "react";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
-import makingOfMetaData  from "../../app/the-making-of/makingOfMetadata";
+import makingOfMetaData from "../../app/the-making-of/makingOfMetadata";
+import formsMetaData from "app/forms/formsMetadata";
 
 const MENU_LIST: {
   path: string;
@@ -20,20 +21,61 @@ const MENU_LIST: {
   {
     path: "/the-making-of",
     text: "How to make this site",
-    submenuItems: makingOfMetaData.pages.map (page => {
-      return {target: page.uri, text: page.menuText }
+    submenuItems: makingOfMetaData.pages.map((page) => {
+      return { target: page.uri, text: page.menuText };
+    }),
+  },
+  {
+    path: "/forms",
+    text: "Sample forms",
+    submenuItems: formsMetaData.pages.map((page) => {
+      return { target: page.uri, text: page.menuText };
     }),
   },
 ];
 
 const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState([false,false]);
 
   const handleMenuItemClick = () => {
-    setNavOpen(false), setSubmenuOpen(false);
+    setNavOpen(false),
+      setSubmenuOpen([false,false]);
   };
-  const handleOnSubmenuItemClick = () => setSubmenuOpen(!submenuOpen);
+  const handleSubmenuItemClick = [
+    () => setSubmenuOpen([!submenuOpen[0], false]),
+    () => setSubmenuOpen([false, !submenuOpen[1]]),
+  ];
+
+  const MENU_LIST: {
+    path: string;
+    text: string;
+    submenuItems?: MenuItemProps[];
+    handleClick?: any;
+    index?: number;
+  }[] = [
+    { path: "/", text: "Home" },
+    {
+      path: "/me-and-my-site",
+      text: "Me and my site",
+    },
+    {
+      path: "/the-making-of",
+      text: "How to make this site",
+      index: 0,
+      submenuItems: makingOfMetaData.pages.map((page) => {
+        return { target: page.uri, text: page.menuText };
+      }),
+    },
+    {
+      path: "/forms",
+      text: "Sample forms",
+      index: 1,
+      submenuItems: formsMetaData.pages.map((page) => {
+        return { target: page.uri, text: page.menuText };
+      }),
+    },
+  ];
 
   return (
     <div className="fixed w-full flex flex-col md:flex-row">
@@ -71,9 +113,9 @@ const Menu: FunctionComponent<{}> = () => {
                 key={item.text}
                 path={item.path}
                 text={item.text}
-                submenuOpen={submenuOpen}
+                submenuOpen={submenuOpen[item.index]}
                 onClick={handleMenuItemClick}
-                onSubmenuItemClick={handleOnSubmenuItemClick}
+                onSubmenuItemClick={handleSubmenuItemClick[item.index]}
                 submenuItems={item.submenuItems}
               />
             ) : (
