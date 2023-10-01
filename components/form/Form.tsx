@@ -1,16 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { FormProps } from "./types";
-import Submit from "./submit";
 
-const Form: FunctionComponent<FormProps> = ({
-  children,
-  action,
-  submitText = 'Submit form',
-}) => {
+const Form: FunctionComponent<FormProps> = ({ children, action }) => {
   return (
-    <form action={action}>
+    <form onSubmit={action} className="">
       {children}
-      <Submit>{submitText}</Submit>
     </form>
   );
 };

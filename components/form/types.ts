@@ -1,7 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode, BaseSyntheticEvent } from "react";
+
+type ReactHookFormHandleSubmitReturn = (
+  e?: BaseSyntheticEvent<object, any, any>
+) => Promise<any>;
 
 export type FormProps = {
-  action: (formData: FormData) => void;
+  action: ReactHookFormHandleSubmitReturn;
   children?: ReactNode;
-  submitText?: string;
 };
