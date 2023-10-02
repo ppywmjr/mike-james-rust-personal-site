@@ -9,6 +9,7 @@ import { FormSchemaType, formSchema } from "./schema";
 import Submit from "@components/form/submit";
 import { useState } from "react";
 import Button from "@components/button/Button";
+import SubHeading from "@components/article/sub-heading";
 
 export function CalculationForm() {
   const {
@@ -22,7 +23,10 @@ export function CalculationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverData, setServerData] = useState({
     faces: undefined,
+    edges: undefined,
+    vertices: undefined,
   });
+  const [resultHistory, setResultHistory] = useState([]);
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
     setServerData(await action(data));
@@ -30,7 +34,7 @@ export function CalculationForm() {
   };
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 sm:w-80 m-auto">
       {!submitted && (
         <Form
           action={handleSubmit(onSubmit)}
@@ -58,15 +62,41 @@ export function CalculationForm() {
       )}
       {submitted && (
         <>
-          <p className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">
+          <p className="mb-2 bg-mjr_light_green rounded-md p-5 text-center m-auto text-lg ">
             {`The result is: ${serverData.faces} faces`}
           </p>
           <Button
-            onClick={() => setSubmitted(false)}
+            className="m-auto"
+            onClick={() => {
+              setResultHistory([
+                {
+                  firstInput: serverData.vertices,
+                  secondInput: serverData.edges,
+                  faces: serverData.faces,
+                },
+                ...resultHistory,
+              ]);
+              setSubmitted(false);
+            }}
             text="Try another calculation"
           />
         </>
       )}
+      <div>
+        {resultHistory.length > 0 && (
+          <SubHeading level={2}>Result History</SubHeading>
+        )}
+        {resultHistory.map((result) => (
+          <div
+            key={`${serverData.vertices} ${serverData.edges} ${serverData.faces}`}
+            className="w-full flex justify-between bg-mjr_light_green rounded-md p-1 px-2 my-2"
+          >
+            <p className="text-center mx-1">{`First input: ${result.firstInput}`}</p>
+            <p className="text-center mx-1">{`Second input: ${result.secondInput}`}</p>
+            <p className="text-center mx-1">{`Faces: ${result.faces}`}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

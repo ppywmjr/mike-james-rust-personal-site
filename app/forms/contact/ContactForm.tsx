@@ -75,6 +75,7 @@ export function ContactForm() {
             )}
           </div>
           <Button
+            className="m-auto"
             onClick={() => setSubmitted(false)}
             text="Send another message"
           />
