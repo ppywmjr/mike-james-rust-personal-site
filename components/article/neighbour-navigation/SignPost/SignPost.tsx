@@ -38,9 +38,8 @@ const SignPost: FunctionComponent<SignPostProps> = ({
           className="absolute -z-10"
         />
         <p
-          className={`text-mjr_very_dark_orange 
+          className={`text-mjr_very_dark_orange w-20
           ${direction === "left" ? "ms-2" : "ms-0"} 
-          ${!description ? "w-56 ps-3 m-auto" : "w-20"}
           text-center group-hover:font-bold leading-normal`}
         >
           {direction === "left" ? "Previous" : "Next"}
