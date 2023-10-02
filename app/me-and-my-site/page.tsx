@@ -2,6 +2,7 @@ import React from "react";
 import PageHeading from "../../components/page-heading";
 import Hero from "../../components/hero";
 import Paragraph from "@components/article/paragraph";
+import SubHeading from "@components/article/sub-heading";
 
 export const metadata = {
   title: "Me and my site",
@@ -25,6 +26,9 @@ export default function AboutSite() {
         primarily for me, but I&rsquo;m delighted to imagine you reading it.
         I&rsquo;ve made a few little apps just for fun over the years but
         I&rsquo;m motivated to make this one for a couple of new reasons.
+      </Paragraph>
+      <SubHeading level={2}>My motivations</SubHeading>
+      <Paragraph>
         Firstly, I know someone who wants to build a website and they came to me
         for some advice. I found that as much as I know how to make a huge
         difference to agile teams, I realised I don&rsquo;t really know how to
