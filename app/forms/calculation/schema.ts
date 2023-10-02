@@ -10,6 +10,7 @@ export const formSchema = z
       .number()
       .int("Both numbers should be integers.")
       .positive("Both numbers should be positive."),
-  });
+  })
+  .refine((schema) => schema.vertices > 1 + schema.edges, { message: "That combination of numbers is not valid."});
 
 export type FormSchemaType = z.infer<typeof formSchema>;

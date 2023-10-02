@@ -47,6 +47,7 @@ export function CalculationForm() {
             errors={errors.edges}
             type="number"
           />
+          {errors && <p>`{`hi ${errors?.root?.message as string}`}</p>}
           <Submit disabled={isSubmitting}>Find out the result</Submit>
         </Form>
       )}
