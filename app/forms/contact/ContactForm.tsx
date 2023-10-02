@@ -62,16 +62,18 @@ export function ContactForm() {
       )}
       {submitted && (
         <>
-          <Paragraph>{`Thanks for the message! This is the data you sent was:`}</Paragraph>
-          {serverData?.message && (
-            <Paragraph>{`Message: ${serverData?.message}`}</Paragraph>
-          )}
-          {serverData?.name && (
-            <Paragraph>{`Name: ${serverData?.name}`}</Paragraph>
-          )}
-          {serverData?.email && (
-            <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
-          )}
+          <div className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">
+            <Paragraph>{`Thanks for the message! This is the data you sent:`}</Paragraph>
+            {serverData?.message && (
+              <Paragraph>{`Message: ${serverData?.message}`}</Paragraph>
+            )}
+            {serverData?.name && (
+              <Paragraph>{`Name: ${serverData?.name}`}</Paragraph>
+            )}
+            {serverData?.email && (
+              <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+            )}
+          </div>
           <Button
             onClick={() => setSubmitted(false)}
             text="Send another message"

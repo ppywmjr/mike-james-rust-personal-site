@@ -8,7 +8,6 @@ import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
 import Submit from "@components/form/submit";
 import { useState } from "react";
-import Paragraph from "@components/article/paragraph";
 import Button from "@components/button/Button";
 
 export function CalculationForm() {
@@ -53,7 +52,7 @@ export function CalculationForm() {
       )}
       {submitted && (
         <>
-          <Paragraph>{`The result is: ${serverData.faces} faces`}</Paragraph>
+          <p className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">{`The result is: ${serverData.faces} faces`}</p>
           <Button
             onClick={() => setSubmitted(false)}
             text="Try another calculation"

@@ -12,15 +12,16 @@ export const metadata = {
 export default function Contact() {
   return (
     <div className="max-w-prose lg:max-w-3xl mx-auto">
-      <PageHeading>A form calculate... something</PageHeading>
+      <PageHeading>A form to calculate... something</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-3/superhero.jpg"}
         altText={"A red squirrel poses like a superhero"}
         text={"Submit a form, and a mysterious unknown calculation will happen"}
       />
       <Paragraph>
-        This form is simply for submitting some data and pperforming a small
-        calculation and returning the result.
+        This form is simply for submitting some data and performing a small
+        calculation and returning the result. Maybe you can work out what the
+        calculation is?
       </Paragraph>
       <CalculationForm />
     </div>
