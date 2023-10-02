@@ -32,6 +32,9 @@ export default function Contact() {
         Because they are using the same schema to validate, they should be the
         same.
       </Paragraph>
+      <Paragraph>
+        The data returned from the server is displayed on the screen
+      </Paragraph>
       <ContactForm />
     </div>
   );
