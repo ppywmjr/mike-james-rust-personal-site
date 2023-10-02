@@ -11,7 +11,7 @@ export const formSchema = z
       .int("Both numbers should be integers.")
       .positive("Both numbers should be positive."),
   })
-  .refine((schema) => schema.vertices > 1 + schema.edges, {
+  .refine((schema) => 2 + schema.edges - schema.vertices >= 0, {
     path: ["form"],
     message:
       "That combination of numbers is not valid, but I'm not gonna tell you why!",
