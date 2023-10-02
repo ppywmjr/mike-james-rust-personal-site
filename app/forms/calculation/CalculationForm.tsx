@@ -30,7 +30,7 @@ export function CalculationForm() {
   };
 
   return (
-    <>
+    <div className="mb-10">
       {!submitted && (
         <Form
           action={handleSubmit(onSubmit)}
@@ -67,6 +67,6 @@ export function CalculationForm() {
           />
         </>
       )}
-    </>
+    </div>
   );
 }

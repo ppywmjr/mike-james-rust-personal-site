@@ -35,7 +35,7 @@ export function ContactForm() {
   };
 
   return (
-    <>
+    <div className="mb-10">
       {!submitted && (
         <Form action={handleSubmit(onSubmit)}>
           <Input
@@ -80,6 +80,6 @@ export function ContactForm() {
           />
         </>
       )}
-    </>
+    </div>
   );
 }
