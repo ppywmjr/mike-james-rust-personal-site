@@ -47,7 +47,10 @@ export function CalculationForm() {
             errors={errors.edges}
             type="number"
           />
-          {errors && <p>`{`hi ${errors?.root?.message as string}`}</p>}
+          {
+            // @ts-expect-error This error was added via Zod, but RHF's type is not aware of it.
+            errors?.form?.message && <p>{errors?.form?.message as string}</p>
+          }
           <Submit disabled={isSubmitting}>Find out the result</Submit>
         </Form>
       )}
