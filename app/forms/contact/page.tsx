@@ -3,15 +3,22 @@ import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
 import { ContactForm } from "./ContactForm";
+import formsMetaData from "../formsMetadata";
+import NeighbourNavigation from "@components/article/neighbour-navigation";
+
 
 export const metadata = {
   title: "Contact me",
   description: "A sample form",
 };
 
+const currentPageIndex = 0;
+const previousPage = formsMetaData.pages[currentPageIndex - 1];
+const nextPage = formsMetaData.pages[currentPageIndex + 1];
+
 export default function Contact() {
   return (
-    <div className="max-w-prose lg:max-w-3xl mx-auto">
+    <>
       <PageHeading>Submit a contact form</PageHeading>
       <Hero
         imageSource={"/profile.jpg"}
@@ -36,6 +43,11 @@ export default function Contact() {
         The data returned from the server is displayed on the screen
       </Paragraph>
       <ContactForm />
-    </div>
+      <NeighbourNavigation
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
+        nextDescription={nextPage?.linkDescription}
+      />
+    </>
   );
 }

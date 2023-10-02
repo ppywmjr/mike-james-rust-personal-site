@@ -2,16 +2,22 @@ import React from "react";
 import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
+import NeighbourNavigation from "@components/article/neighbour-navigation";
 import { CalculationForm } from "./CalculationForm";
+import formsMetaData from "../formsMetadata";
 
 export const metadata = {
   title: "Calculate",
   description: "A form that performs a mysterious calculation",
 };
 
+const currentPageIndex = 1;
+const previousPage = formsMetaData.pages[currentPageIndex - 1];
+const nextPage = formsMetaData.pages[currentPageIndex + 1];
+
 export default function Contact() {
   return (
-    <div className="max-w-prose lg:max-w-3xl mx-auto">
+    <>
       <PageHeading>A form to calculate... something</PageHeading>
       <Hero
         imageSource={"/the-making-of/day-3/superhero.jpg"}
@@ -24,6 +30,11 @@ export default function Contact() {
         calculation is?
       </Paragraph>
       <CalculationForm />
-    </div>
+      <NeighbourNavigation
+        previousTarget={previousPage?.uri}
+        nextTarget={nextPage?.uri}
+        nextDescription={nextPage?.linkDescription}
+      />
+    </>
   );
 }
