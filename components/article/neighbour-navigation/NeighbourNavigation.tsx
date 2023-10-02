@@ -8,8 +8,6 @@ const NeighbourNavigation: FunctionComponent<NeighbourNavigationProps> = ({
   nextDescription,
   previousDescription,
 }) => {
-  const nextText = nextDescription ? `Next - ${nextDescription}` : 'Next';
-  const previousText = previousDescription ? `Previous - ${previousDescription}` : "Previous";
   const largeSignPosts = nextDescription || previousDescription;
   return (
     <div
@@ -26,30 +24,21 @@ const NeighbourNavigation: FunctionComponent<NeighbourNavigationProps> = ({
     }`}
     >
       {previousTarget && (
-        <div data-testid="previous-link-wrapper" 
+        <div
+          data-testid="previous-link-wrapper"
           className={`${largeSignPosts ? "hidden sm:flex align-start" : ""}`}
         >
-          <SignPost
-            direction="left"
-            text={previousText}
-            target={previousTarget}
-            size={
-              largeSignPosts
-                ? previousText.length > 10
-                  ? "large"
-                  : "medium"
-                : "small"
-            }
-          />
+          <SignPost direction="left" target={previousTarget}/>
         </div>
       )}
       {nextTarget && (
-        <SignPost
-          direction="right"
-          text={nextText}
-          target={nextTarget}
-          size={largeSignPosts ? "large" : "small"}
-        />
+        <>
+          <SignPost
+            direction="right"
+            description={nextDescription}
+            target={nextTarget}
+          />
+        </>
       )}
     </div>
   );

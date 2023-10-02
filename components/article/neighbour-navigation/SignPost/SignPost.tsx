@@ -5,41 +5,51 @@ import Image from "next/image";
 
 const SignPost: FunctionComponent<SignPostProps> = ({
   target,
-  text,
+  description,
   direction,
-  size,
 }) => {
+  const descriptionContainerWidth =
+    description?.length > 50
+      ? "w-64"
+      : description?.length > 28
+      ? "w-52"
+      : "w-64";
   const source =
     direction === "left" ? "/signpost-left.svg" : "/signpost-right.svg";
-  const isSmall = size === "small";
-  const isMedium = size === "medium";
-  const isLarge = size === "large";
   return (
-    <>
+    <div
+      className={`
+        ${description ? descriptionContainerWidth : "w-24"}
+         group flex flex-col ${
+           direction === "left" ? "items-start" : "items-end"
+         }`}
+    >
       <Link
         href={target}
         className={`
-        ${isSmall ? "w-24" : isMedium ? "w-32" : "w-64"}
+        ${"w-24"}
          group flex items-center`}
       >
         <Image
           src={source}
           alt={""}
-          width={isLarge ? 270 : isMedium ? 135 : 96}
-          height={isLarge ? 96 : isMedium ? 48 : 24}
+          width={96}
+          height={24}
           className="absolute -z-10"
         />
         <p
           className={`text-mjr_very_dark_orange 
           ${direction === "left" ? "ms-2" : "ms-0"} 
-          ${isLarge ? "w-56 ps-3 m-auto" : "w-20"}
-          ${isMedium ? "ps-2 m-auto" : ""}
+          ${!description ? "w-56 ps-3 m-auto" : "w-20"}
           text-center group-hover:font-bold leading-normal`}
         >
-          {text}
+          {direction === "left" ? "Previous" : "Next"}
         </p>
       </Link>
-    </>
+      <p className="flex text-right mt-1 text-mjr_very_dark_orange">
+        {description}
+      </p>
+    </div>
   );
 };
 
