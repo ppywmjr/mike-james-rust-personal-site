@@ -45,7 +45,7 @@ const SignPost: FunctionComponent<SignPostProps> = ({
           {direction === "left" ? "Previous" : "Next"}
         </p>
       </Link>
-      <p className="flex text-right mt-1 text-mjr_very_dark_orange">
+      <p className="flex text-right mt-1 text-mjr_very_dark_orange italic">
         {description}
       </p>
     </div>
