@@ -32,7 +32,13 @@ export function CalculationForm() {
   return (
     <>
       {!submitted && (
-        <Form action={handleSubmit(onSubmit)}>
+        <Form
+          action={handleSubmit(onSubmit)}
+          error={
+            // @ts-expect-error This error was added via Zod, but the React Hook Form type is not aware of it.
+            errors?.form?.message
+          }
+        >
           <Input
             name="vertices"
             label="The first input."
@@ -52,7 +58,9 @@ export function CalculationForm() {
       )}
       {submitted && (
         <>
-          <p className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">{`The result is: ${serverData.faces} faces`}</p>
+          <p className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">
+            {`The result is: ${serverData.faces} faces`}
+          </p>
           <Button
             onClick={() => setSubmitted(false)}
             text="Try another calculation"
