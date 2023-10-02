@@ -1,6 +1,5 @@
 export type SignPostProps = {
   target: string;
-  text: string;
+  description?: string;
   direction: "left" | "right";
-  size: "small" | "medium" | "large";
 };
