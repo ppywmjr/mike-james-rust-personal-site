@@ -20,7 +20,7 @@ export default function Contact() {
     <>
       <PageHeading>A form to calculate... something</PageHeading>
       <Hero
-        imageSource={"/the-making-of/day-3/superhero.jpg"}
+        imageSource={"/how-to-make-a-website/day-3/superhero.jpg"}
         altText={"A red squirrel poses like a superhero"}
         text={"Submit a form, and a mysterious unknown calculation will happen"}
       />

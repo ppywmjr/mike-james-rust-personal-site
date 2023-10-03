@@ -26,7 +26,7 @@ export default function TheMakingOf() {
       />
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
-        imageSource={"/the-making-of/day-2/running.jpg"}
+        imageSource={"/how-to-make-a-website/day-2/running.jpg"}
         altText={"A red squirrel sprints across a screen"}
         text={
           "Only a few clicks to make a website and server running in the cloud"
@@ -58,7 +58,7 @@ export default function TheMakingOf() {
           to create it.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-2/article/clone-nextjs.png"
+          imageSource="/how-to-make-a-website/day-2/article/clone-nextjs.png"
           labelText="Cloning the Next.js template on Vercel"
         />
         <Paragraph>
@@ -68,7 +68,7 @@ export default function TheMakingOf() {
           created. Awesome.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-2/article/Nextjs-template.png"
+          imageSource="/how-to-make-a-website/day-2/article/Nextjs-template.png"
           labelText="The newly created Next.js template website"
         />
         <SubHeading level={2}>So what?</SubHeading>

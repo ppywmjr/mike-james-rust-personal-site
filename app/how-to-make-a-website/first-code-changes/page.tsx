@@ -30,7 +30,7 @@ export default function TheMakingOf() {
       />
       <PageHeading>Day 4 - First code changes</PageHeading>
       <Hero
-        imageSource={"/the-making-of/day-4/build.jpg"}
+        imageSource={"/how-to-make-a-website/day-4/build.jpg"}
         altText={"A mischievous red squirrel throws around building blocks"}
         text={"It's my server and I'll change what I want to"}
       />
@@ -117,7 +117,7 @@ export default function TheMakingOf() {
           Hover over it and see what it says:
         </Paragraph>
         <Illustration
-          imageSource={"/the-making-of/day-4/article/vscode-error.jpg"}
+          imageSource={"/how-to-make-a-website/day-4/article/vscode-error.jpg"}
           altText="VS Code shows an error that the apostrophe needs to be encoded"
           labelText={"VSCode error"}
         />
@@ -186,7 +186,7 @@ export default function TheMakingOf() {
           you&rsquo;ll see a big green button to create a pull request.
         </Paragraph>
         <Illustration
-          imageSource={"/the-making-of/day-4/article/create-pr.jpg"}
+          imageSource={"/how-to-make-a-website/day-4/article/create-pr.jpg"}
           labelText={"GitHub's Compare & pull request button"}
         />
         <Paragraph>
@@ -201,7 +201,7 @@ export default function TheMakingOf() {
           like this:
         </Paragraph>
         <Illustration
-          imageSource={"/the-making-of/day-4/article/check-passed.jpg"}
+          imageSource={"/how-to-make-a-website/day-4/article/check-passed.jpg"}
           altText={
             "GitHub shows that the checks have passed but the merge is blocked because it hasn't been reviewed"
           }

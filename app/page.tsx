@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import LinkCard from "../components/link-card";
 import PageHeading from "../components/page-heading";
-import makingOfMetaData from "./the-making-of/makingOfMetadata";
+import makingOfMetaData from "./how-to-make-a-website/makingOfMetadata";
 import formsMetaData from "./forms/formsMetadata";
 
 const LINK_CARDS: { target: string; heading: string; description: string }[] = [
@@ -23,9 +23,9 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
     description: makingOfMetaData.pages[1].linkDescription,
   },
   {
-    target: formsMetaData.pages[0].uri,
-    heading: formsMetaData.pages[0].menuText,
-    description: formsMetaData.pages[0].linkDescription,
+    target: formsMetaData.pages[1].uri,
+    heading: formsMetaData.pages[1].menuText,
+    description: formsMetaData.pages[1].linkDescription,
   },
 ];
 
