@@ -23,9 +23,9 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
     description: makingOfMetaData.pages[1].linkDescription,
   },
   {
-    target: formsMetaData.pages[0].uri,
-    heading: formsMetaData.pages[0].menuText,
-    description: formsMetaData.pages[0].linkDescription,
+    target: formsMetaData.pages[1].uri,
+    heading: formsMetaData.pages[1].menuText,
+    description: formsMetaData.pages[1].linkDescription,
   },
 ];
 
