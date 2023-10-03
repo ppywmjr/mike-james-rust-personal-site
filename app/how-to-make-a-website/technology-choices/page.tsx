@@ -27,7 +27,7 @@ export default function TheMakingOf() {
       />
       <PageHeading>Day 1 - Choices</PageHeading>
       <Hero
-        imageSource={"/the-making-of/day-1/choices.jpg"}
+        imageSource={"/how-to-make-a-website/day-1/choices.jpg"}
         altText={"Old style computer monitors showing code."}
         text={"Where to start in a world of development possibilities"}
       />

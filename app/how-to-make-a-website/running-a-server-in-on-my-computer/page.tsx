@@ -27,7 +27,7 @@ export default function TheMakingOf() {
       />
       <PageHeading>Day 3 - A website on my computer</PageHeading>
       <Hero
-        imageSource={"/the-making-of/day-3/superhero.jpg"}
+        imageSource={"/how-to-make-a-website/day-3/superhero.jpg"}
         altText={"A red squirrel poses like a superhero"}
         text={"With great power comes great responsibility"}
       />
@@ -56,7 +56,7 @@ export default function TheMakingOf() {
           click clone.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/clone-a-repository.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/clone-a-repository.jpg"
           labelText="Github Desktop&rsquo;s clone dialogue."
           isPortraitOrientation={true}
         />
@@ -70,7 +70,7 @@ export default function TheMakingOf() {
           your development.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/vscode.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/vscode.jpg"
           labelText="VSCode integrated development environment welcome screen."
         />
         <SubHeading level={2}>Node.js</SubHeading>
@@ -95,7 +95,7 @@ export default function TheMakingOf() {
           selecting &quot;Run as administrator&quot;.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/powershell-as-admin.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/powershell-as-admin.jpg"
           labelText="Searching for PowerShell in Windows search bar to run as administrator."
         />
         <Paragraph>
@@ -109,7 +109,7 @@ export default function TheMakingOf() {
           version, eg. <Code>nvm use 18.18.0</Code>
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/powershell.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/powershell.jpg"
           labelText="PowerShell terminal to install and use Node."
         />
         <Paragraph>
@@ -122,7 +122,7 @@ export default function TheMakingOf() {
           version of Node that is running.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/vscode-terminal.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/vscode-terminal.jpg"
           labelText="VSCode integrated development environment welcome screen."
         />
         <SubHeading level={2}>Installing Node packages</SubHeading>
@@ -144,7 +144,7 @@ export default function TheMakingOf() {
           node_modules.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/npm-run-dev.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/npm-run-dev.jpg"
           labelText="Running npm run dev in the VSCode terminal."
         />
         <SubHeading level={2}>Running the app</SubHeading>
@@ -156,7 +156,7 @@ export default function TheMakingOf() {
           computer.
         </Paragraph>
         <Illustration
-          imageSource="/the-making-of/day-3/article/the-website-on-localhost.jpg"
+          imageSource="/how-to-make-a-website/day-3/article/the-website-on-localhost.jpg"
           labelText="The website running on Chrome on the url localhost:3000."
         />
         <SubHeading level={2}>Wrapping up</SubHeading>

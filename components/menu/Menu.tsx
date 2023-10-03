@@ -5,7 +5,7 @@ import React, { FunctionComponent, useState } from "react";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
-import makingOfMetaData from "../../app/the-making-of/makingOfMetadata";
+import makingOfMetaData from "../../app/how-to-make-a-website/makingOfMetadata";
 import formsMetaData from "../../app/forms/formsMetadata";
 
 const MENU_LIST: {
@@ -20,7 +20,7 @@ const MENU_LIST: {
     text: "Me and my site",
   },
   {
-    path: "/the-making-of",
+    path: "/how-to-make-a-website",
     text: "How to make this site",
     index: 0,
     submenuItems: makingOfMetaData.pages.map((page) => {
@@ -39,11 +39,10 @@ const MENU_LIST: {
 
 const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState([false,false]);
+  const [submenuOpen, setSubmenuOpen] = useState([false, false]);
 
   const handleMenuItemClick = () => {
-    setNavOpen(false),
-      setSubmenuOpen([false,false]);
+    setNavOpen(false), setSubmenuOpen([false, false]);
   };
   const handleSubmenuItemClick = [
     () => setSubmenuOpen([!submenuOpen[0], false]),
