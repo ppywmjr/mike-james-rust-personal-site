@@ -48,7 +48,7 @@ export default function TheMakingOf() {
         <Paragraph>
           Once you have installed GitHub Desktop and logged into it, you will
           get the option to clone a repository. Either one from your account, or
-          you can chose clone from URL to clone mine from{" "}
+          you can chose &quot;clone from URL&quot; to clone mine from{" "}
           <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site.git">
             https://github.com/ppywmjr/mike-james-rust-personal-site.git
           </TextLink>
@@ -75,7 +75,7 @@ export default function TheMakingOf() {
         />
         <SubHeading level={2}>Node.js</SubHeading>
         <Paragraph>
-          The javascript code needs something to execute it, on a website it is
+          The javascript code needs something to execute it. On a website it is
           run by the browser, such as Chrome. On the server the most common
           approach is to use Node.js. You could install Node directly onto your
           computer but I have found that this approach will eventually end up
@@ -143,17 +143,19 @@ export default function TheMakingOf() {
           in the VSCode explorer that a new folder has been generated called
           node_modules.
         </Paragraph>
-        <Illustration
-          imageSource="/how-to-make-a-website/day-3/article/npm-run-dev.jpg"
-          labelText="Running npm run dev in the VSCode terminal."
-        />
         <SubHeading level={2}>Running the app</SubHeading>
         <Paragraph>
           Ok, we are ready to actually run the app. Run one final command in the
           terminal <Code>npm run dev</Code> and the server will start in
-          developer mode. In Chrome, or which ever browser you like best, go to
-          url localhost:3000 and you should see the app running on your
-          computer.
+          developer mode.
+        </Paragraph>
+        <Illustration
+          imageSource="/how-to-make-a-website/day-3/article/npm-run-dev.jpg"
+          labelText="Running npm run dev in the VSCode terminal."
+        />
+        <Paragraph>
+          In Chrome, or which ever browser you like best, go to url
+          localhost:3000 and you should see the app running on your computer.
         </Paragraph>
         <Illustration
           imageSource="/how-to-make-a-website/day-3/article/the-website-on-localhost.jpg"
