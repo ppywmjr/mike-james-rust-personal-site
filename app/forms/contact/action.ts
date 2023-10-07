@@ -7,13 +7,13 @@ import sendMail from "./sendEmail";
 export const action = async (data: FormSchemaType) => {
   try {
     const parse = formSchema.parse({
-      email: data.email,
+      email: data?.email,
       message: data.message,
     });
 
     revalidatePath("/forms/contact");
     sendMail(parse);
-    return data;
+    return parse;
   } catch (err) {
     revalidatePath("/forms/contact");
     return err;
