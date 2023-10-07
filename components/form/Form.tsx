@@ -3,7 +3,7 @@ import { FormProps } from "./types";
 
 const Form: FunctionComponent<FormProps> = ({ children, action, error }) => {
   return (
-    <form onSubmit={action} className="">
+    <form noValidate onSubmit={action} className="">
       {children}
       {error && (
         <span className="text-mjr_very_dark_orange block mt-2">
