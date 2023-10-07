@@ -16,8 +16,14 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
   const handleOnClick = () => onClick();
 
   return (
-    <li className="flex md:w-44 shrink-0 flex-col items-center justify-center group">
+    <li
+      id={`${text}-menu`}
+      className="flex md:w-44 shrink-0 flex-col items-center justify-center group"
+    >
       <button
+        aria-label={`${text} sub menu`}
+        aria-expanded={submenuOpen}
+        aria-controls={`${text}-menu`}
         onClick={onSubmenuItemClick}
         className="flex flex-row justify-center items-center bg-mjr_light_green w-full"
       >

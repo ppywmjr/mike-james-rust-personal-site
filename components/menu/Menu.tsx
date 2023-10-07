@@ -51,14 +51,19 @@ const Menu: FunctionComponent<{}> = () => {
 
   return (
     <div className="fixed w-full flex flex-col md:flex-row">
-      <nav className="flex w-full flex-col md:flex-row bg-mjr_light_green">
+      <nav
+        id="main-menu"
+        className="flex w-full flex-col md:flex-row bg-mjr_light_green"
+      >
         <div className="flex flex-row justify-between">
           <div className="flex flex-row items-center">
             <Logo />
             <p className="md:hidden lg:block">mike james rust</p>
           </div>
           <button
-            aria-controls="menu"
+            aria-label="Menu"
+            aria-expanded={navOpen}
+            aria-controls="main-menu"
             className={"p-3 md:hidden"}
             onClick={() => setNavOpen(!navOpen)}
             data-testid="burger-menu"
