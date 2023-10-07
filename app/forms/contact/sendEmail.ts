@@ -9,26 +9,41 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendMail: (emailDetails: FormSchemaType) => void = function (
+const sendMail: (emailDetails: FormSchemaType) => void = async function (
   emailDetails: FormSchemaType
 ) {
   const mailOptions = {
-    from: process.env.EMAIL_FROM,
+    from: { address: process.env.EMAIL_FROM, name: "Mike James Rust" },
     to: process.env.EMAIL_TO,
-    subject: "Contact Form message",
-    text: `The following details were sent in a contact form on 
-    mikejamesrust.com
+    subject: "mikejamesrust.com Contact Form",
+    text: `mikejamesrust.com : the following details were sent in a contact form
     email: ${emailDetails.email ?? "Not provided"}
     message: ${emailDetails.message ?? "Not provided"}`,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-      // do something useful
-    }
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
+  });
+
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Email sent: " + info.response);
+        resolve(info);
+      }
+    });
   });
 };
 
