@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { SubmenuProps } from "./types";
 import { usePathname } from "next/navigation";
 import MenuItem from "../menu-item";
@@ -52,7 +52,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
       </button>
       <ul
         className={`${
-          !submenuOpen ? "hidden" : "md:hidden"
+          !submenuOpen ? "hidden" : ""
         } w-full duration-500 md:group-hover:block`}
       >
         <div className="md:absolute">
