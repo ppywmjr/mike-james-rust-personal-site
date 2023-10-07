@@ -40,6 +40,7 @@ export function ContactForm() {
             label="Message:"
             register={register}
             errors={errors.message}
+            type="multiline"
           />
           <Input
             name="email"
