@@ -4,7 +4,7 @@ export type InputProps = {
   id?: string;
   name: string;
   label: string;
-  type?: "email" | "number" | "text" ;
+  type?: "email" | "number" | "text" | "multiline" ;
   register: UseFormRegister<any>;
   errors?: FieldError;
 };
