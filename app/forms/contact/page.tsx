@@ -8,7 +8,7 @@ import NeighbourNavigation from "@components/article/neighbour-navigation";
 
 export const metadata = {
   title: "Contact me",
-  description: "A sample form",
+  description: "I'd love to hear from you!",
 };
 
 const currentPageIndex = 0;
@@ -24,24 +24,14 @@ export default function Contact() {
         altText={
           "My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
         }
-        text={"Submit a form, and nothing will happen!"}
+        text={"What are you thinking? What would you like to see next?"}
       />
       <Paragraph>
-        This form is simply for submitting some data. It doesn&rsquo;t actually
-        send a message, it&rsquo;s a demo of client and server side validation.
-        It is validated on the front end with react-hook-form and the payload is
-        handled by a Next.js 13 server action. The front and back end
-        validations use Zod for the validation rules. The browser logs the data
-        sent in the browser console. The back end returns the parsed data back
-        to the browser, and the broswer also logs that. If you open the browser
-        console (Windows: Ctrl + Shift + J. Mac: Cmd + Opt +J) you can see that
-        nothing is submitted until the form is valid. And you can see the front
-        and back end data. Because they are using the same schema to validate,
-        they should be the same.
+        Heya, so you want to get in touch? I&rsquo;d love to hear from you. Have
+        you got any requests for me? Or a suggestion, perhaps? Maybe you want to point out
+        a bug to me? Whatever it is, I&rsquo;m looking forward to it.
       </Paragraph>
-      <Paragraph>
-        The data returned from the server is displayed on the screen
-      </Paragraph>
+      <Paragraph>x x Mike</Paragraph>
       <ContactForm />
       <NeighbourNavigation
         previousTarget={previousPage?.uri}

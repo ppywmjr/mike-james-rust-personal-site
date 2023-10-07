@@ -2,17 +2,15 @@ import z from 'zod';
 
 export const formSchema = z
   .object({
-    name: z
+    email: z
       .string()
-      .max(
-        30,
-        'If your name is longer than 30 characters, just use a nickname'
-      ),
-    email: z.string().email('This must be an valid email.').or(z.literal('')),
+      .email("This must be an valid email")
+      .max(100, "I'm afraid I don't accept emails this long, maybe you have a shorter one?")
+      .or(z.literal("")),
     message: z
       .string()
-      .min(1, 'You must enter a message.')
-      .max(20, "I'm not going to read something longer than 20 characters."),
+      .min(1, "You must enter a message.")
+      .max(500, "This message is getting a little long, can you keep it under 500 characters."),
   })
   .partial();
 
