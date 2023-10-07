@@ -3,4 +3,5 @@ export type IllustrationProps = {
   labelText: string;
   altText?: string;
   isPortraitOrientation?: boolean;
+  hasLightBox?: boolean;
 };
