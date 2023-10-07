@@ -62,8 +62,13 @@ export function ContactForm() {
       )}
       {submitted && (
         <>
-          <div className="mb-2 bg-mjr_light_green rounded-md w-96 p-5 text-center m-auto text-lg ">
-            <Paragraph>{`Thanks for the message! This is the data you sent:`}</Paragraph>
+          <div className="mb-2 bg-mjr_light_green rounded-md max-w-96 p-5 text-center m-auto text-lg ">
+            <Paragraph>
+              You submitted a form, but this doesn&rsquo;t actually send an
+              contact message! This is just a demo of client and server side
+              validation.
+            </Paragraph>
+            <Paragraph> The data you sent:</Paragraph>
             {serverData?.message && (
               <Paragraph>{`Message: ${serverData?.message}`}</Paragraph>
             )}
@@ -77,7 +82,7 @@ export function ContactForm() {
           <Button
             className="m-auto"
             onClick={() => setSubmitted(false)}
-            text="Send another message"
+            text="Send another 'message'"
           />
         </>
       )}
