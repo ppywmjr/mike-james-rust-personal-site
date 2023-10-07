@@ -2,6 +2,7 @@
 
 import { formSchema, FormSchemaType } from "./schema";
 import { revalidatePath } from "next/cache";
+import sendMail from "./sendEmail";
 
 export const action = async (data: FormSchemaType) => {
   try {
@@ -11,6 +12,7 @@ export const action = async (data: FormSchemaType) => {
     });
 
     revalidatePath("/forms/contact");
+    sendMail(parse);
     return data;
   } catch (err) {
     revalidatePath("/forms/contact");

@@ -22,7 +22,6 @@ export function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [serverData, setServerData] = useState({
-    name: "",
     message: "",
     email: "",
   });
@@ -45,12 +44,6 @@ export function ContactForm() {
             errors={errors.message}
           />
           <Input
-            name="name"
-            label="Name:"
-            register={register}
-            errors={errors.name}
-          />
-          <Input
             name="email"
             label="Email:"
             register={register}
@@ -64,25 +57,26 @@ export function ContactForm() {
         <>
           <div className="mb-2 bg-mjr_light_green rounded-md max-w-96 p-5 text-center m-auto text-lg ">
             <Paragraph>
-              You submitted a form, but this doesn&rsquo;t actually send an
-              contact message! This is just a demo of client and server side
-              validation.
+              Thanks for your message! I&rsquo;ll get back to you as soon as I
+              can.
             </Paragraph>
-            <Paragraph> The data you sent:</Paragraph>
             {serverData?.message && (
-              <Paragraph>{`Message: ${serverData?.message}`}</Paragraph>
+              <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
             )}
-            {serverData?.name && (
-              <Paragraph>{`Name: ${serverData?.name}`}</Paragraph>
-            )}
-            {serverData?.email && (
+            {serverData?.email ? (
               <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+            ) : (
+              <Paragraph>
+                You didn&rsquo;t submit an email so I won&rsquo;t be able to get
+                back to you, but I appreciate the message anyway. Feel free to
+                submit again with an email address if you want a response.
+              </Paragraph>
             )}
           </div>
           <Button
             className="m-auto"
             onClick={() => setSubmitted(false)}
-            text="Send another 'message'"
+            text="Send another message"
           />
         </>
       )}
