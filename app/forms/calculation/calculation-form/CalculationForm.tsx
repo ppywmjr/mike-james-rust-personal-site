@@ -10,6 +10,7 @@ import Submit from "@components/form/submit";
 import { useState } from "react";
 import Button from "@components/button/Button";
 import SubHeading from "@components/article/sub-heading";
+import EquationGuess from "../equation-guess";
 
 export function CalculationForm() {
   const {
@@ -20,24 +21,44 @@ export function CalculationForm() {
     resolver: zodResolver(formSchema),
   });
 
-  const [submitted, setSubmitted] = useState(false);
-  const [serverData, setServerData] = useState({
-    faces: undefined,
-    edges: undefined,
-    vertices: undefined,
-  });
-  const [resultHistory, setResultHistory] = useState([]);
+  const [faces, setFaces] = useState<number>();
+  const [resultHistory, setResultHistory] = useState<
+    Array<{
+      key: number;
+      firstInput: number;
+      secondInput: number;
+      faces: number;
+    }>
+  >([]);
+  const [showCalculationQuestion, setShowCalculationQuestion] = useState(true);
+  const [showEquationGuessQuestion, setShowEquationGuessQuestion] =
+    useState(false);
 
-  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
-    setServerData(await action(data));
-    setSubmitted(true);
+  const onCalculationSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    const response = await action(data);
+    setFaces(response.faces);
+    setResultHistory([
+      {
+        key: resultHistory.length,
+        firstInput: response.vertices,
+        secondInput: response.edges,
+        faces: response.faces,
+      },
+      ...resultHistory,
+    ]);
+    setShowCalculationQuestion(false);
+  };
+
+  const handleCloseEquationGuessForm = () => {
+    setShowEquationGuessQuestion(false);
+    setShowCalculationQuestion(true);
   };
 
   return (
-    <div className="mb-10 sm:w-80 m-auto">
-      {!submitted && (
+    <div className="mb-10 sm:w-96 m-auto">
+      {showCalculationQuestion && (
         <Form
-          action={handleSubmit(onSubmit)}
+          action={handleSubmit(onCalculationSubmit)}
           error={
             // @ts-expect-error This error was added via Zod, but the React Hook Form type is not aware of it.
             errors?.form?.message
@@ -57,30 +78,37 @@ export function CalculationForm() {
             errors={errors.edges}
             type="number"
           />
-          <Submit disabled={isSubmitting}>Find out the result</Submit>
+          <Submit disabled={isSubmitting} text="Find out the result" />
         </Form>
       )}
-      {submitted && (
+      {!showCalculationQuestion && (
         <>
           <p className="mb-2 bg-mjr_light_green rounded-md p-5 text-center m-auto text-lg ">
-            {`The result is: ${serverData.faces} faces`}
+            {`The result is: ${faces} face${faces === 1 ? "" : "s"}`}
           </p>
+        </>
+      )}
+      {showEquationGuessQuestion && (
+        <EquationGuess closeForm={handleCloseEquationGuessForm} />
+      )}
+      {!showCalculationQuestion && !showEquationGuessQuestion && (
+        <div className="flex justify-between">
           <Button
-            className="m-auto"
             onClick={() => {
-              setResultHistory([
-                {
-                  firstInput: serverData.vertices,
-                  secondInput: serverData.edges,
-                  faces: serverData.faces,
-                },
-                ...resultHistory,
-              ]);
-              setSubmitted(false);
+              setShowEquationGuessQuestion(false);
+              setShowCalculationQuestion(true);
             }}
             text="Try another calculation"
+            importance="secondary"
           />
-        </>
+          <Button
+            onClick={() => {
+              setShowEquationGuessQuestion(true);
+              setShowCalculationQuestion(false);
+            }}
+            text="Or try to guess the equation"
+          />
+        </div>
       )}
       <div>
         {resultHistory.length > 0 && (
@@ -88,7 +116,7 @@ export function CalculationForm() {
         )}
         {resultHistory.map((result) => (
           <div
-            key={`${serverData.vertices} ${serverData.edges} ${serverData.faces}`}
+            key={result.key}
             className="w-full flex justify-between bg-mjr_light_green rounded-md p-1 px-2 my-2"
           >
             <p className="text-center mx-1">{`First input: ${result.firstInput}`}</p>

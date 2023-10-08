@@ -3,7 +3,7 @@ import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
 import NeighbourNavigation from "@components/article/neighbour-navigation";
-import { CalculationForm } from "./CalculationForm";
+import CalculationForm from "./calculation-form";
 import formsMetaData from "../formsMetadata";
 
 export const metadata = {

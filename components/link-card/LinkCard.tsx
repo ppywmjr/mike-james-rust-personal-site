@@ -10,7 +10,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = ({
   return (
     <Link
       href={target}
-      className="p-2 m-2 max-w-[16rem] min-h-[8rem] group border-2 border-mjr_light_orange rounded-lg flex"
+      className="p-2 m-2 max-w-[16rem] min-h-[8rem] group border-2 border-mjr_very_light_orange rounded-lg flex"
     >
       <div className="p-2 rounded-md bg-mjr_very_light_green hover:bg-mjr_light_green ease-out flex-stretch w-full">
         <h2 className="font-bold my-2">

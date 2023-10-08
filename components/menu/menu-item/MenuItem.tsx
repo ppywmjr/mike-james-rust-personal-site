@@ -30,11 +30,13 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
           ${
             current
               ? `border-b-2 md:border-b-2 ${
-                  isSubmenu ? "border-mjr_light_orange" : "border-mjr_orange"
+                  isSubmenu
+                    ? "border-mjr_very_light_orange"
+                    : "border-mjr_orange"
                 }`
               : `border-transparent border-b-2 ${
                   isSubmenu
-                    ? `group-hover/submenuitem:border-mjr_light_orange group-hover/submenuitem:font-bold`
+                    ? `group-hover/submenuitem:border-mjr_very_light_orange group-hover/submenuitem:font-bold`
                     : `group-hover:border-mjr_orange group-hover:font-bold`
                 }`
           }

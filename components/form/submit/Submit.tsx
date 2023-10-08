@@ -1,15 +1,21 @@
 import React, { FunctionComponent } from "react";
 import { SubmitProps } from "./types";
+import Button from "@components/button";
 
-const Submit: FunctionComponent<SubmitProps> = ({ children, disabled }) => {
+const Submit: FunctionComponent<SubmitProps> = ({
+  importance = "primary",
+  text,
+  disabled,
+  className,
+}) => {
   return (
-    <button
+    <Button
+      importance={importance}
       type="submit"
       disabled={disabled}
-      className="block bg-mjr_orange hover:bg-mjr_very_dark_orange p-2 my-3 w-40 center disabled:bg-mjr_light_orange"
-    >
-      {children}
-    </button>
+      className={`${className} disabled:bg-mjr_very_light_orange`}
+      text={text}
+    />
   );
 };
 
