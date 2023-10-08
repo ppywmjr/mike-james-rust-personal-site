@@ -31,8 +31,8 @@ export function ContactForm() {
     const response = action(data);
     console.log("response defined");
     response
-      .then((data) => {
-        setServerData(data);
+      .then(() => {
+        setServerData({ message: data.message, email: data.email });
         setSubmitted(true);
       })
       .catch((error) => {
