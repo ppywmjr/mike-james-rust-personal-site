@@ -25,10 +25,21 @@ export function ContactForm() {
     message: "",
     email: "",
   });
+  const [emailError, setEmailError] = useState(false);
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
-    setServerData(await action(data));
-    setSubmitted(true);
+    const response = action(data);
+    console.log("response defined");
+    response
+      .then(() => {
+        setServerData({ message: data.message, email: data.email });
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.log(error);
+        setEmailError(true);
+        setSubmitted(true);
+      });
   };
 
   return (
@@ -55,21 +66,31 @@ export function ContactForm() {
       {submitted && (
         <>
           <div className="mb-2 bg-mjr_light_green rounded-md max-w-96 p-5 text-center m-auto text-lg ">
-            <Paragraph>
-              Thanks for your message! I&rsquo;ll get back to you as soon as I
-              can.
-            </Paragraph>
-            {serverData?.message && (
-              <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
-            )}
-            {serverData?.email ? (
-              <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
-            ) : (
+            {emailError ? (
               <Paragraph>
-                You didn&rsquo;t submit an email so I won&rsquo;t be able to get
-                back to you, but I appreciate the message anyway. Feel free to
-                submit again with an email address if you want a response.
+                Unfortunately there was an error sending the email. Please, try
+                again later.
               </Paragraph>
+            ) : (
+              <>
+                <Paragraph>
+                  Thanks for your message! I&rsquo;ll get back to you as soon as
+                  I can.
+                </Paragraph>
+                {serverData?.message && (
+                  <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
+                )}
+                {serverData?.email ? (
+                  <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+                ) : (
+                  <Paragraph>
+                    You didn&rsquo;t submit an email so I won&rsquo;t be able to
+                    get back to you, but I appreciate the message anyway. Feel
+                    free to submit again with an email address if you want a
+                    response.
+                  </Paragraph>
+                )}
+              </>
             )}
           </div>
           <Button
