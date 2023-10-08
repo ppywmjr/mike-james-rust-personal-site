@@ -11,9 +11,9 @@ const transporter = nodemailer.createTransport({
 
 const environment = process.env.NEXT_PUBLIC_VERCEL_ENV;
 
-const sendMail: (emailDetails: FormSchemaType) => void = async function (
+const sendMail: (emailDetails: FormSchemaType) => Promise<any> = (
   emailDetails: FormSchemaType
-) {
+) => {
   const now = new Date();
   const dateTimeStamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
 
@@ -27,31 +27,39 @@ const sendMail: (emailDetails: FormSchemaType) => void = async function (
     on environment: ${environment}
     at ${dateTimeStamp}`,
   };
-
-  await new Promise((resolve, reject) => {
-    // verify connection configuration
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log(error);
-        reject(error);
-      } else {
-        console.log("Server is ready to take our messages");
-        resolve(success);
-      }
+  const verify = () => {
+    return new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+          reject(error);
+        } else {
+          console.log("Server is");
+          resolve(success);
+        }
+      });
     });
-  });
+  };
 
-  await new Promise((resolve, reject) => {
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-        reject(error);
-      } else {
-        console.log("Email sent: " + info.response);
-        resolve(info);
-      }
-    });
+  const promise = new Promise((resolve, reject) => {
+    verify()
+      .then(() => {
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(`Email send error: ${error}`);
+            reject(`Email could not be sent: ${error}`);
+          } else {
+            resolve(info);
+          }
+        });
+      })
+      .catch((error) => {
+        console.log(`Email connection error: ${error}`);
+        reject(`Connection could not be made: ${error}`);
+      });
   });
+  return promise;
 };
 
 export default sendMail;
