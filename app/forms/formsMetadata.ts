@@ -13,8 +13,7 @@ const formsMetaData: {
     {
       uri: `${basePath}/calculation`,
       menuText: "A calculation",
-      linkDescription:
-        "A sample form that does a calculation",
+      linkDescription: "Bet you can't guess the equation this form is doing?",
     },
   ],
 };

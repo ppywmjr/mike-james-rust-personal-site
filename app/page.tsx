@@ -13,6 +13,11 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
       "A first page, with a little about who I am and why I'm doing this.",
   },
   {
+    target: formsMetaData.pages[1].uri,
+    heading: formsMetaData.pages[1].menuText,
+    description: formsMetaData.pages[1].linkDescription,
+  },
+  {
     target: makingOfMetaData.pages[0].uri,
     heading: makingOfMetaData.pages[0].menuText,
     description: makingOfMetaData.pages[0].linkDescription,
@@ -21,11 +26,6 @@ const LINK_CARDS: { target: string; heading: string; description: string }[] = [
     target: makingOfMetaData.pages[1].uri,
     heading: makingOfMetaData.pages[1].menuText,
     description: makingOfMetaData.pages[1].linkDescription,
-  },
-  {
-    target: formsMetaData.pages[1].uri,
-    heading: formsMetaData.pages[1].menuText,
-    description: formsMetaData.pages[1].linkDescription,
   },
 ];
 
