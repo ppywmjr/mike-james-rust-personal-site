@@ -14,8 +14,14 @@ const environment = process.env.NEXT_PUBLIC_VERCEL_ENV;
 const sendMail: (emailDetails: FormSchemaType) => Promise<any> = (
   emailDetails: FormSchemaType
 ) => {
+  const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+
   const now = new Date();
-  const dateTimeStamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+  const dateTimeStamp = new Intl.DateTimeFormat("en-GB", {
+    dateStyle: "full",
+    timeStyle: "long",
+    timeZone: "Europe/London",
+  }).format(now);
 
   const mailOptions = {
     from: { address: process.env.EMAIL_FROM, name: "Mike James Rust" },
@@ -35,7 +41,7 @@ const sendMail: (emailDetails: FormSchemaType) => Promise<any> = (
           console.log(error);
           reject(error);
         } else {
-          console.log("Server is");
+          console.error("Email server is ready and verified");
           resolve(success);
         }
       });
@@ -47,16 +53,17 @@ const sendMail: (emailDetails: FormSchemaType) => Promise<any> = (
       .then(() => {
         transporter.sendMail(mailOptions, function (error, info) {
           if (error) {
-            console.log(`Email send error: ${error}`);
-            reject(`Email could not be sent: ${error}`);
+            console.error(error);
+            reject("Email could not be sent");
           } else {
             resolve(info);
           }
         });
       })
       .catch((error) => {
-        console.log(`Email connection error: ${error}`);
-        reject(`Connection could not be made: ${error}`);
+        console.error(error);
+        console.log("Email connection error: ", error);
+        reject("Connection could not be made");
       });
   });
   return promise;

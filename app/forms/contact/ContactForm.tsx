@@ -28,18 +28,15 @@ export function ContactForm() {
   const [emailError, setEmailError] = useState(false);
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
-    const response = action(data);
-    console.log("response defined");
-    response
-      .then(() => {
-        setServerData({ message: data.message, email: data.email });
-        setSubmitted(true);
-      })
-      .catch((error) => {
-        console.log(error);
-        setEmailError(true);
-        setSubmitted(true);
-      });
+    try {
+      const response = await action(data);
+      setServerData({ message: data.message, email: data.email });
+      setSubmitted(true);
+    } catch (error) {
+      console.log(error);
+      setEmailError(true);
+      setSubmitted(true);
+    }
   };
 
   return (
