@@ -12,7 +12,7 @@ export const action = async (data: FormSchemaType) => {
     // Euler's polyhedron formula
     const faces = 2 - parse.vertices + parse.edges;
     revalidatePath("/forms/calculation");
-    return { faces: faces, vertices: parse.vertices, edges: parse.edges};
+    return  { faces: faces, vertices: parse.vertices, edges: parse.edges };
   } catch (err) {
     revalidatePath("/forms/calculation");
     console.log(err);

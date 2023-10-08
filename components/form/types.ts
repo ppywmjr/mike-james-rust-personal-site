@@ -7,5 +7,6 @@ type ReactHookFormHandleSubmitReturn = (
 export type FormProps = {
   action: ReactHookFormHandleSubmitReturn;
   children?: ReactNode;
-  error?: string
+  error?: string;
+  className?: string;
 };

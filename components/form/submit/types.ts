@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-
 export type SubmitProps = {
-  children: ReactNode;
+  importance?: "primary" | "secondary";
+  text: string;
   disabled?: boolean;
+  className?: string;
 };

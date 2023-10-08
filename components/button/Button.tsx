@@ -1,11 +1,26 @@
 import React, { FunctionComponent } from "react";
 import { ButtonProps } from "./types";
 
-const Button: FunctionComponent<ButtonProps> = ({ onClick, text, className }) => {
+const Button: FunctionComponent<ButtonProps> = ({
+  importance = "primary",
+  onClick,
+  text,
+  className,
+  disabled,
+  type,
+}) => {
+  const isPrimary = importance === "primary";
   return (
     <button
-      className={`${className} block bg-mjr_orange hover:bg-mjr_very_dark_orange p-2 my-3 w-40 center rounded-sm`}
+      className={`${
+        isPrimary
+          ? "bg-mjr_orange hover:bg-mjr_very_dark_orange"
+          : "bg-mjr_light_orange hover:bg-mjr_dark_orange"
+      } 
+      block p-2 my-3 w-40 center rounded-sm ${className} `}
       onClick={onClick}
+      disabled={disabled}
+      type={type}
     >
       {text}
     </button>

@@ -57,7 +57,7 @@ export function ContactForm() {
             errors={errors.email}
             type="email"
           />
-          <Submit disabled={isSubmitting}>Submit</Submit>
+          <Submit disabled={isSubmitting} text="Submit" />
         </Form>
       )}
       {submitted && (
