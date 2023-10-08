@@ -9,16 +9,23 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const environment = process.env.NEXT_PUBLIC_VERCEL_ENV;
+
 const sendMail: (emailDetails: FormSchemaType) => void = async function (
   emailDetails: FormSchemaType
 ) {
+  const now = new Date();
+  const dateTimeStamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+
   const mailOptions = {
     from: { address: process.env.EMAIL_FROM, name: "Mike James Rust" },
     to: process.env.EMAIL_TO,
     subject: "mikejamesrust.com Contact Form",
     text: `mikejamesrust.com : the following details were sent in a contact form
     email: ${emailDetails.email ?? "Not provided"}
-    message: ${emailDetails.message ?? "Not provided"}`,
+    message: ${emailDetails.message ?? "Not provided"}
+    on environment: ${environment}
+    at ${dateTimeStamp}`,
   };
 
   await new Promise((resolve, reject) => {
