@@ -5,7 +5,7 @@ import Submit from "../Submit";
 
 describe("Submit", () => {
   it("renders the Submit with children", () => {
-    render(<Submit>Child text</Submit>);
+    render(<Submit text="Child text" />);
 
     const submitButton = screen.getByRole("button");
 
