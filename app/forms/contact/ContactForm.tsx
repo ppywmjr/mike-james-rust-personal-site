@@ -71,20 +71,18 @@ export function ContactForm() {
             ) : (
               <>
                 <Paragraph>
-                  Thanks for your message! I&rsquo;ll get back to you as soon as
-                  I can.
+                  Thanks for your message!
                 </Paragraph>
                 {serverData?.message && (
                   <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
                 )}
                 {serverData?.email ? (
-                  <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+                  <><Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+<Paragraph>I&rsquo;ll get back to you as soon as I can.</Paragraph></>
                 ) : (
                   <Paragraph>
-                    You didn&rsquo;t submit an email so I won&rsquo;t be able to
-                    get back to you, but I appreciate the message anyway. Feel
-                    free to submit again with an email address if you want a
-                    response.
+                    You didn&rsquo;t submit an email addres so I won&rsquo;t be able to
+                    get back to you, but I appreciate the message anyway.
                   </Paragraph>
                 )}
               </>
