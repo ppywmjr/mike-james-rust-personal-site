@@ -77,8 +77,8 @@ export function ContactForm() {
                   <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
                 )}
                 {serverData?.email ? (
-                  <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
-<Paragraph>I&rsquo;ll get back to you as soon as I can.</Paragraph>
+                  <><Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+<Paragraph>I&rsquo;ll get back to you as soon as I can.</Paragraph></>
                 ) : (
                   <Paragraph>
                     You didn&rsquo;t submit an email addres so I won&rsquo;t be able to
