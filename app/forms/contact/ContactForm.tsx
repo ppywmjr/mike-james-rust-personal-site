@@ -81,10 +81,8 @@ export function ContactForm() {
                   <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
                 ) : (
                   <Paragraph>
-                    You didn&rsquo;t submit an email so I won&rsquo;t be able to
-                    get back to you, but I appreciate the message anyway. Feel
-                    free to submit again with an email address if you want a
-                    response.
+                    You didn&rsquo;t submit an email addres so I won&rsquo;t be able to
+                    get back to you, but I appreciate the message anyway.
                   </Paragraph>
                 )}
               </>
