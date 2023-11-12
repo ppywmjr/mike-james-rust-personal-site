@@ -152,7 +152,7 @@ const Menu: FunctionComponent<{}> = () => {
           </button>
         </div>
         <ul
-          className={`overflow-hidden relative ${
+          className={`relative ${
             navOpen ? "mobileMenu flex" : "hidden md:flex"
           } 
         flex-col md:flex-row flex-auto flex-wrap items-stretc`}
