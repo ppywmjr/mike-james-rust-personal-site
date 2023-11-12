@@ -142,18 +142,25 @@ export function CalculationForm() {
       )}
       <div>
         {resultHistory.length > 0 && (
-          <SubHeading level={2}>Result History</SubHeading>
+          <table className="table-auto w-full">
+            <thead className="bg-slate-100">
+              <tr>
+                <th>First input</th>
+                <th>Second input</th>
+                <th>Faces</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultHistory.map((result) => (
+                <tr key={result.key} className="border text-center">
+                  <td>{result.firstInput}</td>
+                  <td>{result.secondInput}</td>
+                  <td>{result.faces}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
-        {resultHistory.map((result) => (
-          <div
-            key={result.key}
-            className="w-full flex justify-between bg-mjr_light_green rounded-md p-1 px-2 my-2"
-          >
-            <p className="text-center mx-1">{`First input: ${result.firstInput}`}</p>
-            <p className="text-center mx-1">{`Second input: ${result.secondInput}`}</p>
-            <p className="text-center mx-1">{`Faces: ${result.faces}`}</p>
-          </div>
-        ))}
       </div>
     </div>
   );
