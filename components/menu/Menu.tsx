@@ -42,6 +42,11 @@ const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState([false, false]);
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+    const baseAnimationDuration = 100;
+      // !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
     let mobileMenuTopArray = [0, -200];
     let topBurgerBar = {
       rotation: 0,
@@ -57,19 +62,19 @@ const Menu: FunctionComponent<{}> = () => {
       mobileMenuTopArray = [-200, 0];
       topBurgerBar = {
         rotation: -45,
-        translateX: "-1.8rem",
-        translateY: "8.8rem",
+        translateX: "-28.8px",
+        translateY: "140.8px",
       };
       bottomBurgerBar = {
         rotation: 45,
-        translateX: "8.8rem",
-        translateY: "-4.4rem",
+        translateX: "140.8px",
+        translateY: "-70.4px",
       };
     }
     anime({
       targets: ".mobileMenu",
       top: mobileMenuTopArray,
-      duration: 600,
+      duration: baseAnimationDuration * 6,
       easing: "easeOutElastic(1, 1)",
     });
     anime({
@@ -77,7 +82,7 @@ const Menu: FunctionComponent<{}> = () => {
       translateX: topBurgerBar.translateX,
       translateY: topBurgerBar.translateY,
       rotate: topBurgerBar.rotation,
-      duration: 400,
+      duration: baseAnimationDuration * 4,
       easing: "easeOutQuint",
     });
     anime({
@@ -85,7 +90,7 @@ const Menu: FunctionComponent<{}> = () => {
       translateX: bottomBurgerBar.translateX,
       translateY: bottomBurgerBar.translateY,
       rotate: bottomBurgerBar.rotation,
-      duration: 400,
+      duration: baseAnimationDuration * 4,
       easing: "easeOutQuint",
     });
   }, [navOpen]);
@@ -113,14 +118,14 @@ const Menu: FunctionComponent<{}> = () => {
             aria-label="Menu"
             aria-expanded={navOpen}
             aria-controls="main-menu"
-            className={"md:hidden p-0.5"}
+            className={"md:hidden p-2"}
             onClick={() => setNavOpen(!navOpen)}
             data-testid="burger-menu"
           >
             {
               <svg
-                height="30px"
-                width="30px"
+                height="36px"
+                width="36px"
                 viewBox="0 0 240 240"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,20 +134,18 @@ const Menu: FunctionComponent<{}> = () => {
                 <path
                   fill="transparent"
                   stroke="#0D2B57"
-                  stroke-width="12"
+                  strokeWidth="8"
                   d="M40 90 L 200 90"
                   className="topbar"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                 ></path>
                 <path
                   fill="transparent"
                   stroke="#0D2B57"
-                  stroke-width="12"
+                  strokeWidth="8"
                   d="M40 150 L 200 150"
                   className="bottombar"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                 ></path>
               </svg>
             }

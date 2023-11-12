@@ -10,6 +10,15 @@ jest.mock("next/navigation", () => ({
   },
 }));
 
+beforeAll(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation(() => ({
+        matches: false,
+      })),
+    });
+});
+
 describe("Menu", () => {
   test("renders the Menu with active URI /me-and-my-site", () => {
     render(<Menu />);
@@ -60,7 +69,7 @@ describe("Menu", () => {
   });
 
   test("clicking link hides links", async () => {
-    render(<Menu />)
+    render(<Menu />);
     const burger = screen.getByTestId("burger-menu");
     await userEvent.click(burger);
 
@@ -90,5 +99,5 @@ describe("Menu", () => {
     await waitFor(() => {
       expect(screen.queryAllByRole("list")).not.toBeInTheDocument;
     });
-  }); 
+  });
 });
