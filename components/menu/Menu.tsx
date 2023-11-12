@@ -45,7 +45,8 @@ const Menu: FunctionComponent<{}> = () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     );
-    const baseAnimationDuration = !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
+    const baseAnimationDuration =
+      !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
     let mobileMenuTopArray = [0, -200];
     let topBurgerBar = {
       rotation: 0,
@@ -109,7 +110,7 @@ const Menu: FunctionComponent<{}> = () => {
         className="flex w-full flex-col md:flex-row bg-mjr_light_green"
       >
         <div className="flex flex-row justify-between">
-          <div className="flex flex-row items-center z-10">
+          <div className="flex flex-row items-center">
             <Logo />
             <p className="md:hidden lg:block">mike james rust</p>
           </div>
@@ -151,10 +152,10 @@ const Menu: FunctionComponent<{}> = () => {
           </button>
         </div>
         <ul
-          className={`mobileMenu overflow-hidden relative ${
-            navOpen ? "flex" : "hidden md:flex"
+          className={`overflow-hidden relative ${
+            navOpen ? "mobileMenu flex" : "hidden md:flex"
           } 
-        flex-col md:flex-row flex-auto flex-wrap items-stretch `}
+        flex-col md:flex-row flex-auto flex-wrap items-stretc`}
         >
           {MENU_LIST.map((item) =>
             item.submenuItems ? (

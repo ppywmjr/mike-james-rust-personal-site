@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="text-mjr_dark_blue">
         <Menu />
-        <main className="justify-start items-center px-4 pt-12 pb-16 leading-relaxed">
+        <main className="justify-start items-center px-4 pt-16 pb-16 leading-relaxed">
           {children}
         </main>
         <Analytics />
