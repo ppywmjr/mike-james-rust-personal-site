@@ -7,7 +7,8 @@ import Input from "@components/form/text-input";
 import { action } from "./action";
 import { FormSchemaType, formSchema } from "./schema";
 import Submit from "@components/form/submit";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import anime from "animejs";
 import Button from "@components/button/Button";
 import SubHeading from "@components/article/sub-heading";
 import EquationGuess from "../equation-guess";
@@ -33,6 +34,34 @@ export function CalculationForm() {
   const [showCalculationQuestion, setShowCalculationQuestion] = useState(true);
   const [showEquationGuessQuestion, setShowEquationGuessQuestion] =
     useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+    const baseAnimationDuration =
+      !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
+    const guessEquationOffSet =
+      !showCalculationQuestion && !showEquationGuessQuestion ? 0 : 384;
+    let myTimeline = anime.timeline();
+    myTimeline
+      .add({
+        targets: ".tryAnotherButton",
+        right: guessEquationOffSet,
+        opacity: 1,
+        duration: baseAnimationDuration * 4,
+        easing: "easeOutQuint",
+        delay: 0,
+      })
+      .add({
+        targets: ".guessEquationButton",
+        left: guessEquationOffSet / 2,
+        opacity: 1,
+        duration: baseAnimationDuration * 3,
+        easing: "easeOutElastic(1, 0.8)",
+        delay: 1000,
+      });
+  }, [showCalculationQuestion, showEquationGuessQuestion]);
 
   const onCalculationSubmit: SubmitHandler<FormSchemaType> = async (data) => {
     const response = await action(data);
@@ -94,14 +123,15 @@ export function CalculationForm() {
       {!showCalculationQuestion && !showEquationGuessQuestion && (
         <div className="flex justify-between">
           <Button
+            className="tryAnotherButton relative right-96 opacity-0"
             onClick={() => {
               setShowEquationGuessQuestion(false);
               setShowCalculationQuestion(true);
             }}
             text="Try another calculation"
-            importance="secondary"
           />
           <Button
+            className="guessEquationButton relative left-40 opacity-0"
             onClick={() => {
               setShowEquationGuessQuestion(true);
               setShowCalculationQuestion(false);
