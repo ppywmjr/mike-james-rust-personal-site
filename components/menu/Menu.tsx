@@ -104,7 +104,7 @@ const Menu: FunctionComponent<{}> = () => {
   ];
 
   return (
-    <div className="fixed w-full flex flex-col md:flex-row">
+    <div className="fixed w-full flex flex-col md:flex-row z-10">
       <nav
         id="main-menu"
         className="flex w-full flex-col md:flex-row bg-mjr_light_green"
