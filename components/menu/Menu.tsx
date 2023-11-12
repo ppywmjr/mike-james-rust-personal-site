@@ -1,8 +1,8 @@
 "use client";
 
 import MenuItem from "./menu-item";
-import React, { FunctionComponent, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, FunctionComponent, useState } from "react";
+import anime from "animejs";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
@@ -41,6 +41,54 @@ const MENU_LIST: {
 const Menu: FunctionComponent<{}> = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState([false, false]);
+  useEffect(() => {
+    let mobileMenuTopArray = [0, -200];
+    let topBurgerBar = {
+      rotation: 0,
+      translateX: "0",
+      translateY: "0",
+    };
+    let bottomBurgerBar = {
+      rotation: 0,
+      translateX: "0",
+      translateY: "0",
+    };
+    if (navOpen) {
+      mobileMenuTopArray = [-200, 0];
+      topBurgerBar = {
+        rotation: -45,
+        translateX: "-1.8rem",
+        translateY: "8.8rem",
+      };
+      bottomBurgerBar = {
+        rotation: 45,
+        translateX: "8.8rem",
+        translateY: "-4.4rem",
+      };
+    }
+    anime({
+      targets: ".mobileMenu",
+      top: mobileMenuTopArray,
+      duration: 600,
+      easing: "easeOutElastic(1, 1)",
+    });
+    anime({
+      targets: ".topbar",
+      translateX: topBurgerBar.translateX,
+      translateY: topBurgerBar.translateY,
+      rotate: topBurgerBar.rotation,
+      duration: 400,
+      easing: "easeOutQuint",
+    });
+    anime({
+      targets: ".bottombar",
+      translateX: bottomBurgerBar.translateX,
+      translateY: bottomBurgerBar.translateY,
+      rotate: bottomBurgerBar.rotation,
+      duration: 400,
+      easing: "easeOutQuint",
+    });
+  }, [navOpen]);
 
   const handleMenuItemClick = () => {
     setNavOpen(false), setSubmenuOpen([false, false]);
@@ -57,7 +105,7 @@ const Menu: FunctionComponent<{}> = () => {
         className="flex w-full flex-col md:flex-row bg-mjr_light_green"
       >
         <div className="flex flex-row justify-between">
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center z-10">
             <Logo />
             <p className="md:hidden lg:block">mike james rust</p>
           </div>
@@ -65,32 +113,46 @@ const Menu: FunctionComponent<{}> = () => {
             aria-label="Menu"
             aria-expanded={navOpen}
             aria-controls="main-menu"
-            className={"md:hidden"}
+            className={"md:hidden p-0.5"}
             onClick={() => setNavOpen(!navOpen)}
             data-testid="burger-menu"
           >
-            {navOpen ? (
-              <Image
-                src="/burger-menu-opened.svg"
-                alt=""
-                width={30}
-                height={30}
-                priority
-              />
-            ) : (
-              <Image
-                src="/burger-menu-closed.svg"
-                alt=""
-                width={30}
-                height={30}
-                priority
-              />
-            )}
+            {
+              <svg
+                height="30px"
+                width="30px"
+                viewBox="0 0 240 240"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <path
+                  fill="transparent"
+                  stroke="#0D2B57"
+                  stroke-width="12"
+                  d="M40 90 L 200 90"
+                  className="topbar"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  fill="transparent"
+                  stroke="#0D2B57"
+                  stroke-width="12"
+                  d="M40 150 L 200 150"
+                  className="bottombar"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            }
           </button>
         </div>
         <ul
-          className={`${navOpen ? "flex" : "hidden md:flex"} 
-        flex-col md:flex-row flex-auto flex-wrap items-stretch`}
+          className={`mobileMenu overflow-hidden relative ${
+            navOpen ? "flex" : "hidden md:flex"
+          } 
+        flex-col md:flex-row flex-auto flex-wrap items-stretch `}
         >
           {MENU_LIST.map((item) =>
             item.submenuItems ? (
