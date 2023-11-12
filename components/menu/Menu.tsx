@@ -2,6 +2,7 @@
 
 import MenuItem from "./menu-item";
 import React, { FunctionComponent, useState } from "react";
+import Image from "next/image";
 import Logo from "../logo";
 import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
@@ -64,20 +65,27 @@ const Menu: FunctionComponent<{}> = () => {
             aria-label="Menu"
             aria-expanded={navOpen}
             aria-controls="main-menu"
-            className={"p-3 md:hidden"}
+            className={"md:hidden"}
             onClick={() => setNavOpen(!navOpen)}
             data-testid="burger-menu"
           >
-            <div
-              className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
-            ${navOpen ? "-rotate-45 translate-y-[0.2rem]" : ""}`}
-              role="presentation"
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-mjr_very_dark_orange my-1 mx-0 block duration-500
-            ${navOpen ? "rotate-45 -translate-y-[0.2rem]" : ""}`}
-              role="presentation"
-            ></div>
+            {navOpen ? (
+              <Image
+                src="/burger-menu-opened.svg"
+                alt=""
+                width={30}
+                height={30}
+                priority
+              />
+            ) : (
+              <Image
+                src="/burger-menu-closed.svg"
+                alt=""
+                width={30}
+                height={30}
+                priority
+              />
+            )}
           </button>
         </div>
         <ul
