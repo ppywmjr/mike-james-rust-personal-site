@@ -79,7 +79,10 @@ export function ContactForm() {
                 )}
                 {serverData?.email ? (
                   <>
-                    <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+                    <Paragraph>
+                      <strong>Email sent: </strong>
+                      {serverData?.email}
+                    </Paragraph>
                     <Paragraph>
                       I&rsquo;ll get back to you as soon as I can.
                     </Paragraph>
