@@ -129,7 +129,6 @@ export function CalculationForm() {
               setShowCalculationQuestion(true);
             }}
             text="Try another calculation"
-            // importance="secondary"
           />
           <Button
             className="guessEquationButton relative left-40 opacity-0"
