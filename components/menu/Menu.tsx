@@ -45,8 +45,7 @@ const Menu: FunctionComponent<{}> = () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     );
-    const baseAnimationDuration = 100;
-      // !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
+    const baseAnimationDuration = !prefersReducedMotion || prefersReducedMotion.matches ? 0 : 100;
     let mobileMenuTopArray = [0, -200];
     let topBurgerBar = {
       rotation: 0,
