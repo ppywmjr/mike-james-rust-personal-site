@@ -70,19 +70,25 @@ export function ContactForm() {
               </Paragraph>
             ) : (
               <>
-                <Paragraph>
-                  Thanks for your message!
-                </Paragraph>
+                <Paragraph>Thanks for your message!</Paragraph>
                 {serverData?.message && (
-                  <Paragraph>{`Message sent: ${serverData?.message}`}</Paragraph>
+                  <Paragraph>
+                    <strong>Message sent: </strong>
+                    {serverData?.message}
+                  </Paragraph>
                 )}
                 {serverData?.email ? (
-                  <><Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
-<Paragraph>I&rsquo;ll get back to you as soon as I can.</Paragraph></>
+                  <>
+                    <Paragraph>{`Email: ${serverData?.email}`}</Paragraph>
+                    <Paragraph>
+                      I&rsquo;ll get back to you as soon as I can.
+                    </Paragraph>
+                  </>
                 ) : (
                   <Paragraph>
-                    You didn&rsquo;t submit an email addres so I won&rsquo;t be able to
-                    get back to you, but I appreciate the message anyway.
+                    You didn&rsquo;t submit an email addres so I won&rsquo;t be
+                    able to get back to you, but I appreciate the message
+                    anyway.
                   </Paragraph>
                 )}
               </>
