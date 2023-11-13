@@ -20,25 +20,40 @@ export default function AboutSite() {
           "My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
         }
         text={"An intro to what this site is all about"}
+        socialMediaLinks="linkedin"
       />
       <Paragraph>
-        Hi folks, I&rsquo;m Mike and this is my site. Welcome! This site is
-        primarily for me, but I&rsquo;m delighted to imagine you reading it.
-        I&rsquo;ve made a few little apps just for fun over the years but
-        I&rsquo;m motivated to make this one for a couple of new reasons.
+        Hi folks, I&rsquo;m Mike and this is my site. Welcome! I am Senior
+        Quality Assurance engineer. That is a job title that no-one ever
+        understands. If you have heard of that role before then, you probably
+        have the wrong idea of what I do. Let me explain.
       </Paragraph>
-      <SubHeading level={2}>My motivations</SubHeading>
+      <SubHeading level={2}>What is Quality Assurance?</SubHeading>
       <Paragraph>
-        Firstly, I know someone who wants to build a website and they came to me
-        for some advice. I found that as much as I know how to make a huge
-        difference to agile teams, I realised I don&rsquo;t really know how to
-        put together a complete website. So I was a little embarrased. Yes, my
-        core motivation is embarrassment. The second reason is the technology.
-        I&rsquo;ve been working as a tester with Nextjs apps for a couple of
-        years now and it&rsquo;s so easy to work with that I figured the effort
-        to get something up and running would be minimal. Also, Nextjs has so
-        many features that I think it would be really and fun to try out some
-        different approaches on different pages.
+        A long time ago, this role meant &quot;tester&quot;. But software has
+        become more and more complicated and the release cycle so rapid that it
+        has became really important to automate testing. So a new role was
+        created called, &quot;Software Development Engineer in Test&quot;.
+        People like the title, it sounds cool. But it&rsquo;s not. People doing
+        that role write automated test scripts and basically focus on writing
+        code to test other code. Unfortunately, focus on writing test code tends
+        to have a detrimental effect on thinking about the role of testing.
+        That&rsquo;s where modern Quality Assurance comes in. Instead of
+        focusing on writing speciliased test code, I focus on the big picture. I
+        make sure I understand the architecture that is being used to run
+        software applications, to test applications, and to deploy applications.
+        I understand the code, and it&rsquo;s strengths and weaknesses. I
+        consider what might go wrong in all these palces and I plan, advise,
+        coach and code to reduce risk in the short and long term. Done well,
+        it&rsquo;s an incredibly complex role. Done poorly, it&rsquo;s boring
+        and ineffective. I love it.
+      </Paragraph>
+      <SubHeading level={2}>My motivations for this site</SubHeading>
+      <Paragraph>
+        I am used to working on the large enterprise scale, but, like most
+        engineers, I also have the urge to create. So this site will serve as a
+        place to do that; to experiment and document that process. I&rsquo;m
+        currently excited to try out what Nextjs and Vercel can do.
       </Paragraph>
     </div>
   );

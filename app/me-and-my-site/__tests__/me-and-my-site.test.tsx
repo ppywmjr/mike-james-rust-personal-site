@@ -16,7 +16,9 @@ describe("Me and my site", () => {
   it("renders with img", () => {
     render(<MeAndMySite />);
 
-    const image = screen.getByRole("img");
+    const image = screen.getByRole("img", {
+      name: "My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile",
+    });
 
     expect(image).toBeVisible();
   });
