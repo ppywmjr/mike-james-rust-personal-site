@@ -8,6 +8,7 @@ import Submenu from "./submenu";
 import { MenuItemProps } from "./menu-item/types";
 import makingOfMetaData from "../../app/how-to-make-a-website/makingOfMetadata";
 import formsMetaData from "../../app/forms/formsMetadata";
+import Link from "next/link";
 
 const MENU_LIST: {
   path: string;
@@ -110,10 +111,14 @@ const Menu: FunctionComponent<{}> = () => {
         className="flex w-full flex-col md:flex-row bg-mjr_light_green"
       >
         <div className="flex flex-row justify-between">
-          <div className="flex flex-row items-center">
+          <Link
+            href="/"
+            className="flex flex-row items-center"
+            aria-hidden="true"
+          >
             <Logo />
             <p className="md:hidden lg:block">mike james rust</p>
-          </div>
+          </Link>
           <button
             aria-label="Menu"
             aria-expanded={navOpen}

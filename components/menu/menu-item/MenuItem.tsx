@@ -22,7 +22,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
     >
       <Link
         href={target}
-        className="flex flex-row justify-center  w-full"
+        className="flex flex-row justify-center w-full"
         onClick={onClick}
       >
         <p
