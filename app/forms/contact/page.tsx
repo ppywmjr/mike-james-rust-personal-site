@@ -13,6 +13,7 @@ export const metadata = {
 
 const currentPageIndex = 0;
 const previousPage = formsMetaData.pages[currentPageIndex - 1];
+const currentPage = formsMetaData.pages[currentPageIndex];
 const nextPage = formsMetaData.pages[currentPageIndex + 1];
 
 export default function Contact() {
@@ -20,16 +21,14 @@ export default function Contact() {
     <>
       <PageHeading>Submit a contact form</PageHeading>
       <Hero
-        imageSource={"/profile.jpg"}
-        altText={
-          "My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
-        }
+        imageSource={currentPage.imageData.source}
+        altText={currentPage.imageData.altText}
         text={"What are you thinking? What would you like to see next?"}
       />
       <Paragraph>
         Heya, so you want to get in touch? I&rsquo;d love to hear from you. Have
-        you got any requests for me? Or a suggestion, perhaps? Maybe you want to point out
-        a bug to me? Whatever it is, I&rsquo;m looking forward to it.
+        you got any requests for me? Or a suggestion, perhaps? Maybe you want to
+        point out a bug to me? Whatever it is, I&rsquo;m looking forward to it.
       </Paragraph>
       <Paragraph>x x Mike</Paragraph>
       <ContactForm />
