@@ -13,6 +13,7 @@ export const metadata = {
 
 const currentPageIndex = 1;
 const previousPage = formsMetaData.pages[currentPageIndex - 1];
+const currentPage = formsMetaData.pages[currentPageIndex];
 const nextPage = formsMetaData.pages[currentPageIndex + 1];
 
 export default function Contact() {
@@ -20,8 +21,8 @@ export default function Contact() {
     <>
       <PageHeading>A form to calculate... something</PageHeading>
       <Hero
-        imageSource={"/how-to-make-a-website/day-3/superhero.jpg"}
-        altText={"A red squirrel poses like a superhero"}
+        imageSource={currentPage.imageData.source}
+        altText={currentPage.imageData.altText}
         text={"Submit a form, and a mysterious unknown calculation will happen"}
       />
       <Paragraph>

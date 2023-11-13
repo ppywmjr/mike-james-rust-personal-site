@@ -15,6 +15,7 @@ export const metadata = {
 
 const currentPageIndex = 1;
 const nextPage = makingOfMetaData.pages[currentPageIndex + 1];
+const currentPage = makingOfMetaData.pages[currentPageIndex];
 const previousPage = makingOfMetaData.pages[currentPageIndex - 1];
 
 export default function TheMakingOf() {
@@ -26,8 +27,8 @@ export default function TheMakingOf() {
       />
       <PageHeading>Day 2 - Up and running</PageHeading>
       <Hero
-        imageSource={"/how-to-make-a-website/day-2/running.jpg"}
-        altText={"A red squirrel sprints across a screen"}
+        imageSource={currentPage.imageData.source}
+        altText={currentPage.imageData.altText}
         text={
           "Only a few clicks to make a website and server running in the cloud"
         }
