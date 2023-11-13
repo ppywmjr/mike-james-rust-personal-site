@@ -20,6 +20,7 @@ export default function AboutSite() {
           "My selfie. A handsome chap with long wavy hair, a tidy beard and a big smile"
         }
         text={"An intro to what this site is all about"}
+        socialMediaLinks="linkedin"
       />
       <Paragraph>
         Hi folks, I&rsquo;m Mike and this is my site. Welcome! I am Senior
