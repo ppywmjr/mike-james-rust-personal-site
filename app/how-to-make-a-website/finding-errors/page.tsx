@@ -3,12 +3,10 @@ import PageHeading from "@components/page-heading";
 import Hero from "@components/hero";
 import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
-import Illustration from "@components/article/illustration";
 import NeighbourNavigation from "@components/article/neighbour-navigation";
 import makingOfMetaData from "../makingOfMetadata";
 import TextList from "@components/article/text-list";
 import TextListItem from "@components/article/text-list/text-list-item";
-import TextLink from "@components/article/text-link";
 import CodeBlock from "@components/article/code-block";
 
 export const metadata = {
