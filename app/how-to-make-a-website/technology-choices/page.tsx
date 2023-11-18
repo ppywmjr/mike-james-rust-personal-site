@@ -47,7 +47,7 @@ export default function TheMakingOf() {
           whole project goes. Navigating the options can be a nightmare but I
           can help with some sensible choices for getting started. Even though I
           am not a developer, I am a Tester/Quality Assurance engineer and I get
-          to watch developers&rsquo; making mistakes every day - don&rsquo;t
+          to watch developers making mistakes every day - don&rsquo;t
           tell them I said that. Sometimes they make good choices too.
           Don&rsquo;t tell them I admitted that either.
         </Paragraph>

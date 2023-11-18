@@ -3,5 +3,5 @@ export type CodeBlockProps = {
   startingLineNumber?: number;
   wrapLongLines?: boolean;
   highlightLines?: number[];
-  language: "tsx" | "css";
+  language: "tsx" | "css" | "log";
 };

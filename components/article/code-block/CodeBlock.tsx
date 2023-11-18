@@ -39,7 +39,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
         return { style };
       }}
       wrapLongLines={wrapLongLines}
-      showLineNumbers={true}
+      showLineNumbers={language === 'log' ? false : true}
       startingLineNumber={startingLineNumber}
       customStyle={{ borderRadius: "0px", padding: "0.5rem" }}
       className={`leading-tight block text-sm rounded-none ${styles.scrollbar}`}

@@ -220,7 +220,16 @@ export default function TheMakingOf() {
           <TextLink
             target={"https://mike-james-rust-personal-site.vercel.app"}
           />
-          . Although, you know what, actually it didn&rsquo;t work out so
+          Although by the time you click this, it will have a changed a lot. So
+          here is a screenshot from the time.
+        </Paragraph>
+        <Illustration
+          imageSource={"/how-to-make-a-website/day-4/article/my-website.png"}
+          altText="The Nextjs template app with my first copy changes on it."
+          labelText={"My changes to the Nextjs template app"}
+        />
+        <Paragraph>
+          Although, you know what, actually it didn&rsquo;t work out so
           smoothly, in reality I broke the app with the first change!
         </Paragraph>
       </div>
