@@ -3,6 +3,7 @@ import PageHeading from "../../components/page-heading";
 import Hero from "../../components/hero";
 import Paragraph from "@components/article/paragraph";
 import SubHeading from "@components/article/sub-heading";
+import TextLink from "@components/article/text-link";
 
 export const metadata = {
   title: "Me and my site",
@@ -54,6 +55,13 @@ export default function AboutSite() {
         engineers, I also have the urge to create. So this site will serve as a
         place to do that; to experiment and document that process. I&rsquo;m
         currently excited to try out what Nextjs and Vercel can do.
+      </Paragraph>
+      <Paragraph>
+        All the code for this site can be found on my{" "}
+        <TextLink target="https://github.com/ppywmjr/mike-james-rust-personal-site">
+          Github
+        </TextLink>{" "}
+        account.
       </Paragraph>
     </div>
   );
