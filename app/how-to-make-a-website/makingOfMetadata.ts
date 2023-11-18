@@ -49,6 +49,15 @@ const makingOfMetaData: {
         altText: "A mischievous red squirrel throws around building blocks",
       },
     },
+    {
+      uri: `${basePath}/finding-errors`,
+      menuText: "Finding errors",
+      linkDescription: "Rule 1: Things will always go wrong",
+      imageData: {
+        source: "/how-to-make-a-website/day-5/finding-errors.jpg",
+        altText: "A red squirrel detective searches for a ladybird",
+      },
+    },
   ],
 };
 
