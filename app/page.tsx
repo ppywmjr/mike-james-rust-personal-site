@@ -50,7 +50,7 @@ export default function Home() {
         height={214}
         priority
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:pt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:gap-2 sm:pt-16">
         {LINK_CARDS.map((item) => (
           <LinkCard
             key={item.target}
