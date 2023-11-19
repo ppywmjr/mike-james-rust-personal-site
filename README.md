@@ -13,3 +13,5 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+The current production version of the site is available at [mikejamesrust.com](mikejamesrust.com)
