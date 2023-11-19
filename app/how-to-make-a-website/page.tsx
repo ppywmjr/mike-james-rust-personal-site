@@ -15,7 +15,7 @@ export default function TheMakingOf() {
       <div className="px-2">
         <PageHeading>How to make this site</PageHeading>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pt-4 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pt-4 justify-items-center sm:gap-2">
         <div className="m-6 max-w-[20rem]">
           <Hero
             imageSource={"/how-to-make-a-website/searching.jpg"}
