@@ -13,7 +13,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = ({
   return (
     <Link
       href={target}
-      className="p-2 m-2 max-w-[20rem] min-h-[8rem] group border-2 border-mjr_very_light_orange rounded-lg flex"
+      className="p-2 m-2 max-w-[20rem] w-full min-h-[8rem] group border-2 border-mjr_very_light_orange rounded-lg flex"
     >
       <div className="p-2 rounded-md bg-mjr_very_light_green hover:bg-mjr_light_green flex-stretch w-full">
         <h2 className="font-bold py-2 text-center">{heading}</h2>
