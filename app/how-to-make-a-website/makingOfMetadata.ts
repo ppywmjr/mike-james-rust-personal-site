@@ -58,6 +58,15 @@ const makingOfMetaData: {
         altText: "A red squirrel detective searches for a ladybird",
       },
     },
+    {
+      uri: `${basePath}/creating-nextjs-routes`,
+      menuText: "The instant new page",
+      linkDescription: "The route to happiness and fast load times",
+      imageData: {
+        source: "/how-to-make-a-website/day-6/squirrel-routing.jpg",
+        altText: "A red squirrel leaps from one path to another",
+      },
+    },
   ],
 };
 
