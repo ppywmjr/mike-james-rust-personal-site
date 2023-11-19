@@ -56,7 +56,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
         } w-full duration-500 md:group-hover:block`}
       >
         <div className="md:absolute">
-          {submenuItems.map((item) => (
+          {submenuItems.slice(0,5).map((item) => (
             <MenuItem
               key={item.text}
               target={`${item.target}`}
@@ -65,6 +65,14 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
               onClick={handleOnClick}
             />
           ))}
+          {submenuItems.length > 5 && (
+            <MenuItem
+              target={path}
+              text={"More ..."}
+              isSubmenu={true}
+              onClick={handleOnClick}
+            />
+          )}
         </div>
       </ul>
     </li>
