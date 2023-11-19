@@ -6,4 +6,5 @@ export type LinkCardProps = {
     source: string,
     altText: string,
   };
+  landscape?: boolean, 
 };

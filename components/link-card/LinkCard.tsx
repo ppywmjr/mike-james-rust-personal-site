@@ -8,22 +8,23 @@ const LinkCard: FunctionComponent<LinkCardProps> = ({
   heading,
   description,
   imageData,
+  landscape,
 }) => {
   return (
     <Link
       href={target}
       className="p-2 m-2 max-w-[20rem] min-h-[8rem] group border-2 border-mjr_very_light_orange rounded-lg flex"
     >
-      <div className="p-2 rounded-md bg-mjr_very_light_green hover:bg-mjr_light_green ease-out flex-stretch w-full">
+      <div className="p-2 rounded-md bg-mjr_very_light_green hover:bg-mjr_light_green flex-stretch w-full">
         <h2 className="font-bold py-2 text-center">{heading}</h2>
         <Image
-          className="rounded-lg m-auto"
+          className={`rounded-lg ${landscape ? "float-left mr-2" : ""}`}
           src={imageData.source}
           alt={imageData.altText}
-          width={260}
-          height={143}
+          width={landscape ? 100 : 260}
+          height={landscape ? 100 : 260}
         />
-        <p className="text-sm p-3">{description}</p>
+        <p className="text-sm">{description}</p>
       </div>
     </Link>
   );
