@@ -1,12 +1,12 @@
 ## Getting Started
 
-First fecth the dependencies:
+First, in a terminal or console, fetch the dependencies with the command:
 
 ```bash
 npm ci
 ```
 
-First, run the development server:
+Second, run the development server:
 
 ```bash
 npm run dev
