@@ -89,7 +89,6 @@ export function CalculationForm() {
         <Form
           action={handleSubmit(onCalculationSubmit)}
           error={
-            // @ts-expect-error This error was added via Zod, but the React Hook Form type is not aware of it.
             errors?.form?.message
           }
         >

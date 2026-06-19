@@ -43,7 +43,6 @@ export const EquationGuess: FunctionComponent<EquationGuessProps> = ({
           className="min-h-[150px]"
           action={handleSubmit(onSubmit)}
           error={
-            // @ts-expect-error This error was added via Zod, but the React Hook Form type is not aware of it.
             errors?.form?.message
           }
         >
