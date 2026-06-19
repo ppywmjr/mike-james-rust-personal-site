@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@11.7.0",
   "engines": {
-    "node": ">=24.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -19,8 +19,8 @@
     "@hookform/resolvers": "^3.3",
     "@vercel/analytics": "^1.0",
     "animejs": "^3.2",
-    "next": "16.2.5",
-    "nodemailer": "^7.0.11",
+    "next": "16.2.9",
+    "nodemailer": "^9.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.46",
