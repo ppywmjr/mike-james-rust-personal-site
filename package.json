@@ -19,7 +19,7 @@
     "@hookform/resolvers": "^3.3",
     "@vercel/analytics": "^1.0",
     "animejs": "^3.2",
-    "next": "16.2.9",
+    "next": "16.2.11",
     "nodemailer": "^9.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
