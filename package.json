@@ -20,7 +20,7 @@
     "@vercel/analytics": "^1.0",
     "animejs": "^3.2",
     "next": "16.2.9",
-    "nodemailer": "^9.0.1",
+    "nodemailer": "^9.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.46",
